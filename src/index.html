@@ -15,9 +15,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;600&family=Space+Grotesk:wght@400;500;700&family=Barlow+Semi+Condensed:wght@400;500;600;700&family=Pinyon+Script&display=swap" rel="stylesheet" />
-    <!-- aplica o tema salvo antes do Angular carregar (evita piscar) -->
+    <!-- aplica tema e cor salvos antes do Angular carregar (evita piscar) -->
     <script>
-      try { document.documentElement.dataset.theme = localStorage.getItem('theme') || 'light'; } catch (e) {}
+      var r = document.documentElement; r.dataset.theme = 'light'; r.dataset.accent = 'neutral';
+      try { r.dataset.theme = localStorage.getItem('theme') || 'light'; r.dataset.accent = localStorage.getItem('accent') || 'neutral'; } catch (e) {}
     </script>
   </head>
   <body>
