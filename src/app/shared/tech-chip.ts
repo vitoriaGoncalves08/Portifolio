@@ -9,6 +9,7 @@ const ICONS: Record<string, string> = {
   'Material UI': 'materialui', Figma: 'figma', MySQL: 'mysql', 'SQL Server': 'microsoftsqlserver',
   'Module Federation': 'webpack', 'Micro-frontends': 'angularjs',
   'Next.js': 'nextjs', 'Tailwind CSS': 'tailwindcss', Python: 'python', 'scikit-learn': 'scikitlearn', 'Chrome Extension': 'chrome',
+  Vite: 'vitejs', 'Framer Motion': 'framermotion', Maven: 'maven',
 };
 
 export const techIconUrl = (name: string): string => {

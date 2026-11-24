@@ -586,3 +586,19 @@ html{scroll-padding-top:86px}
 .msg.typing i:nth-child(3){animation-delay:.3s}
 @keyframes typing{0%,80%,100%{opacity:.3;transform:translateY(0)}40%{opacity:1;transform:translateY(-3px)}}
 .chat form .btn[disabled]{opacity:.5;cursor:default}
+
+/* ===== carrossel de imagens do modal de projeto ===== */
+.gallery{position:relative;display:block;overflow:hidden;background:var(--bg2);outline:none;touch-action:pan-y}
+.gallery:focus-visible{box-shadow:inset 0 0 0 2px var(--ac-t)}
+.g-track{display:flex;transition:transform .45s cubic-bezier(.2,.7,.2,1);cursor:grab;user-select:none}
+.g-track:active{cursor:grabbing}
+.g-slide{flex:0 0 100%;margin:0;aspect-ratio:16/9;display:grid;place-items:center;padding:14px}
+.g-slide img{max-width:100%;max-height:100%;object-fit:contain;border-radius:8px;box-shadow:0 14px 30px -18px rgba(0,0,0,.5);pointer-events:none}
+.g-nav{position:absolute;top:50%;translate:0 -50%;width:40px;height:40px;border-radius:50%;border:1px solid var(--line);background:color-mix(in srgb,var(--card) 88%,transparent);color:var(--fg);font-size:1.5rem;line-height:1;cursor:pointer;display:grid;place-items:center;backdrop-filter:blur(6px);transition:background .2s,color .2s}
+.g-nav:hover{background:var(--ac);color:var(--ac-fg);border-color:var(--ac)}
+.g-nav.prev{left:12px}.g-nav.next{right:12px}
+.g-dots{position:absolute;left:50%;bottom:10px;translate:-50% 0;display:flex;gap:6px}
+.g-dots button{width:8px;height:8px;border-radius:99px;border:0;padding:0;background:color-mix(in srgb,var(--fg) 30%,transparent);cursor:pointer;transition:width .25s,background .25s}
+.g-dots button.on{width:22px;background:var(--ac-t)}
+.g-count{position:absolute;right:14px;bottom:8px;color:var(--mut);font-size:.7rem}
+@media (prefers-reduced-motion:reduce){.g-track{transition:none}}

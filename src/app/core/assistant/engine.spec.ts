@@ -31,6 +31,12 @@ describe('AssistantEngine (Dúvidas? offline)', () => {
     expect(code.actions.some((a) => a.kind === 'link' && a.value.includes('microservice-saga'))).toBe(true);
   });
 
+  it('responde sobre Fátima Bolos, Farma.co e Java Patterns', () => {
+    expect(hasProject(ask(engine, 'site de bolo'), 'fatima-bolos')).toBe(true);
+    expect(hasProject(ask(engine, 'app de farmacia'), 'farma-co')).toBe(true);
+    expect(hasProject(ask(engine, 'padroes de projeto gof'), 'patterns')).toBe(true);
+  });
+
   it('responde sobre Sorria e Acene e Futurize', () => {
     expect(hasProject(ask(engine, 'reconhece libras?'), 'sorria-acene')).toBe(true);
     expect(hasProject(ask(engine, 'sorria e acene'), 'sorria-acene')).toBe(true);

@@ -26,6 +26,8 @@ export interface Project {
   emoji: string;
   /** caminho da imagem/screenshot (opcional), ex.: assets/projects/saga.png */
   img?: string;
+  /** imagens extras mostradas no carrossel do modal (a primeira do carrossel é sempre `img`) */
+  imgs?: string[];
   desc: Localized;
   problem: Localized;
   solution: Localized;

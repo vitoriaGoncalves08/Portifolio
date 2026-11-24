@@ -331,6 +331,7 @@ export const DATA: PortfolioData = {
     },
     {
       id: 'futurize', title: 'Futurize', img: 'assets/projects/futurize.webp',
+      imgs: ['assets/projects/futurize-trabalhos.webp', 'assets/projects/futurize-casos-de-uso.webp', 'assets/projects/futurize-classes.webp', 'assets/projects/futurize-logico.webp'],
       tags: ['Java', 'Spring Boot', 'React.js', 'MySQL', 'Material UI', 'JWT'],
       cat: 'Full Stack', emoji: '📋',
       desc: {
@@ -366,6 +367,79 @@ export const DATA: PortfolioData = {
       code: 'https://github.com/vitoriaGoncalves08/Futurize', demo: ''
     },
     {
+      id: 'fatima-bolos', title: 'Fátima Bolos', img: 'assets/projects/fatima-bolos.webp',
+      tags: ['React.js', 'TypeScript', 'Vite', 'Material UI', 'Framer Motion'],
+      cat: 'Front-end', emoji: '🎂',
+      desc: {
+        pt: 'Site de uma confeitaria com catálogo de bolos, salgados e tortas, carrinho e encomenda enviada direto pelo WhatsApp.',
+        en: 'Website for a bakery with a catalog of cakes, savory snacks and pies, a cart and orders sent straight to WhatsApp.',
+        es: 'Sitio de una pastelería con catálogo de pasteles, bocadillos y tartas, carrito y pedidos enviados directo por WhatsApp.'
+      },
+      problem: {
+        pt: 'A confeitaria recebia pedidos só por conversa no WhatsApp, sem um lugar para mostrar os produtos, tamanhos e sabores.',
+        en: 'The bakery took orders only through WhatsApp chats, with no place to show its products, sizes and flavors.',
+        es: 'La pastelería recibía pedidos solo por WhatsApp, sin un lugar para mostrar sus productos, tamaños y sabores.'
+      },
+      solution: {
+        pt: 'Site com seções Sobre nós, Produtos (com categorias como Festa, Salgados e Tortas), formulário de encomenda, dúvidas frequentes e contato. Os itens vão para um carrinho e o pedido é montado e enviado como mensagem no WhatsApp.',
+        en: 'Website with About, Products (with categories such as Party, Savory and Pies), an order form, FAQ and contact sections. Items go to a cart and the order is built and sent as a WhatsApp message.',
+        es: 'Sitio con secciones Sobre nosotros, Productos (con categorías como Fiesta, Salados y Tartas), formulario de pedido, preguntas frecuentes y contacto. Los productos van a un carrito y el pedido se arma y se envía como mensaje de WhatsApp.'
+      },
+      arch: {
+        pt: 'React 19 com TypeScript e Vite, componentes organizados em Atomic Design (átomos, moléculas, organismos e templates), Material UI e animações com Framer Motion e animate.css.',
+        en: 'React 19 with TypeScript and Vite, components organized with Atomic Design (atoms, molecules, organisms and templates), Material UI and animations with Framer Motion and animate.css.',
+        es: 'React 19 con TypeScript y Vite, componentes organizados con Atomic Design (átomos, moléculas, organismos y plantillas), Material UI y animaciones con Framer Motion y animate.css.'
+      },
+      challenges: {
+        pt: 'Montar a mensagem do pedido com os itens do carrinho e os dados da encomenda de forma legível no WhatsApp, e deixar o catálogo bonito e leve em qualquer tela.',
+        en: 'Building the order message from the cart items and order details in a readable way on WhatsApp, and keeping the catalog beautiful and light on any screen.',
+        es: 'Armar el mensaje del pedido con los productos del carrito y los datos del pedido de forma legible en WhatsApp, y mantener el catálogo bonito y liviano en cualquier pantalla.'
+      },
+      result: {
+        pt: 'Uma vitrine online com a identidade da marca, que facilita o pedido para o cliente e organiza as encomendas para a confeitaria.',
+        en: 'An online showcase with the brand identity that makes ordering easier for customers and organizes orders for the bakery.',
+        es: 'Una vitrina online con la identidad de la marca, que facilita el pedido al cliente y organiza los encargos de la pastelería.'
+      },
+      code: 'https://github.com/vitoriaGoncalves08/FatimaBolos', demo: ''
+    },
+    {
+      id: 'farma-co', title: 'Farma.co', img: 'assets/projects/farma-co.webp',
+      imgs: ['assets/projects/farma-co-cadastros.webp', 'assets/projects/farma-co-catalogo.webp'],
+      tags: ['Figma', 'UX/UI', 'Mobile'],
+      cat: 'UX/UI', emoji: '💊',
+      desc: {
+        pt: 'Protótipo de aplicativo de farmácia: catálogo, carrinho, pagamento, envio de receita e acompanhamento da entrega.',
+        en: 'Pharmacy app prototype: catalog, cart, payment, prescription upload and delivery tracking.',
+        es: 'Prototipo de aplicación de farmacia: catálogo, carrito, pago, envío de receta y seguimiento de la entrega.'
+      },
+      problem: {
+        pt: 'Comprar medicamentos pelo celular, incluindo os que exigem receita, e saber em que etapa está a entrega.',
+        en: 'Buying medicines on the phone, including prescription ones, and knowing which stage the delivery is in.',
+        es: 'Comprar medicamentos por el celular, incluidos los que requieren receta, y saber en qué etapa está la entrega.'
+      },
+      solution: {
+        pt: 'Fluxo completo desenhado no Figma: splash, cadastro e login; catálogo com busca e categorias; página do produto; carrinho; pagamento (cartão, Pix ou boleto); envio da receita pelo WhatsApp; endereço; rota e status da entrega; e histórico de pedidos.',
+        en: 'Complete flow designed in Figma: splash, sign-up and login; catalog with search and categories; product page; cart; payment (card, Pix or bank slip); prescription upload via WhatsApp; address; delivery route and status; and order history.',
+        es: 'Flujo completo diseñado en Figma: splash, registro e inicio de sesión; catálogo con búsqueda y categorías; página del producto; carrito; pago (tarjeta, Pix o boleto); envío de la receta por WhatsApp; dirección; ruta y estado de la entrega; e historial de pedidos.'
+      },
+      arch: {
+        pt: 'Protótipo navegável no Figma, dividido em Cadastros (incluindo a área do administrador, que adiciona produtos e valida pedidos) e Catálogo, com barra de navegação inferior fixa.',
+        en: 'Clickable Figma prototype, split into Sign-up (including the admin area, which adds products and validates orders) and Catalog, with a fixed bottom navigation bar.',
+        es: 'Prototipo navegable en Figma, dividido en Registro (incluida el área del administrador, que agrega productos y valida pedidos) y Catálogo, con barra de navegación inferior fija.'
+      },
+      challenges: {
+        pt: 'Tratar a compra de remédios com receita sem travar o fluxo e mostrar o andamento da entrega de forma clara, da receita enviada ao pedido entregue.',
+        en: 'Handling prescription purchases without blocking the flow and showing delivery progress clearly, from prescription sent to order delivered.',
+        es: 'Manejar la compra de medicamentos con receta sin trabar el flujo y mostrar el avance de la entrega con claridad, desde la receta enviada hasta el pedido entregado.'
+      },
+      result: {
+        pt: 'Um protótipo completo, com identidade visual em verde-petróleo, pronto para guiar o desenvolvimento do aplicativo.',
+        en: 'A complete prototype with a teal visual identity, ready to guide the app development.',
+        es: 'Un prototipo completo, con identidad visual en verde petróleo, listo para guiar el desarrollo de la aplicación.'
+      },
+      code: '', demo: ''
+    },
+    {
       id: 'saga', title: 'Microservice SAGA Orquestrado', tags: ['Java', 'Spring Boot', 'Kafka', 'Docker'],
       cat: 'Back-end', emoji: '🧩',
       desc: { pt: 'Sistema de microsserviços com padrão SAGA orquestrado.', en: 'Microservices system using the orchestrated SAGA pattern.', es: 'Sistema de microservicios con el patrón SAGA orquestado.' },
@@ -399,14 +473,38 @@ export const DATA: PortfolioData = {
       code: 'https://github.com/vitoriaGoncalves08/micro-frontends-vendas', demo: ''
     },
     {
-      id: 'patterns', title: 'Java Patterns', tags: ['Java', 'Design Patterns'],
+      id: 'patterns', title: 'Java Patterns', tags: ['Java', 'Design Patterns', 'Maven'],
       cat: 'Estudo', emoji: '📐',
-      desc: { pt: 'Exemplos práticos de padrões de projeto em Java.', en: 'Practical Java design pattern examples.', es: 'Ejemplos prácticos de patrones de diseño en Java.' },
-      problem: { pt: 'Descreva o problema.', en: 'Describe the problem.', es: 'Describe el problema.' },
-      solution: { pt: 'Descreva a solução.', en: 'Describe the solution.', es: 'Describe la solución.' },
-      arch: { pt: 'Descreva a arquitetura.', en: 'Describe the architecture.', es: 'Describe la arquitectura.' },
-      challenges: { pt: 'Descreva os desafios.', en: 'Describe the challenges.', es: 'Describe los desafíos.' },
-      result: { pt: 'Descreva o resultado.', en: 'Describe the result.', es: 'Describe el resultado.' },
+      desc: {
+        pt: 'Os 23 padrões de projeto do GoF implementados em Java puro, cada um com um exemplo concreto do problema antes e depois do padrão.',
+        en: 'The 23 GoF design patterns implemented in plain Java, each with a concrete example of the problem before and after the pattern.',
+        es: 'Los 23 patrones de diseño del GoF implementados en Java puro, cada uno con un ejemplo concreto del problema antes y después del patrón.'
+      },
+      problem: {
+        pt: 'Entender não só como cada padrão é escrito, mas por que ele existe: que acoplamento ou repetição ele resolve.',
+        en: 'Understanding not only how each pattern is written, but why it exists: which coupling or repetition it solves.',
+        es: 'Entender no solo cómo se escribe cada patrón, sino por qué existe: qué acoplamiento o repetición resuelve.'
+      },
+      solution: {
+        pt: 'Cada padrão tem um domínio concreto (caixa eletrônico, iPhone, Alexa, PacMan, cafeteria…) com as versões "antes" e "depois", além de variações como Builder fluente e funcional, Singleton monostate e Adapter na arquitetura hexagonal.',
+        en: 'Each pattern has a concrete domain (ATM, iPhone, Alexa, PacMan, coffee shop…) with "before" and "after" versions, plus variations such as fluent and functional Builder, monostate Singleton and Adapter in hexagonal architecture.',
+        es: 'Cada patrón tiene un dominio concreto (cajero automático, iPhone, Alexa, PacMan, cafetería…) con las versiones "antes" y "después", además de variaciones como Builder fluido y funcional, Singleton monostate y Adapter en arquitectura hexagonal.'
+      },
+      arch: {
+        pt: '6 projetos Maven independentes, separados em padrões criacionais, estruturais e comportamentais (referência do curso e reprodução própria). Java 8, sem frameworks; cada exemplo roda por uma classe Client.',
+        en: '6 independent Maven projects, split into creational, structural and behavioral patterns (course reference and my own reproduction). Java 8, no frameworks; each example runs from a Client class.',
+        es: '6 proyectos Maven independientes, divididos en patrones creacionales, estructurales y de comportamiento (referencia del curso y reproducción propia). Java 8, sin frameworks; cada ejemplo se ejecuta desde una clase Client.'
+      },
+      challenges: {
+        pt: 'Escolher, para cada padrão, um exemplo em que o problema fique evidente e comparar as variações sem misturar conceitos.',
+        en: 'Choosing, for each pattern, an example where the problem is obvious, and comparing variations without mixing concepts.',
+        es: 'Elegir, para cada patrón, un ejemplo donde el problema sea evidente y comparar las variaciones sin mezclar conceptos.'
+      },
+      result: {
+        pt: 'Um repositório de consulta com os 23 padrões documentados em catálogo, que uso como referência no dia a dia.',
+        en: 'A reference repository with all 23 patterns documented in a catalog, which I use day to day.',
+        es: 'Un repositorio de consulta con los 23 patrones documentados en un catálogo, que uso como referencia en el día a día.'
+      },
       code: 'https://github.com/vitoriaGoncalves08/Java-Patterns', demo: ''
     }
   ],

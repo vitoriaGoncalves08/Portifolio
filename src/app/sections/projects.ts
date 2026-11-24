@@ -6,6 +6,7 @@ import { ScrollFxService } from '../core/scroll-fx.service';
 import { UiBusService } from '../core/ui-bus.service';
 import { DATA } from '../data/portfolio.data';
 import { Project } from '../models/portfolio.models';
+import { Gallery } from '../shared/gallery';
 import { RevealDirective } from '../shared/reveal.directive';
 import { TechChip, techIconUrl } from '../shared/tech-chip';
 
@@ -18,7 +19,7 @@ const GRADIENTS: [string, string][] = [['#55524a', '#171715'], ['#8a7d63', '#1d1
  */
 @Component({
   selector: 'app-projects',
-  imports: [NgTemplateOutlet, RevealDirective, TechChip],
+  imports: [Gallery, NgTemplateOutlet, RevealDirective, TechChip],
   template: `
     <section id="projects" class="sec">
       <div class="wrap">
@@ -89,7 +90,11 @@ const GRADIENTS: [string, string][] = [['#55524a', '#171715'], ['#8a7d63', '#1d1
     <dialog #dlg class="modal" (click)="$event.target === dlg && dlg.close()">
       <button type="button" class="close" aria-label="Fechar" (click)="dlg.close()">✕</button>
       @if (selected(); as p) {
-        <div class="m-shot"><ng-container *ngTemplateOutlet="shot; context: { $implicit: p }" /></div>
+        @if (selectedGallery().length > 1) {
+          <app-gallery [images]="selectedGallery()" [title]="p.title" />
+        } @else {
+          <div class="m-shot"><ng-container *ngTemplateOutlet="shot; context: { $implicit: p }" /></div>
+        }
         <div class="m-in">
           <h3 style="margin-top:0">{{ p.title }}</h3>
           <div class="chips">@for (t of p.tags; track t) {<app-tech-chip [name]="t" />}</div>
@@ -163,6 +168,12 @@ export class Projects {
     this.cat.set('all');
     this.tagSel.set(new Set());
   }
+
+  /** todas as imagens do projeto aberto: a principal + as extras */
+  protected readonly selectedGallery = computed(() => {
+    const p = this.selected();
+    return p ? [p.img, ...(p.imgs ?? [])].filter((x): x is string => !!x) : [];
+  });
 
   protected open(p: Project): void {
     this.selected.set(p);
