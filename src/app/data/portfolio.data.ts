@@ -21,7 +21,7 @@ export const DATA: PortfolioData = {
       cta_projects: 'Ver projetos', cta_cv: 'Baixar CV',
       about_pro_t: 'Profissional', about_hobby_t: 'Fora do código',
       about_pro: 'Sou desenvolvedora fullstack em São Paulo. Na Muralis Tecnologia comecei como estagiária em 2022 e hoje desenvolvo microsserviços em Java e Spring Boot com arquitetura hexagonal, APIs REST e interfaces em React, participando das decisões técnicas e do dia a dia ágil do time. Também atuo como freelancer, criando landing pages, protótipos no Figma e identidades visuais.',
-      about_hobby: 'Quando fecho o editor, estou treinando, jogando, modelando cerâmica ou com um livro na mão.',
+      about_hobby: 'Quando fecho o editor, estou {0}, {1}, {2} ou {3}.',
       langs_t: 'Idiomas',
       tl_work: 'Experiência', tl_edu: 'Educação', tl_all: 'Tudo', more: 'Ver detalhes →', all: 'Todos',
       certs_badges: 'Badges', certs_courses: 'Certificados e cursos', badge_soon: 'Próxima badge',
@@ -48,7 +48,7 @@ export const DATA: PortfolioData = {
       cta_projects: 'View projects', cta_cv: 'Download CV',
       about_pro_t: 'Professional', about_hobby_t: 'Beyond code',
       about_pro: "I'm a full stack developer based in São Paulo. I joined Muralis Tecnologia as an intern in 2022 and today I build Java and Spring Boot microservices with hexagonal architecture, REST APIs and React interfaces, taking part in technical decisions and the team's agile routine. I also freelance, creating landing pages, Figma prototypes and visual identities.",
-      about_hobby: "When I close the editor, I'm working out, gaming, shaping ceramics or reading a book.",
+      about_hobby: "When I close the editor, I'm {0}, {1}, {2} or {3}.",
       langs_t: 'Languages',
       tl_work: 'Experience', tl_edu: 'Education', tl_all: 'All', more: 'See details →', all: 'All',
       certs_badges: 'Badges', certs_courses: 'Certificates & courses', badge_soon: 'Next badge',
@@ -75,7 +75,7 @@ export const DATA: PortfolioData = {
       cta_projects: 'Ver proyectos', cta_cv: 'Descargar CV',
       about_pro_t: 'Profesional', about_hobby_t: 'Fuera del código',
       about_pro: 'Soy desarrolladora fullstack en São Paulo. Entré a Muralis Tecnologia como pasante en 2022 y hoy desarrollo microservicios en Java y Spring Boot con arquitectura hexagonal, APIs REST e interfaces en React, participando en las decisiones técnicas y en el día a día ágil del equipo. También trabajo como freelancer, creando landing pages, prototipos en Figma e identidades visuales.',
-      about_hobby: 'Cuando cierro el editor, estoy entrenando, jugando, modelando cerámica o con un libro en la mano.',
+      about_hobby: 'Cuando cierro el editor, estoy {0}, {1}, {2} o {3}.',
       langs_t: 'Idiomas',
       tl_work: 'Experiencia', tl_edu: 'Educación', tl_all: 'Todo', more: 'Ver detalles →', all: 'Todos',
       certs_badges: 'Insignias', certs_courses: 'Certificados y cursos', badge_soon: 'Próxima insignia',
@@ -104,27 +104,28 @@ export const DATA: PortfolioData = {
     { pt: 'Espanhol — básico', en: 'Spanish — basic', es: 'Español — básico' }
   ],
 
-  /* Hobbies: ilustrações em SVG (traço usa a cor do tema) */
+  /* Hobbies: aparecem como palavras marcadas na frase "about_hobby" ({0}, {1}...).
+     w = como a palavra aparece na frase · d = frase curta mostrada ao passar o mouse */
   hobbies: [
     {
       t: { pt: 'Academia', en: 'Gym', es: 'Gimnasio' },
-      d: { pt: 'Treino para manter corpo e cabeça em dia.', en: 'Training to keep body and mind in shape.', es: 'Entreno para mantener cuerpo y mente en forma.' },
-      svg: '<circle cx="60" cy="72" r="24"/><path d="M48 52V42a12 12 0 0 1 24 0v10"/><path d="M52 72h16"/><path d="M18 104h84"/><rect x="18" y="96" width="8" height="16" rx="2"/><rect x="94" y="96" width="8" height="16" rx="2"/><rect x="28" y="99" width="6" height="10" rx="2"/><rect x="86" y="99" width="6" height="10" rx="2"/>'
+      w: { pt: 'treinando', en: 'working out', es: 'entrenando' },
+      d: { pt: 'Treino para manter corpo e cabeça em dia.', en: 'Training to keep body and mind in shape.', es: 'Entreno para mantener cuerpo y mente en forma.' }
     },
     {
       t: { pt: 'Jogos', en: 'Games', es: 'Videojuegos' },
-      d: { pt: 'Jogos com boa história e bons desafios.', en: 'Games with a good story and good challenges.', es: 'Juegos con buena historia y buenos desafíos.' },
-      svg: '<path d="M34 46h52a20 20 0 0 1 19 26l-6 18a10 10 0 0 1-17 3l-9-10H47l-9 10a10 10 0 0 1-17-3l-6-18a20 20 0 0 1 19-26z"/><path d="M40 58v14M33 65h14"/><circle cx="80" cy="60" r="3"/><circle cx="88" cy="68" r="3"/><path d="M54 36c0-6 6-6 6-12s6-6 6-6"/>'
+      w: { pt: 'jogando', en: 'gaming', es: 'jugando' },
+      d: { pt: 'Jogos com boa história e bons desafios.', en: 'Games with a good story and good challenges.', es: 'Juegos con buena historia y buenos desafíos.' }
     },
     {
       t: { pt: 'Cerâmica', en: 'Ceramics', es: 'Cerámica' },
-      d: { pt: 'Modelar no torno ensina paciência e detalhe.', en: 'Throwing on the wheel teaches patience and detail.', es: 'Modelar en el torno enseña paciencia y detalle.' },
-      svg: '<path d="M50 26h20"/><path d="M53 26c0 10-15 16-15 34 0 13 9 22 22 22s22-9 22-22c0-18-15-24-15-34"/><path d="M42 60c6 3 30 3 36 0"/><ellipse cx="60" cy="92" rx="36" ry="7"/><path d="M60 99v10M44 109h32"/><path d="M18 88c-4-6-4-12 0-18M102 88c4-6 4-12 0-18"/>'
+      w: { pt: 'modelando cerâmica', en: 'shaping ceramics', es: 'modelando cerámica' },
+      d: { pt: 'Modelar no torno ensina paciência e detalhe.', en: 'Throwing on the wheel teaches patience and detail.', es: 'Modelar en el torno enseña paciencia y detalle.' }
     },
     {
       t: { pt: 'Livros', en: 'Books', es: 'Libros' },
-      d: { pt: 'Ficção, tecnologia e tudo que abre a cabeça.', en: 'Fiction, tech and anything that opens the mind.', es: 'Ficción, tecnología y todo lo que abre la mente.' },
-      svg: '<rect x="22" y="88" width="64" height="12" rx="2"/><rect x="28" y="76" width="56" height="12" rx="2"/><rect x="20" y="64" width="60" height="12" rx="2"/><path d="M30 64v12M36 76v12M30 88v12"/><path d="M88 100V50l12-4v54"/><path d="M84 40h0"/><path d="M60 52h14v8a7 7 0 0 1-14 0z"/><path d="M74 54h3a3 3 0 0 1 0 6h-3"/><path d="M64 44c0-3 3-3 3-6M69 44c0-3 3-3 3-6"/>'
+      w: { pt: 'com um livro na mão', en: 'reading a book', es: 'con un libro en la mano' },
+      d: { pt: 'Ficção, tecnologia e tudo que abre a cabeça.', en: 'Fiction, tech and anything that opens the mind.', es: 'Ficción, tecnología y todo lo que abre la mente.' }
     }
   ],
 
@@ -206,8 +207,7 @@ export const DATA: PortfolioData = {
       },
       {
         when: { pt: '2019 — 2021', en: '2019 — 2021', es: '2019 — 2021' }, t: { pt: 'Técnico em Desenvolvimento de Sistemas', en: 'Systems Development Technician', es: 'Técnico en Desarrollo de Sistemas' }, org: 'ETEC Guaianases · São Paulo, SP',
-        d: { pt: 'Aplicações web e mobile e modelagem de banco de dados.', en: 'Web and mobile applications and database modeling.', es: 'Aplicaciones web y móviles y modelado de bases de datos.' },
-        hl: { pt: 'Projetos de robótica com Arduino', en: 'Robotics projects with Arduino', es: 'Proyectos de robótica con Arduino' }
+        d: { pt: 'Aplicações web e mobile e modelagem de banco de dados.', en: 'Web and mobile applications and database modeling.', es: 'Aplicaciones web y móviles y modelado de bases de datos.' }
       }
     ]
   },

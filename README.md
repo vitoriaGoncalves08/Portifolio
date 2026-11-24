@@ -30,14 +30,14 @@ e várias animações ligadas ao scroll.
 | --- | --- |
 | **Hero** | Nome em letra cursiva, cargo em destaque, chamada, botões "Ver projetos" e "Baixar CV", foto em arco e logo gigante desfocado ao fundo |
 | **Faixa** | Skills passando em loop; acelera e inverte de direção com o scroll |
-| **Sobre** | Texto profissional, números com contagem animada, idiomas e hobbies em formato de selos |
+| **Sobre** | Texto profissional, números com contagem animada, idiomas e uma frase com os hobbies marcados (marca-texto + dica ao passar o mouse) |
 | **Skills** | Tecnologias agrupadas, com ícone de cada uma |
-| **Projetos** | Busca, filtros por categoria e tecnologia, cards grandes e modal com o estudo de caso |
+| **Projetos** | Busca e filtros na lateral (categoria e tecnologia), cards grandes e modal com o estudo de caso |
 | **Trajetória** | Linha do tempo (experiência + educação) que se preenche com o scroll |
 | **Serviços** | Faixa escura com ondas, frase que acende palavra por palavra e lista numerada |
 | **Certificações** | Badges digitais (com espaços para as próximas) e certificados/cursos com imagem ampliável |
 | **Depoimentos** | Faixa com cores invertidas |
-| **Contato** | Logos dos apps (LinkedIn, GitHub, WhatsApp, Instagram), CV no idioma atual e formulário |
+| **Contato** | Logos dos apps (LinkedIn, GitHub, WhatsApp, Instagram), CV no idioma atual, mapinha do Brasil com São Paulo marcado e formulário |
 | **Dúvidas?** | Botão fixo que abre um assistente de perguntas e respostas |
 
 ## Funcionalidades
@@ -102,7 +102,7 @@ src/
       count-up.directive.ts  contagem animada dos números
       split-text.ts          título letra por letra
       tech-chip.ts           pílula de tecnologia com ícone
-      trusted-svg.pipe.ts    SVG das ilustrações de hobbies
+      brazil-map.ts          mapinha do Brasil com o ponto da cidade
     sections/            um componente por seção (header, hero, about, projects...)
 static-version/        primeira versão em HTML/CSS/JS puro (referência)
 docs/                  prompt com a especificação do conteúdo
@@ -116,7 +116,7 @@ Quase tudo fica em **`src/app/data/portfolio.data.ts`**:
 | --- | --- |
 | Textos fixos (menu, botões, títulos) | `i18n.pt`, `i18n.en`, `i18n.es` |
 | Números do "Sobre" | `stats` |
-| Hobbies | `hobbies` (o ícone é um SVG simples de traço) |
+| Hobbies | `hobbies` (`w` = palavra na frase) e a frase `about_hobby` em `i18n` (`{0}`, `{1}`... marcam onde cada hobby entra) |
 | Skills | `skills` |
 | Projetos | `projects` |
 | Experiência e formação | `timeline.work`, `timeline.edu` |

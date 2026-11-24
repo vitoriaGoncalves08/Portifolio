@@ -13,7 +13,8 @@ export type Text = string | Localized;
 
 export interface Stat { n: string; l: Localized; }
 
-export interface Hobby { t: Localized; d: Localized; /** conteúdo interno de um <svg viewBox="0 0 120 120"> */ svg: string; }
+/** Hobby: `w` é a palavra marcada na frase do Sobre; `d` aparece ao passar o mouse. */
+export interface Hobby { t: Localized; w: Localized; d: Localized; }
 
 export interface SkillGroup { t: Text; items: string[]; }
 

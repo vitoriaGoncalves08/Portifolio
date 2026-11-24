@@ -1,14 +1,13 @@
-import { Component, inject } from '@angular/core';
+import { Component, computed, inject } from '@angular/core';
 import { I18nService } from '../core/i18n.service';
 import { DATA } from '../data/portfolio.data';
 import { CountUpDirective } from '../shared/count-up.directive';
 import { RevealDirective } from '../shared/reveal.directive';
-import { TrustedSvgPipe } from '../shared/trusted-svg.pipe';
 
-/** Sobre: texto profissional, números, idiomas e hobbies em formato de selos (carimbos). */
+/** Sobre: texto profissional, números, idiomas e uma frase com os hobbies marcados (como marca-texto). */
 @Component({
   selector: 'app-about',
-  imports: [CountUpDirective, RevealDirective, TrustedSvgPipe],
+  imports: [CountUpDirective, RevealDirective],
   template: `
     <section id="about" class="sec">
       <div class="wrap">
@@ -33,21 +32,16 @@ import { TrustedSvgPipe } from '../shared/trusted-svg.pipe';
 
         <div class="hobby-wrap" appReveal [revealIndex]="2">
           <h3>{{ i18n.t('about_hobby_t') }}</h3>
-          <p>{{ i18n.t('about_hobby') }}</p>
-          <div class="hobbies">
-            @for (h of data.hobbies; track $index; let i = $index) {
-              <div class="stamp" tabindex="0" appReveal="item" [revealIndex]="i"
-                   [attr.aria-label]="i18n.tr(h.t) + ': ' + i18n.tr(h.d)">
-                <svg viewBox="0 0 120 120" aria-hidden="true">
-                  <defs><path [attr.id]="'hc' + i" d="M60,60 m-45,0 a45,45 0 1,1 90,0 a45,45 0 1,1 -90,0" /></defs>
-                  <circle class="o" cx="60" cy="60" r="57" /><circle class="o" cx="60" cy="60" r="33" />
-                  <g class="ring"><text><textPath [attr.href]="'#hc' + i" textLength="280" lengthAdjust="spacing">{{ ring(i18n.tr(h.t)) }}</textPath></text></g>
-                  <g class="ic" transform="translate(60 60) scale(.42) translate(-60 -60)" [innerHTML]="h.svg | trustedSvg"></g>
-                </svg>
-                <span class="tip">{{ i18n.tr(h.d) }}</span>
-              </div>
+          <p class="hobby-line">
+            @for (part of hobbyParts(); track $index) {
+              @if (part.h !== undefined) {
+                <span class="mk" tabindex="0" [style.--d]="part.h * 0.35 + 's'">
+                  <span class="mk-w">{{ i18n.tr(data.hobbies[part.h].w) }}</span>
+                  <span class="mk-tip" role="tooltip"><b>{{ i18n.tr(data.hobbies[part.h].t) }}</b>{{ i18n.tr(data.hobbies[part.h].d) }}</span>
+                </span>
+              } @else {<ng-container>{{ part.text }}</ng-container>}
             }
-          </div>
+          </p>
         </div>
       </div>
     </section>`,
@@ -56,10 +50,15 @@ export class About {
   protected readonly i18n = inject(I18nService);
   protected readonly data = DATA;
 
-  /** texto do anel do selo: o nome repetido até completar a volta */
-  protected ring(label: string): string {
-    const up = label.toUpperCase();
-    const reps = Math.max(2, Math.round(24 / (up.length + 3)));
-    return Array(reps).fill(up + ' • ').join('');
-  }
+  /** divide a frase "about_hobby" nos trechos de texto e nos marcadores {0}, {1}... */
+  protected readonly hobbyParts = computed(() =>
+    this.i18n
+      .t('about_hobby')
+      .split(/(\{\d\})/)
+      .filter(Boolean)
+      .map((s) => {
+        const m = s.match(/^\{(\d)\}$/);
+        return m ? { h: +m[1], text: '' } : { h: undefined, text: s };
+      }),
+  );
 }

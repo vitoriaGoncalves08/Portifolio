@@ -27,7 +27,6 @@ import { SplitText } from '../shared/split-text';
         </div>
         <figure class="photo">
           <img src="assets/photo.jpg" alt="Retrato de Vitória Passos" />
-          <figcaption class="mono">São Paulo, SP — Brasil</figcaption>
         </figure>
       </div>
       <a class="scroll-hint mono" href="#about" aria-label="Scroll">scroll ↓</a>

@@ -2,6 +2,7 @@ import { Component, inject } from '@angular/core';
 import { CvService } from '../core/cv.service';
 import { I18nService } from '../core/i18n.service';
 import { DATA } from '../data/portfolio.data';
+import { BrazilMap } from '../shared/brazil-map';
 import { RevealDirective } from '../shared/reveal.directive';
 
 const EMAIL = 'vigoncalvesp@gmail.com';
@@ -12,7 +13,7 @@ const EMAIL = 'vigoncalvesp@gmail.com';
  */
 @Component({
   selector: 'app-contact',
-  imports: [RevealDirective],
+  imports: [BrazilMap, RevealDirective],
   template: `
     <section id="contact" class="sec">
       <div class="wrap grid-2">
@@ -27,7 +28,10 @@ const EMAIL = 'vigoncalvesp@gmail.com';
               </a>
             }
           </div>
-          <a class="btn" [href]="cv.href()" download>{{ i18n.t('cta_cv') }}</a>
+          <div class="contact-foot">
+            <a class="btn" [href]="cv.href()" download>{{ i18n.t('cta_cv') }}</a>
+            <app-brazil-map />
+          </div>
         </div>
         <form class="form" appReveal [revealIndex]="1" (submit)="send($event)">
           <label><span>{{ i18n.t('f_name') }}</span><input name="name" required /></label>

@@ -40,7 +40,7 @@ const endOf = (w: string) => {
                 <h3>{{ i.t }}</h3>
                 <span class="meta">{{ i.org }}</span>
                 <p>{{ i.d }}</p>
-                @if (i.hl) {<span class="hl">★ {{ i.hl }}</span>}
+                @if (i.hl) {<span class="tl-hl">★ {{ i.hl }}</span>}
               </div>
             </li>
           }

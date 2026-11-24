@@ -13,7 +13,7 @@ const norm = (s: string) => s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,
 const GRADIENTS: [string, string][] = [['#55524a', '#171715'], ['#8a7d63', '#1d1a14'], ['#3f4857', '#0f1217'], ['#6a5d52', '#181512']];
 
 /**
- * Projetos: busca digitável (nome, descrição, categoria, tag — sem acento), filtros por
+ * Projetos: filtros na lateral (fixos ao rolar) — busca digitável (nome, descrição, categoria, tag — sem acento), filtros por
  * categoria e por tecnologia (combinados), cards grandes e modal com o estudo de caso.
  */
 @Component({
@@ -24,7 +24,8 @@ const GRADIENTS: [string, string][] = [['#55524a', '#171715'], ['#8a7d63', '#1d1
       <div class="wrap">
         <h2 appReveal>{{ i18n.t('nav_projects') }}</h2>
 
-        <div class="proj-bar" appReveal>
+        <div class="proj-layout">
+        <aside class="proj-side" appReveal>
           <label class="search"><span class="sr-only">{{ i18n.t('search_ph') }}</span>
             <input type="search" autocomplete="off" [placeholder]="i18n.t('search_ph')"
                    [value]="query()" (input)="query.set($any($event.target).value)" /></label>
@@ -46,12 +47,11 @@ const GRADIENTS: [string, string][] = [['#55524a', '#171715'], ['#8a7d63', '#1d1
               }
             </div>
           </div>
-          <div class="proj-meta">
-            <p class="count mono" aria-live="polite">{{ list().length }} / {{ all.length }} {{ i18n.t('found') }}</p>
-            <button type="button" class="btn small" (click)="clear()">{{ i18n.t('clear') }}</button>
-          </div>
-        </div>
+          <button type="button" class="btn small" (click)="clear()">{{ i18n.t('clear') }}</button>
+        </aside>
 
+        <div>
+        <p class="count mono" aria-live="polite">{{ list().length }} / {{ all.length }} {{ i18n.t('found') }}</p>
         <div class="cards proj-grid">
           @for (p of list(); track p.id; let i = $index) {
             <button type="button" class="card click proj-card" appReveal="item" [revealIndex]="i" (click)="open(p)">
@@ -66,6 +66,8 @@ const GRADIENTS: [string, string][] = [['#55524a', '#171715'], ['#8a7d63', '#1d1
           } @empty {
             <p class="empty" style="grid-column:1/-1">{{ i18n.t('no_results') }}</p>
           }
+        </div>
+        </div>
         </div>
       </div>
     </section>
