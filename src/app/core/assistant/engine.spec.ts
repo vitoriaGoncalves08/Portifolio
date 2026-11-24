@@ -31,6 +31,13 @@ describe('AssistantEngine (Dúvidas? offline)', () => {
     expect(code.actions.some((a) => a.kind === 'link' && a.value.includes('microservice-saga'))).toBe(true);
   });
 
+  it('responde sobre o e-commerce Bewear', () => {
+    expect(hasProject(ask(engine, 'tem algum ecommerce?'), 'bewear')).toBe(true);
+    expect(ask(engine, 'sabe nextjs?').text).toMatch(/Next\.js/);
+    expect(ask(engine, 'usou stripe?').text).toMatch(/Bewear/);
+    expect(ask(engine, 'sabe tailwind?').text).not.toMatch(/não aparece/);
+  });
+
   it('responde sobre trabalho, inclusive com gíria', () => {
     expect(ask(engine, 'onde ela trabalha?').text).toMatch(/Muralis/);
     expect(ask(engine, 'me fala dos trampos').text).toMatch(/Muralis/);

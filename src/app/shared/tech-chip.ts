@@ -8,6 +8,7 @@ const ICONS: Record<string, string> = {
   'CI/CD': 'githubactions', 'React.js': 'react', JavaScript: 'javascript', 'Node.js': 'nodejs', SASS: 'sass',
   'Material UI': 'materialui', Figma: 'figma', MySQL: 'mysql', 'SQL Server': 'microsoftsqlserver',
   'Module Federation': 'webpack', 'Micro-frontends': 'angularjs',
+  'Next.js': 'nextjs', 'Tailwind CSS': 'tailwindcss',
 };
 
 export const techIconUrl = (name: string): string => {

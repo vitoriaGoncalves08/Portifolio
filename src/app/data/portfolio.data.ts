@@ -258,6 +258,42 @@ export const DATA: PortfolioData = {
 
   projects: [
     {
+      id: 'bewear', title: 'E-commerce Bewear', img: 'assets/projects/bewear.svg',
+      tags: ['Next.js', 'React.js', 'TypeScript', 'Tailwind CSS', 'PostgreSQL', 'Drizzle ORM', 'Stripe'],
+      cat: 'Full Stack', emoji: '🛒',
+      desc: {
+        pt: 'Loja virtual completa em Next.js: catálogo, busca e filtros, carrinho, checkout com Stripe e tema claro/escuro.',
+        en: 'Full-featured online store in Next.js: catalog, search and filters, cart, Stripe checkout and light/dark mode.',
+        es: 'Tienda online completa en Next.js: catálogo, búsqueda y filtros, carrito, checkout con Stripe y modo claro/oscuro.'
+      },
+      problem: {
+        pt: 'Construir uma loja virtual de ponta a ponta, da vitrine de produtos ao pagamento, rápida e funcionando bem em qualquer dispositivo.',
+        en: 'Build an end-to-end online store, from the product showcase to payment, fast and working well on any device.',
+        es: 'Construir una tienda online de punta a punta, desde la vitrina de productos hasta el pago, rápida y que funcione bien en cualquier dispositivo.'
+      },
+      solution: {
+        pt: 'Next.js 13+ com App Router e React 19, listagem e detalhes de produtos, busca e filtros, carrinho de compras, checkout seguro com Stripe, autenticação com Better Auth e formulários validados com React Hook Form + Zod.',
+        en: 'Next.js 13+ with the App Router and React 19, product listing and details, search and filters, shopping cart, secure Stripe checkout, Better Auth authentication and forms validated with React Hook Form + Zod.',
+        es: 'Next.js 13+ con App Router y React 19, listado y detalle de productos, búsqueda y filtros, carrito de compras, checkout seguro con Stripe, autenticación con Better Auth y formularios validados con React Hook Form + Zod.'
+      },
+      arch: {
+        pt: 'Front-end em Next.js (App Router), Tailwind CSS e componentes Radix UI; dados com TanStack Query; back-end com API Routes do Next.js, Drizzle ORM e PostgreSQL; pagamentos pelo Stripe.',
+        en: 'Next.js (App Router) front-end with Tailwind CSS and Radix UI components; data with TanStack Query; back-end with Next.js API Routes, Drizzle ORM and PostgreSQL; payments through Stripe.',
+        es: 'Front-end en Next.js (App Router), Tailwind CSS y componentes Radix UI; datos con TanStack Query; back-end con API Routes de Next.js, Drizzle ORM y PostgreSQL; pagos con Stripe.'
+      },
+      challenges: {
+        pt: 'Integrar o pagamento com o Stripe de forma segura, manter o carrinho e os dados sincronizados em tempo real e validar os formulários do checkout.',
+        en: 'Integrating Stripe payments securely, keeping the cart and data in sync in real time and validating the checkout forms.',
+        es: 'Integrar el pago con Stripe de forma segura, mantener el carrito y los datos sincronizados en tiempo real y validar los formularios del checkout.'
+      },
+      result: {
+        pt: 'Uma loja completa e responsiva, com carregamento rápido, tema claro/escuro e código organizado com ESLint, Prettier e Husky.',
+        en: 'A complete, responsive store with fast page loads, light/dark mode and code kept tidy with ESLint, Prettier and Husky.',
+        es: 'Una tienda completa y responsiva, con carga rápida, modo claro/oscuro y código organizado con ESLint, Prettier y Husky.'
+      },
+      code: 'https://github.com/vitoriaGoncalves08/E-commerce-Bewear', demo: ''
+    },
+    {
       id: 'saga', title: 'Microservice SAGA Orquestrado', tags: ['Java', 'Spring Boot', 'Kafka', 'Docker'],
       cat: 'Back-end', emoji: '🧩',
       desc: { pt: 'Sistema de microsserviços com padrão SAGA orquestrado.', en: 'Microservices system using the orchestrated SAGA pattern.', es: 'Sistema de microservicios con el patrón SAGA orquestado.' },
