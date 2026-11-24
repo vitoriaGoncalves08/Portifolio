@@ -1,15 +1,17 @@
 import { Component, ElementRef, OnDestroy, afterNextRender, inject, signal } from '@angular/core';
 import { I18nService } from '../core/i18n.service';
 import { ThemeService } from '../core/theme.service';
+import { Logo } from '../shared/logo';
 
 /** Menu fixo no topo: links das seções (com a seção atual destacada), idiomas e painel de tema/cor. */
 @Component({
   selector: 'app-header',
+  imports: [Logo],
   host: { '(document:click)': 'closePop($event)', '(document:keydown.escape)': 'pop.set(false)' },
   template: `
     <header class="nav">
       <div class="wrap nav-in">
-        <a href="#hero" class="logo" aria-label="VGP — início"><img src="assets/logo.png" alt="VGP" /></a>
+        <a href="#hero" class="logo" aria-label="VGP — início"><app-logo /></a>
         <nav id="menu" [class.open]="open()" [attr.aria-label]="'Menu'">
           @for (l of links; track l.id) {
             <a [href]="'#' + l.id" [class.act]="active() === l.id" (click)="open.set(false)">{{ i18n.t(l.key) }}</a>

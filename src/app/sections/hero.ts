@@ -1,16 +1,17 @@
 import { Component, inject } from '@angular/core';
 import { CvService } from '../core/cv.service';
 import { I18nService } from '../core/i18n.service';
+import { Logo } from '../shared/logo';
 import { SplitText } from '../shared/split-text';
 
 /** Abertura: nome em letra cursiva, cargo em destaque, chamada, CTAs e foto em arco. */
 @Component({
   selector: 'app-hero',
-  imports: [SplitText],
+  imports: [Logo, SplitText],
   template: `
     <section id="hero" class="hero">
       <div class="hero-bg" aria-hidden="true">
-        <img class="big-year big-logo" id="bigYear" src="assets/logo.png" alt="" />
+        <app-logo class="big-year big-logo" id="bigYear" />
         <i class="vl v1"></i><i class="vl v2"></i><i class="hl h1"></i><i class="hl h2"></i>
       </div>
       <div class="wrap hero-in">

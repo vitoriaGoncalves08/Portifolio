@@ -2,6 +2,7 @@ import { Component, ElementRef, computed, effect, inject, signal, viewChild } fr
 import { CHAT_ENDPOINT } from '../core/chat.config';
 import { I18nService } from '../core/i18n.service';
 import { DATA } from '../data/portfolio.data';
+import { Logo } from '../shared/logo';
 
 interface Msg { text: string; me: boolean; }
 
@@ -12,9 +13,10 @@ interface Msg { text: string; me: boolean; }
  */
 @Component({
   selector: 'app-chat',
+  imports: [Logo],
   template: `
     <button type="button" class="fab" [attr.aria-label]="i18n.t('chat_fab')" (click)="toggle()">
-      <span>{{ i18n.t('chat_fab') }}</span><img src="assets/logo.png" alt="" />
+      <span>{{ i18n.t('chat_fab') }}</span><app-logo />
     </button>
     @if (open()) {
       <section class="chat" [attr.aria-label]="i18n.t('chat_title')">

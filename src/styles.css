@@ -552,3 +552,15 @@ html{scroll-padding-top:86px}
 .sw:hover{transform:scale(1.08)}
 .sw.on{box-shadow:0 0 0 2px var(--fg)}
 .sw-name{display:block;margin-top:10px;font:.78rem var(--mono);color:var(--fg)}
+
+/* ===== logo nas cores do tema (app-logo: duas máscaras) ===== */
+.logo-mark{position:relative;display:inline-block;aspect-ratio:186/232;height:54px;flex:none}
+.logo-mark i{position:absolute;inset:0;-webkit-mask-size:contain;mask-size:contain;-webkit-mask-repeat:no-repeat;mask-repeat:no-repeat;-webkit-mask-position:center;mask-position:center;transition:background-color .3s}
+.logo-mark .la{background:var(--logo-a,var(--ac-t))}
+.logo-mark .lb{background:var(--logo-b,var(--mut))}
+.logo .logo-mark{height:54px;transition:transform .4s}
+.logo:hover .logo-mark{transform:rotate(-6deg) scale(1.08)}
+.big-logo.logo-mark{height:clamp(18rem,66vh,42rem);width:auto;filter:blur(8px);opacity:.09}
+:root[data-theme="dark"] .big-logo.logo-mark{filter:blur(8px);opacity:.1}
+.fab .logo-mark{height:26px;--logo-a:var(--ac-fg);--logo-b:color-mix(in srgb,var(--ac-fg) 60%,transparent)}
+@media (max-width:860px){.logo .logo-mark{height:46px}}

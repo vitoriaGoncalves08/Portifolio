@@ -94,6 +94,7 @@ src/
       cv.service.ts        link do CV conforme o idioma
       scroll-fx.service.ts efeitos ligados ao scroll
       pointer-fx.service.ts cursor, brilho e inclinação dos cards (mouse)
+      favicon.service.ts   favicon desenhado com o tema e a cor escolhidos
       chat.config.ts       endpoint opcional do assistente
       storage.ts           localStorage seguro + prefers-reduced-motion
     shared/
@@ -102,6 +103,7 @@ src/
       split-text.ts          título letra por letra
       tech-chip.ts           pílula de tecnologia com ícone
       brazil-map.ts          mapinha do Brasil com o ponto da cidade
+      logo.ts                logo VGP nas cores do tema
     sections/            um componente por seção (header, hero, about, projects...)
 static-version/        primeira versão em HTML/CSS/JS puro (referência)
 docs/                  prompt com a especificação do conteúdo
@@ -142,7 +144,8 @@ Ficam em `public/assets/` e são acessados como `assets/...`:
 
 | Arquivo | Uso |
 | --- | --- |
-| `logo.png` | logo do menu, do fundo do hero e do botão "Dúvidas?" |
+| `logo.png` | logo original (referência) |
+| `logo/logo-a.png`, `logo/logo-b.png` | máscaras das duas partes do logo; o componente `app-logo` pinta cada parte com as cores do tema (menu, fundo do hero, botão "Dúvidas?" e favicon) |
 | `photo.jpg` | foto do hero (proporção 3:4) |
 | `cv-pt.pdf`, `cv-en.pdf`, `cv-es.pdf` | CV por idioma |
 | `certs/*.png` | imagens dos certificados |

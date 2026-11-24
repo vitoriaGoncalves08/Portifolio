@@ -1,4 +1,5 @@
 import { Component, afterNextRender, inject } from '@angular/core';
+import { FaviconService } from './core/favicon.service';
 import { I18nService } from './core/i18n.service';
 import { PointerFxService } from './core/pointer-fx.service';
 import { ScrollFxService } from './core/scroll-fx.service';
@@ -29,9 +30,11 @@ export class App {
     inject(ThemeService); // aplica o tema salvo
     const scroll = inject(ScrollFxService);
     const pointer = inject(PointerFxService);
+    const favicon = inject(FaviconService);
     afterNextRender(() => {
       scroll.start();
       pointer.start();
+      favicon.start();
     });
   }
 
