@@ -330,8 +330,8 @@ export const DATA: PortfolioData = {
       code: 'https://github.com/vitoriaGoncalves08/Sorria-Acene', demo: 'https://lnkd.in/p/dejXym6R'
     },
     {
-      id: 'futurize', title: 'Futurize', img: 'assets/projects/futurize.webp',
-      imgs: ['assets/projects/futurize-trabalhos.webp', 'assets/projects/futurize-casos-de-uso.webp', 'assets/projects/futurize-classes.webp', 'assets/projects/futurize-logico.webp'],
+      id: 'futurize', title: 'Futurize', img: 'assets/projects/futurize-home.webp',
+      imgs: ['assets/projects/futurize.webp', 'assets/projects/futurize-trabalhos.webp', 'assets/projects/futurize-casos-de-uso.webp', 'assets/projects/futurize-classes.webp', 'assets/projects/futurize-logico.webp'],
       tags: ['Java', 'Spring Boot', 'React.js', 'MySQL', 'Material UI', 'JWT'],
       cat: 'Full Stack', emoji: '📋',
       desc: {
@@ -367,7 +367,8 @@ export const DATA: PortfolioData = {
       code: 'https://github.com/vitoriaGoncalves08/Futurize', demo: ''
     },
     {
-      id: 'fatima-bolos', title: 'Fátima Bolos', img: 'assets/projects/fatima-bolos.webp',
+      id: 'fatima-bolos', title: 'Fátima Bolos', img: 'assets/projects/fatima-bolos-home.webp',
+      imgs: ['assets/projects/fatima-bolos.webp'],
       tags: ['React.js', 'TypeScript', 'Vite', 'Material UI', 'Framer Motion'],
       cat: 'Front-end', emoji: '🎂',
       desc: {
@@ -403,8 +404,8 @@ export const DATA: PortfolioData = {
       code: 'https://github.com/vitoriaGoncalves08/FatimaBolos', demo: ''
     },
     {
-      id: 'farma-co', title: 'Farma.co', img: 'assets/projects/farma-co.webp',
-      imgs: ['assets/projects/farma-co-cadastros.webp', 'assets/projects/farma-co-catalogo.webp'],
+      id: 'farma-co', title: 'Farma.co', img: 'assets/projects/farma-co-splash.webp',
+      imgs: ['assets/projects/farma-co.webp', 'assets/projects/farma-co-cadastros.webp', 'assets/projects/farma-co-catalogo.webp'],
       tags: ['Figma', 'UX/UI', 'Mobile'],
       cat: 'UX/UI', emoji: '💊',
       desc: {
