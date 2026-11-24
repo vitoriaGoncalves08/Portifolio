@@ -71,6 +71,7 @@ Outros comandos:
 ```bash
 npm run build      # build de produção em dist/portfolio/browser
 npm run watch      # build contínuo em modo desenvolvimento
+npm test           # testes (Vitest)
 ```
 
 ## Estrutura do projeto
@@ -153,10 +154,28 @@ Ficam em `public/assets/` e são acessados como `assets/...`:
 
 ## Assistente "Dúvidas?"
 
-- **Modo atual (offline):** procura palavras-chave da pergunta em `faq` e responde com o texto pronto no idioma do site.
-  Se nada bater, sugere o formulário de contato.
-- **IA de verdade (opcional):** crie um backend que receba `POST { message, lang }` e devolva `{ reply }`,
-  e coloque a URL em `src/app/core/chat.config.ts`. **Nunca coloque chave de API no front-end.**
+Funciona **100% no navegador, sem custo e sem backend** (`src/app/core/assistant/`):
+
+- **Tolerante**: entende pergunta sem acento, com erro de digitação ("kafika", "angluar", "sprimg boot"), palavras coladas ("springboot") e em PT, EN ou ES.
+- **Liga a pergunta aos dados**: monta sozinho, a partir de `portfolio.data.ts`, o que sabe responder — cada projeto, tecnologia, emprego, curso, badge, certificado, hobby, idioma, serviço, contato e CV — além do FAQ manual (`faq`).
+- **Sempre tenta responder algo concreto**: se tem certeza, responde direto; se está em dúvida, diz "Acho que você quer saber sobre…" e oferece alternativas; se vários assuntos empatam, mostra um resumo de cada; só no último caso lista os assuntos mais próximos.
+- **Lembra do assunto**: depois de falar de um projeto, entende "e o código?", "tem demo?", "quais tecnologias?".
+- **É sincero**: se perguntam de uma tecnologia que não está no portfólio (ex.: Python), diz que não aparece e sugere o contato.
+- **Ações clicáveis**: abrir o modal do projeto, ver o código, ir para uma seção, baixar o CV, abrir LinkedIn/GitHub/WhatsApp.
+
+Como ensinar coisas novas:
+
+| Quero... | Onde |
+| --- | --- |
+| Uma palavra/gíria nova virar um assunto (ex.: "trampo" = trabalho) | `core/assistant/synonyms.ts` (`SYNONYMS`) |
+| Uma pergunta com resposta fixa | `faq` em `portfolio.data.ts` |
+| Mudar o texto das respostas | chaves `ans_*`, `act_*`, `fu_*` em `i18n` de `portfolio.data.ts` |
+| Uma tecnologia que ela **não** usa ser reconhecida | `OTHER_TECHS` em `synonyms.ts` |
+| Ver por que uma pergunta deu certa resposta | `new AssistantEngine(DATA).explain('pergunta', 'pt')` |
+
+Testes do assistente: `npm test` (`core/assistant/engine.spec.ts`).
+
+**IA de verdade (opcional, tem custo):** crie um backend que receba `POST { message, lang }` e devolva `{ reply }` e coloque a URL em `src/app/core/chat.config.ts`. Se o backend falhar, o assistente local responde. **Nunca coloque chave de API no front-end.**
 
 ## Animações
 

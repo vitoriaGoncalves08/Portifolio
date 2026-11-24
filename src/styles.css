@@ -574,3 +574,15 @@ html{scroll-padding-top:86px}
 /* badge com imagem (ex.: AWS): fundo branco e imagem inteira, sem cortar */
 .medal:has(img){background:#fff}
 .medal img{object-fit:contain;padding:10px}
+
+/* ===== chat: respostas com várias linhas, botões de ação e "digitando" ===== */
+.chat .msg{white-space:pre-line}
+.msg-actions{display:flex;flex-wrap:wrap;gap:6px;margin:-2px 0 4px}
+.msg-actions .act{border:1px solid var(--line);background:var(--bg);color:var(--fg);border-radius:99px;padding:4px 11px;font:600 .7rem var(--mono);cursor:pointer;text-decoration:none;transition:background .2s,color .2s,border-color .2s}
+.msg-actions .act:hover{background:var(--ac);color:var(--ac-fg);border-color:var(--ac)}
+.msg.typing{display:flex;gap:4px;align-items:center;width:fit-content;padding:12px 14px}
+.msg.typing i{width:6px;height:6px;border-radius:50%;background:var(--mut);animation:typing 1s infinite ease-in-out}
+.msg.typing i:nth-child(2){animation-delay:.15s}
+.msg.typing i:nth-child(3){animation-delay:.3s}
+@keyframes typing{0%,80%,100%{opacity:.3;transform:translateY(0)}40%{opacity:1;transform:translateY(-3px)}}
+.chat form .btn[disabled]{opacity:.5;cursor:default}

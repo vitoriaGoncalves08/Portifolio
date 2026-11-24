@@ -1,14 +1,14 @@
 import { NgTemplateOutlet } from '@angular/common';
 import { Component, ElementRef, computed, effect, inject, signal, viewChild } from '@angular/core';
+import { norm } from '../core/assistant/text';
 import { I18nService } from '../core/i18n.service';
 import { ScrollFxService } from '../core/scroll-fx.service';
+import { UiBusService } from '../core/ui-bus.service';
 import { DATA } from '../data/portfolio.data';
 import { Project } from '../models/portfolio.models';
 import { RevealDirective } from '../shared/reveal.directive';
 import { TechChip, techIconUrl } from '../shared/tech-chip';
 
-/** remove acentos e caixa para a busca */
-const norm = (s: string) => s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '');
 /** gradientes de fundo das vitrines (um por projeto, em ciclo) */
 const GRADIENTS: [string, string][] = [['#55524a', '#171715'], ['#8a7d63', '#1d1a14'], ['#3f4857', '#0f1217'], ['#6a5d52', '#181512']];
 
@@ -109,6 +109,7 @@ const GRADIENTS: [string, string][] = [['#55524a', '#171715'], ['#8a7d63', '#1d1
 export class Projects {
   protected readonly i18n = inject(I18nService);
   private readonly fx = inject(ScrollFxService);
+  private readonly bus = inject(UiBusService);
   protected readonly all = DATA.projects;
   protected readonly categories = ['all', ...new Set(DATA.projects.map((p) => p.cat))];
   protected readonly tags = [...new Set(DATA.projects.flatMap((p) => p.tags))].sort();
@@ -132,6 +133,15 @@ export class Projects {
   });
 
   constructor() {
+    // o chat "Dúvidas?" pode pedir para abrir um projeto
+    effect(() => {
+      const id = this.bus.openProject();
+      const p = id && this.all.find((x) => x.id === id);
+      if (p) {
+        this.open(p);
+        this.bus.openProject.set(null);
+      }
+    });
     // depois de filtrar, recalcula o parallax das vitrines
     effect(() => {
       this.list();
