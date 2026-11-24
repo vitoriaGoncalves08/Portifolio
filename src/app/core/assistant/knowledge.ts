@@ -88,7 +88,9 @@ export function buildKnowledge(ctx: KnowledgeContext): Intent[] {
     addKeys(keys, [p.id], 3);
     for (const tag of p.tags) addName(keys, tag, 1.2);
     addKeys(keys, tokens(p.cat), 1);
-    addKeys(keys, tokens([p.desc, p.problem, p.solution, p.arch, p.challenges, p.result].map(allLangs).join(' ')), 0.5);
+    addKeys(keys, tokens([p.problem, p.solution, p.arch, p.challenges, p.result].map(allLangs).join(' ')), 0.5);
+    // a descrição curta diz do que o projeto trata (ex.: "Libras", "loja virtual"): pesa mais que o resto do texto
+    addKeys(keys, tokens(allLangs(p.desc)), 1.1);
     const projectActions = (): ChatAction[] => [
       { kind: 'project', label: t('act_details'), value: p.id },
       ...(p.code ? [{ kind: 'link' as const, label: t('act_code'), value: p.code }] : []),

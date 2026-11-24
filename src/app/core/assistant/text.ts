@@ -13,7 +13,7 @@ const STOP = new Set(
     'el la los las un una unos unas del al y en con por para que como es son fue tiene tener su sus ella ' +
     'usted tu te lo le les se sobre muy mas tambien donde cual cuales ' +
     'como quero queria gostaria saber sei pode poderia where does doe did how want would like tell ' +
-    'fala fale conta conte explica explique'
+    'fala fale conta conte explica explique faz fez fazer faco fiz feito'
   ).split(' '),
 );
 

@@ -49,7 +49,7 @@ export const SYN_GROUPS: [string, string[]][] = Object.entries(SYNONYMS).map(([g
 
 /** Tecnologias conhecidas que NÃO estão no portfólio (para responder com sinceridade "não aparece"). */
 export const OTHER_TECHS = [
-  'python', 'django', 'flask', 'php', 'laravel', 'ruby', 'rails', 'golang', 'csharp', 'dotnet', 'kotlin', 'swift',
+  'django', 'flask', 'php', 'laravel', 'ruby', 'rails', 'golang', 'csharp', 'dotnet', 'kotlin', 'swift',
   'flutter', 'dart', 'vue', 'vuejs', 'svelte', 'nuxt', 'rust', 'scala', 'elixir', 'azure', 'gcp',
   'kubernetes', 'k8s', 'terraform', 'graphql', 'oracle', 'cobol', 'unity', 'android', 'ios',
 ];

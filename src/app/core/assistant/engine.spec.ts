@@ -31,6 +31,13 @@ describe('AssistantEngine (Dúvidas? offline)', () => {
     expect(code.actions.some((a) => a.kind === 'link' && a.value.includes('microservice-saga'))).toBe(true);
   });
 
+  it('responde sobre Sorria e Acene e Futurize', () => {
+    expect(hasProject(ask(engine, 'reconhece libras?'), 'sorria-acene')).toBe(true);
+    expect(hasProject(ask(engine, 'sorria e acene'), 'sorria-acene')).toBe(true);
+    expect(ask(engine, 'sabe python?').text).toMatch(/Sorria e Acene/);
+    expect(hasProject(ask(engine, 'futurise'), 'futurize')).toBe(true);
+  });
+
   it('responde sobre o e-commerce Bewear', () => {
     expect(hasProject(ask(engine, 'tem algum ecommerce?'), 'bewear')).toBe(true);
     expect(ask(engine, 'sabe nextjs?').text).toMatch(/Next\.js/);
@@ -51,9 +58,9 @@ describe('AssistantEngine (Dúvidas? offline)', () => {
   });
 
   it('é sincero com tecnologia que não está no portfólio', () => {
-    expect(ask(engine, 'sabe python?').text).toMatch(/Python/);
-    expect(ask(engine, 'sabe python?').text).toMatch(/não aparece/);
-    expect(ask(engine, '¿sabe pyton?', 'es').text).toMatch(/no aparece/);
+    expect(ask(engine, 'sabe php?').text).toMatch(/Php/i);
+    expect(ask(engine, 'sabe php?').text).toMatch(/não aparece/);
+    expect(ask(engine, '¿sabe kotlim?', 'es').text).toMatch(/no aparece/);
   });
 
   it('funciona em inglês e espanhol', () => {

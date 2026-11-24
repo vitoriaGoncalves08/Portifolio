@@ -294,6 +294,78 @@ export const DATA: PortfolioData = {
       code: 'https://github.com/vitoriaGoncalves08/E-commerce-Bewear', demo: ''
     },
     {
+      id: 'sorria-acene', title: 'Sorria e Acene', img: 'assets/projects/sorria-acene.webp',
+      tags: ['JavaScript', 'Python', 'MediaPipe', 'scikit-learn', 'Chrome Extension'],
+      cat: 'IA', emoji: '🐧',
+      desc: {
+        pt: 'Extensão do Chrome que reconhece o alfabeto de Libras pela webcam, em tempo real e 100% no navegador. Você faz a letra com a mão e sorri para confirmar.',
+        en: 'Chrome extension that recognizes the Brazilian Sign Language (Libras) alphabet through the webcam, in real time and 100% in the browser. You sign the letter and smile to confirm.',
+        es: 'Extensión de Chrome que reconoce el alfabeto de Libras (lengua de señas brasileña) por la webcam, en tiempo real y 100% en el navegador. Haces la letra con la mano y sonríes para confirmar.'
+      },
+      problem: {
+        pt: 'Reconhecer as letras de Libras em tempo real sem enviar nenhum quadro de vídeo para servidor, incluindo as 5 letras que têm movimento (H, J, K, X e Z), e confirmar a letra sem tirar a mão da posição.',
+        en: 'Recognize Libras letters in real time without sending any video frame to a server, including the 5 letters that involve movement (H, J, K, X and Z), and confirm the letter without moving the hand.',
+        es: 'Reconocer las letras de Libras en tiempo real sin enviar ningún cuadro de video a un servidor, incluidas las 5 letras con movimiento (H, J, K, X y Z), y confirmar la letra sin mover la mano.'
+      },
+      solution: {
+        pt: 'O MediaPipe extrai os 21 pontos da mão; dois classificadores (redes MLP) decidem a letra, um para poses paradas e outro para gestos com movimento. A confirmação é pelo sorriso, lido dos blendshapes do rosto, e a letra é falada em voz alta e entra na palavra soletrada.',
+        en: 'MediaPipe extracts the 21 hand landmarks; two classifiers (MLP networks) decide the letter, one for static poses and another for movement gestures. Confirmation comes from a smile, read from the face blendshapes, and the letter is spoken aloud and added to the spelled word.',
+        es: 'MediaPipe extrae los 21 puntos de la mano; dos clasificadores (redes MLP) deciden la letra, uno para poses estáticas y otro para gestos con movimiento. La confirmación es con una sonrisa, leída de los blendshapes del rostro, y la letra se dice en voz alta y entra en la palabra deletreada.'
+      },
+      arch: {
+        pt: 'Extensão Manifest V3 com MediaPipe Tasks Vision rodando em WASM local; modelos treinados em Python com scikit-learn e exportados como JSON; inferência em JavaScript puro, sem backend e sem telemetria.',
+        en: 'Manifest V3 extension with MediaPipe Tasks Vision running locally in WASM; models trained in Python with scikit-learn and exported as JSON; inference in plain JavaScript, with no backend and no telemetry.',
+        es: 'Extensión Manifest V3 con MediaPipe Tasks Vision ejecutándose en WASM local; modelos entrenados en Python con scikit-learn y exportados como JSON; inferencia en JavaScript puro, sin backend y sin telemetría.'
+      },
+      challenges: {
+        pt: 'Separar pose de gesto medindo pulso e dedos em "tamanhos de mão por segundo", impedir que o fim de um gesto vire outra letra, manter idênticas as 60 características do gesto em Python e JavaScript (com teste de paridade) e normalizar a taxa de quadros da câmera.',
+        en: 'Telling poses from gestures by measuring wrist and fingers in "hand sizes per second", stopping the end of a gesture from turning into another letter, keeping the 60 gesture features identical in Python and JavaScript (with a parity test) and normalizing the camera frame rate.',
+        es: 'Separar pose de gesto midiendo muñeca y dedos en "tamaños de mano por segundo", evitar que el final de un gesto se convierta en otra letra, mantener idénticas las 60 características del gesto en Python y JavaScript (con prueba de paridad) y normalizar la tasa de cuadros de la cámara.'
+      },
+      result: {
+        pt: 'Alfabeto completo mapeado, com cerca de 99% de acurácia nas letras paradas e 87% nas de movimento (medidas na mesma sessão de gravação), soletração de palavras, fala em pt-BR e testes automatizados. Nenhuma imagem sai da máquina.',
+        en: 'Full alphabet mapped, with about 99% accuracy on static letters and 87% on movement letters (measured on the same recording session), word spelling, pt-BR speech and automated tests. No image ever leaves the machine.',
+        es: 'Alfabeto completo mapeado, con cerca de 99% de precisión en las letras estáticas y 87% en las de movimiento (medidas en la misma sesión de grabación), deletreo de palabras, voz en pt-BR y pruebas automatizadas. Ninguna imagen sale de la máquina.'
+      },
+      code: 'https://github.com/vitoriaGoncalves08/Sorria-Acene', demo: 'https://lnkd.in/p/dejXym6R'
+    },
+    {
+      id: 'futurize', title: 'Futurize', img: 'assets/projects/futurize.webp',
+      tags: ['Java', 'Spring Boot', 'React.js', 'MySQL', 'Material UI', 'JWT'],
+      cat: 'Full Stack', emoji: '📋',
+      desc: {
+        pt: 'Plataforma de gestão de trabalhos em equipe com quadro Kanban, alocação de integrantes, cronômetro das atividades e dashboards de desempenho.',
+        en: 'Team project management platform with a Kanban board, member allocation, activity timers and performance dashboards.',
+        es: 'Plataforma de gestión de trabajos en equipo con tablero Kanban, asignación de integrantes, cronómetro de actividades y dashboards de rendimiento.'
+      },
+      problem: {
+        pt: 'Grupos de trabalho acadêmico precisavam organizar tarefas, responsáveis e prazos num só lugar e enxergar o andamento de cada integrante.',
+        en: 'Academic project groups needed to organize tasks, owners and deadlines in one place and see how each member was doing.',
+        es: 'Los grupos de trabajos académicos necesitaban organizar tareas, responsables y plazos en un solo lugar y ver el avance de cada integrante.'
+      },
+      solution: {
+        pt: 'Quem cria o trabalho vira o gestor e aloca os integrantes; as atividades têm prioridade, dificuldade, responsável, comentários e cronômetro, e andam por um Kanban (Backlog → Sprint → Development → Test). Dashboards pessoais e do projeto mostram o desempenho.',
+        en: 'Whoever creates the project becomes its manager and allocates members; activities have priority, difficulty, owner, comments and a timer, and move across a Kanban (Backlog → Sprint → Development → Test). Personal and project dashboards show performance.',
+        es: 'Quien crea el trabajo se convierte en el gestor y asigna a los integrantes; las actividades tienen prioridad, dificultad, responsable, comentarios y cronómetro, y avanzan por un Kanban (Backlog → Sprint → Development → Test). Dashboards personales y del proyecto muestran el rendimiento.'
+      },
+      arch: {
+        pt: 'API REST em Java 17 com Spring Boot 3, Spring Data JPA, Spring Security com JWT e MySQL versionado pelo Flyway; front-end em React com Vite, Material UI, gráficos com Recharts e arrastar e soltar no Kanban.',
+        en: 'REST API in Java 17 with Spring Boot 3, Spring Data JPA, Spring Security with JWT and MySQL versioned with Flyway; React front-end with Vite, Material UI, Recharts charts and drag and drop on the Kanban.',
+        es: 'API REST en Java 17 con Spring Boot 3, Spring Data JPA, Spring Security con JWT y MySQL versionado con Flyway; front-end en React con Vite, Material UI, gráficos con Recharts y arrastrar y soltar en el Kanban.'
+      },
+      challenges: {
+        pt: 'Garantir que só os integrantes vejam os dados do trabalho e só o gestor o altere, calcular as métricas dos dashboards (atividades refeitas, não iniciadas, concluídas por integrante) e manter o Kanban sincronizado.',
+        en: 'Ensuring only members see a project\'s data and only the manager can change it, computing dashboard metrics (reworked, not started and completed activities per member) and keeping the Kanban in sync.',
+        es: 'Garantizar que solo los integrantes vean los datos del trabajo y solo el gestor lo modifique, calcular las métricas de los dashboards (actividades rehechas, no iniciadas, completadas por integrante) y mantener el Kanban sincronizado.'
+      },
+      result: {
+        pt: 'Sistema completo desenvolvido em equipe, com modelagem documentada (casos de uso, classes, lógico e sequência) e requisitos funcionais e não funcionais para web e mobile.',
+        en: 'Complete system built as a team, with documented modeling (use cases, classes, logical and sequence diagrams) and functional and non-functional requirements for web and mobile.',
+        es: 'Sistema completo desarrollado en equipo, con modelado documentado (casos de uso, clases, lógico y secuencia) y requisitos funcionales y no funcionales para web y móvil.'
+      },
+      code: 'https://github.com/vitoriaGoncalves08/Futurize', demo: ''
+    },
+    {
       id: 'saga', title: 'Microservice SAGA Orquestrado', tags: ['Java', 'Spring Boot', 'Kafka', 'Docker'],
       cat: 'Back-end', emoji: '🧩',
       desc: { pt: 'Sistema de microsserviços com padrão SAGA orquestrado.', en: 'Microservices system using the orchestrated SAGA pattern.', es: 'Sistema de microservicios con el patrón SAGA orquestado.' },
