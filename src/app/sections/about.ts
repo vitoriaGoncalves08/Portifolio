@@ -1,10 +1,10 @@
-import { Component, computed, inject } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
 import { I18nService } from '../core/i18n.service';
 import { DATA } from '../data/portfolio.data';
 import { CountUpDirective } from '../shared/count-up.directive';
 import { RevealDirective } from '../shared/reveal.directive';
 
-/** Sobre: texto profissional, números, idiomas e uma frase com os hobbies marcados (como marca-texto). */
+/** Sobre: texto profissional, números, idiomas e uma estante em que cada livro é um hobby. */
 @Component({
   selector: 'app-about',
   imports: [CountUpDirective, RevealDirective],
@@ -31,17 +31,28 @@ import { RevealDirective } from '../shared/reveal.directive';
         </div>
 
         <div class="hobby-wrap" appReveal [revealIndex]="2">
-          <h3>{{ i18n.t('about_hobby_t') }}</h3>
-          <p class="hobby-line">
-            @for (part of hobbyParts(); track $index) {
-              @if (part.h !== undefined) {
-                <span class="mk" tabindex="0" [style.--d]="part.h * 0.35 + 's'">
-                  <span class="mk-w">{{ i18n.tr(data.hobbies[part.h].w) }}</span>
-                  <span class="mk-tip" role="tooltip"><b>{{ i18n.tr(data.hobbies[part.h].t) }}</b>{{ i18n.tr(data.hobbies[part.h].d) }}</span>
-                </span>
-              } @else {<ng-container>{{ part.text }}</ng-container>}
+          <div class="hobby-text">
+            <h3>{{ i18n.t('about_hobby_t') }}</h3>
+            <p>{{ i18n.t('about_hobby') }}</p>
+            <p class="hobby-note" aria-live="polite">
+              @if (sel() !== null) {
+                <b>{{ i18n.tr(data.hobbies[sel()!].t) }}</b> — {{ i18n.tr(data.hobbies[sel()!].d) }}
+              } @else {
+                <span class="mono">{{ i18n.t('hobby_hint') }}</span>
+              }
+            </p>
+          </div>
+          <div class="shelf" (mouseleave)="sel.set(null)">
+            @for (h of data.hobbies; track $index; let i = $index) {
+              <button type="button" class="spine" [class.on]="sel() === i" [style.--h]="SPINES[i % SPINES.length].h"
+                      [style.--w]="SPINES[i % SPINES.length].w" [attr.data-tone]="i % SPINES.length"
+                      [attr.aria-pressed]="sel() === i" (mouseenter)="sel.set(i)" (focus)="sel.set(i)" (click)="sel.set(i)">
+                <span class="sp-n mono">0{{ i + 1 }}</span>
+                <span class="sp-t">{{ i18n.tr(h.t) }}</span>
+              </button>
             }
-          </p>
+            <span class="bookend" aria-hidden="true"></span>
+          </div>
         </div>
       </div>
     </section>`,
@@ -50,15 +61,13 @@ export class About {
   protected readonly i18n = inject(I18nService);
   protected readonly data = DATA;
 
-  /** divide a frase "about_hobby" nos trechos de texto e nos marcadores {0}, {1}... */
-  protected readonly hobbyParts = computed(() =>
-    this.i18n
-      .t('about_hobby')
-      .split(/(\{\d\})/)
-      .filter(Boolean)
-      .map((s) => {
-        const m = s.match(/^\{(\d)\}$/);
-        return m ? { h: +m[1], text: '' } : { h: undefined, text: s };
-      }),
-  );
+  /** hobby em destaque na estante (null = nenhum) */
+  protected readonly sel = signal<number | null>(null);
+  /** altura e largura de cada lombada, para a estante não ficar uniforme */
+  protected readonly SPINES = [
+    { h: '178px', w: '54px' },
+    { h: '150px', w: '46px' },
+    { h: '192px', w: '60px' },
+    { h: '164px', w: '50px' },
+  ];
 }

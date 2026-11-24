@@ -29,8 +29,7 @@ e várias animações ligadas ao scroll.
 | Seção | O que tem |
 | --- | --- |
 | **Hero** | Nome em letra cursiva, cargo em destaque, chamada, botões "Ver projetos" e "Baixar CV", foto em arco e logo gigante desfocado ao fundo |
-| **Faixa** | Skills passando em loop; acelera e inverte de direção com o scroll |
-| **Sobre** | Texto profissional, números com contagem animada, idiomas e uma frase com os hobbies marcados (marca-texto + dica ao passar o mouse) |
+| **Sobre** | Texto profissional, números com contagem animada, idiomas e uma estante em que cada livro é um hobby (passe o mouse ou toque para ler) |
 | **Skills** | Tecnologias agrupadas, com ícone de cada uma |
 | **Projetos** | Busca e filtros na lateral (categoria e tecnologia), cards grandes e modal com o estudo de caso |
 | **Trajetória** | Linha do tempo (experiência + educação) que se preenche com o scroll |
@@ -116,7 +115,7 @@ Quase tudo fica em **`src/app/data/portfolio.data.ts`**:
 | --- | --- |
 | Textos fixos (menu, botões, títulos) | `i18n.pt`, `i18n.en`, `i18n.es` |
 | Números do "Sobre" | `stats` |
-| Hobbies | `hobbies` (`w` = palavra na frase) e a frase `about_hobby` em `i18n` (`{0}`, `{1}`... marcam onde cada hobby entra) |
+| Hobbies | `hobbies` (`t` = título na lombada, `d` = frase ao passar o mouse) |
 | Skills | `skills` |
 | Projetos | `projects` |
 | Experiência e formação | `timeline.work`, `timeline.edu` |
@@ -162,7 +161,6 @@ Todas respeitam `prefers-reduced-motion`.
 
 - Título do hero entrando letra por letra (desfocado → nítido)
 - Hero sobe e esmaece; logo de fundo com parallax e escala
-- Faixa de skills reativa ao scroll
 - Títulos de seção vazados que se preenchem e deslizam de lado
 - Blocos e itens de lista revelados em cascata
 - Linha do tempo que se preenche e acende os pontos

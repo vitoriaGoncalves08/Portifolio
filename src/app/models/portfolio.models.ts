@@ -13,8 +13,8 @@ export type Text = string | Localized;
 
 export interface Stat { n: string; l: Localized; }
 
-/** Hobby: `w` é a palavra marcada na frase do Sobre; `d` aparece ao passar o mouse. */
-export interface Hobby { t: Localized; w: Localized; d: Localized; }
+/** Hobby: vira um livro na estante do Sobre. `t` vai na lombada; `d` aparece ao passar o mouse ou tocar. */
+export interface Hobby { t: Localized; d: Localized; }
 
 export interface SkillGroup { t: Text; items: string[]; }
 

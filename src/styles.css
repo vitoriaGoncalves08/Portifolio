@@ -96,13 +96,6 @@ main,.nav,.footer{position:relative;z-index:2}
 .scroll-hint{position:absolute;bottom:20px;left:50%;translate:-50% 0;color:var(--mut);text-decoration:none;z-index:2;animation:bob 2s ease-in-out infinite}
 @keyframes bob{50%{transform:translateY(6px)}}
 
-/* marquee */
-.marquee{overflow:hidden;border-bottom:1px solid var(--line);padding:16px 0;position:relative;z-index:2}
-.track{display:flex;gap:48px;width:max-content;will-change:transform}
-.track span{font:400 clamp(1.4rem,3vw,2.2rem) var(--serif);font-style:italic;color:var(--mut);white-space:nowrap}
-.track span::after{content:"✦";margin-left:48px;color:var(--ac-t);font-style:normal;font-size:.8em}
-@keyframes marq{to{transform:translateX(-50%)}}
-
 /* seções */
 .sec{padding:110px 0;position:relative}
 .alt{background:var(--bg2)}
@@ -465,20 +458,6 @@ a.badge:hover{transform:translateY(-5px);border-color:var(--fg)}
 html{scroll-padding-top:86px}
 @media (max-width:860px){#menu{top:68px}.logo img{height:46px}.nav-in{height:68px}}
 
-/* ===== sobre: hobbies como palavras marcadas (marca-texto) ===== */
-.hobby-wrap{display:block}
-.hobby-wrap h3{margin:0 0 14px}
-.hobby-line{font:italic 400 clamp(1.5rem,3vw,2.3rem)/1.35 var(--serif);color:var(--fg);max-width:900px;margin:0}
-.mk{position:relative;display:inline;font-style:normal;font-family:var(--disp);font-weight:600;letter-spacing:.01em;cursor:help;outline:none}
-.mk-w{background:linear-gradient(transparent 58%,color-mix(in srgb,var(--fg) 16%,transparent) 58%,color-mix(in srgb,var(--fg) 16%,transparent) 92%,transparent 92%) no-repeat 0 0/0% 100%;
-  transition:background-size .9s cubic-bezier(.2,.7,.2,1) var(--d,0s),background-color .3s;padding:0 .08em;box-decoration-break:clone;-webkit-box-decoration-break:clone}
-.hobby-wrap.in .mk-w,.hobby-wrap:not(.rv) .mk-w{background-size:100% 100%}
-.mk:hover .mk-w,.mk:focus-visible .mk-w{background-color:color-mix(in srgb,var(--fg) 8%,transparent)}
-.mk-tip{position:absolute;left:50%;bottom:calc(100% + 10px);translate:-50% 6px;width:max-content;max-width:240px;padding:10px 14px;border-radius:12px;
-  background:var(--fg);color:var(--bg);font:400 .8rem/1.4 var(--sans);opacity:0;pointer-events:none;transition:opacity .25s,translate .25s;z-index:5;white-space:normal}
-.mk-tip b{display:block;font:700 .72rem var(--mono);text-transform:uppercase;letter-spacing:.06em;margin-bottom:2px}
-.mk:hover .mk-tip,.mk:focus-visible .mk-tip{opacity:1;translate:-50% 0}
-
 /* ===== trajetória: destaque quebra bem em telas pequenas ===== */
 .tl-card .tl-hl{display:flex;gap:6px;align-items:flex-start;width:fit-content;max-width:100%;white-space:normal;line-height:1.4;border-radius:12px;padding:7px 12px}
 
@@ -503,11 +482,39 @@ html{scroll-padding-top:86px}
   .proj-layout{grid-template-columns:1fr;gap:24px}
   .proj-side{position:static}
   .proj-grid{grid-template-columns:1fr}
-  .hobby-line{font-size:1.4rem}
-  .mk-tip{max-width:200px}
 }
 /* todos os cards de projeto no mesmo tamanho grande (2 por linha) */
 .proj-grid .proj-card:first-child{grid-column:auto;flex-direction:column}
 .proj-grid .proj-card:first-child .shot{flex:none;aspect-ratio:16/10;min-height:0}
 .proj-grid .proj-card:first-child .body{padding:22px 24px 24px;justify-content:flex-start}
 .proj-grid .proj-card h3{font-size:clamp(1.4rem,2.2vw,1.8rem)}
+
+/* ===== sobre: estante de livros (cada livro é um hobby) ===== */
+.hobby-wrap{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:28px 48px;align-items:end;margin-top:56px;padding-top:32px;border-top:1px solid var(--line)}
+.hobby-text h3{margin:0 0 8px}
+.hobby-text p{margin:0;color:var(--mut);max-width:460px}
+.hobby-note{margin-top:18px!important;min-height:3.2em;color:var(--fg)!important;font:italic 1.3rem/1.35 var(--serif)}
+.hobby-note b{font:700 1rem var(--disp);font-style:normal;text-transform:uppercase;letter-spacing:.06em}
+.hobby-note .mono{font-style:normal;color:var(--mut)}
+.shelf{position:relative;display:flex;align-items:flex-end;gap:4px;padding:0 18px;border-bottom:3px solid var(--fg);min-height:210px}
+.shelf::after{content:"";position:absolute;left:6px;right:6px;bottom:-11px;height:8px;background:color-mix(in srgb,var(--fg) 14%,transparent);border-radius:0 0 6px 6px}
+.spine{--bg-s:var(--fg);--fg-s:var(--bg);position:relative;height:var(--h);width:var(--w);border:0;border-radius:4px 4px 1px 1px;padding:12px 0;cursor:pointer;
+  background:var(--bg-s);color:var(--fg-s);display:flex;flex-direction:column;align-items:center;justify-content:space-between;
+  box-shadow:inset -6px 0 0 rgba(0,0,0,.12),inset 1px 0 0 rgba(255,255,255,.12);transform-origin:bottom center;transition:transform .45s cubic-bezier(.2,.7,.2,1),box-shadow .3s}
+.spine::before,.spine::after{content:"";position:absolute;left:6px;right:6px;height:2px;background:currentColor;opacity:.35}
+.spine::before{top:30px}.spine::after{bottom:34px}
+.spine[data-tone="1"]{--bg-s:#b9ad95;--fg-s:#1b1b19}
+.spine[data-tone="2"]{--bg-s:#6f6b62;--fg-s:#f3f0e8}
+.spine[data-tone="3"]{--bg-s:var(--card);--fg-s:var(--fg);box-shadow:inset 0 0 0 1px var(--line),inset -6px 0 0 rgba(0,0,0,.06)}
+.spine:last-of-type{transform:rotate(7deg);transform-origin:bottom left;margin-left:6px}
+.spine:hover,.spine:focus-visible,.spine.on{transform:translateY(-18px)}
+.spine:last-of-type:hover,.spine:last-of-type:focus-visible,.spine:last-of-type.on{transform:rotate(0) translateY(-18px)}
+.spine:focus-visible{outline:2px solid var(--fg);outline-offset:3px}
+.sp-n{font-size:.6rem;opacity:.7}
+.sp-t{writing-mode:vertical-rl;transform:rotate(180deg);font:700 .92rem var(--disp);text-transform:uppercase;letter-spacing:.12em;white-space:nowrap;margin-bottom:6px}
+.bookend{width:14px;height:64px;margin-left:10px;background:var(--fg);border-radius:3px 3px 0 0;opacity:.85}
+@media (max-width:860px){
+  .hobby-wrap{grid-template-columns:1fr}
+  .shelf{justify-content:center;min-height:200px}
+}
+@media (prefers-reduced-motion:reduce){.spine{transition:none}}

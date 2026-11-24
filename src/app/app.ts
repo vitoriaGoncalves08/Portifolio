@@ -11,7 +11,6 @@ import { Footer } from './sections/footer';
 import { Header } from './sections/header';
 import { Hero } from './sections/hero';
 import { Journey } from './sections/journey';
-import { Marquee } from './sections/marquee';
 import { Projects } from './sections/projects';
 import { Services } from './sections/services';
 import { Skills } from './sections/skills';
@@ -20,7 +19,7 @@ import { Testimonials } from './sections/testimonials';
 /** Página única do portfólio: monta as seções e liga os efeitos globais. */
 @Component({
   selector: 'app-root',
-  imports: [Header, Hero, Marquee, About, Skills, Projects, Journey, Services, Certs, Testimonials, Contact, Footer, Chat],
+  imports: [Header, Hero, About, Skills, Projects, Journey, Services, Certs, Testimonials, Contact, Footer, Chat],
   templateUrl: './app.html',
 })
 export class App {

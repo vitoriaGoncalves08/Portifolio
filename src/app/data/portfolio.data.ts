@@ -21,7 +21,7 @@ export const DATA: PortfolioData = {
       cta_projects: 'Ver projetos', cta_cv: 'Baixar CV',
       about_pro_t: 'Profissional', about_hobby_t: 'Fora do código',
       about_pro: 'Sou desenvolvedora fullstack em São Paulo. Na Muralis Tecnologia comecei como estagiária em 2022 e hoje desenvolvo microsserviços em Java e Spring Boot com arquitetura hexagonal, APIs REST e interfaces em React, participando das decisões técnicas e do dia a dia ágil do time. Também atuo como freelancer, criando landing pages, protótipos no Figma e identidades visuais.',
-      about_hobby: 'Quando fecho o editor, estou {0}, {1}, {2} ou {3}.',
+      about_hobby: 'O que me recarrega quando fecho o editor.', hobby_hint: 'Passe o mouse (ou toque) nos livros da estante.',
       langs_t: 'Idiomas',
       tl_work: 'Experiência', tl_edu: 'Educação', tl_all: 'Tudo', more: 'Ver detalhes →', all: 'Todos',
       certs_badges: 'Badges', certs_courses: 'Certificados e cursos', badge_soon: 'Próxima badge',
@@ -48,7 +48,7 @@ export const DATA: PortfolioData = {
       cta_projects: 'View projects', cta_cv: 'Download CV',
       about_pro_t: 'Professional', about_hobby_t: 'Beyond code',
       about_pro: "I'm a full stack developer based in São Paulo. I joined Muralis Tecnologia as an intern in 2022 and today I build Java and Spring Boot microservices with hexagonal architecture, REST APIs and React interfaces, taking part in technical decisions and the team's agile routine. I also freelance, creating landing pages, Figma prototypes and visual identities.",
-      about_hobby: "When I close the editor, I'm {0}, {1}, {2} or {3}.",
+      about_hobby: 'What recharges me when I close the editor.', hobby_hint: 'Hover (or tap) the books on the shelf.',
       langs_t: 'Languages',
       tl_work: 'Experience', tl_edu: 'Education', tl_all: 'All', more: 'See details →', all: 'All',
       certs_badges: 'Badges', certs_courses: 'Certificates & courses', badge_soon: 'Next badge',
@@ -75,7 +75,7 @@ export const DATA: PortfolioData = {
       cta_projects: 'Ver proyectos', cta_cv: 'Descargar CV',
       about_pro_t: 'Profesional', about_hobby_t: 'Fuera del código',
       about_pro: 'Soy desarrolladora fullstack en São Paulo. Entré a Muralis Tecnologia como pasante en 2022 y hoy desarrollo microservicios en Java y Spring Boot con arquitectura hexagonal, APIs REST e interfaces en React, participando en las decisiones técnicas y en el día a día ágil del equipo. También trabajo como freelancer, creando landing pages, prototipos en Figma e identidades visuales.',
-      about_hobby: 'Cuando cierro el editor, estoy {0}, {1}, {2} o {3}.',
+      about_hobby: 'Lo que me recarga cuando cierro el editor.', hobby_hint: 'Pasa el mouse (o toca) los libros del estante.',
       langs_t: 'Idiomas',
       tl_work: 'Experiencia', tl_edu: 'Educación', tl_all: 'Todo', more: 'Ver detalles →', all: 'Todos',
       certs_badges: 'Insignias', certs_courses: 'Certificados y cursos', badge_soon: 'Próxima insignia',
@@ -104,27 +104,23 @@ export const DATA: PortfolioData = {
     { pt: 'Espanhol — básico', en: 'Spanish — basic', es: 'Español — básico' }
   ],
 
-  /* Hobbies: aparecem como palavras marcadas na frase "about_hobby" ({0}, {1}...).
-     w = como a palavra aparece na frase · d = frase curta mostrada ao passar o mouse */
+  /* Hobbies: cada um vira um livro na estante do Sobre.
+     t = título na lombada · d = frase mostrada ao passar o mouse ou tocar */
   hobbies: [
     {
       t: { pt: 'Academia', en: 'Gym', es: 'Gimnasio' },
-      w: { pt: 'treinando', en: 'working out', es: 'entrenando' },
       d: { pt: 'Treino para manter corpo e cabeça em dia.', en: 'Training to keep body and mind in shape.', es: 'Entreno para mantener cuerpo y mente en forma.' }
     },
     {
       t: { pt: 'Jogos', en: 'Games', es: 'Videojuegos' },
-      w: { pt: 'jogando', en: 'gaming', es: 'jugando' },
       d: { pt: 'Jogos com boa história e bons desafios.', en: 'Games with a good story and good challenges.', es: 'Juegos con buena historia y buenos desafíos.' }
     },
     {
       t: { pt: 'Cerâmica', en: 'Ceramics', es: 'Cerámica' },
-      w: { pt: 'modelando cerâmica', en: 'shaping ceramics', es: 'modelando cerámica' },
       d: { pt: 'Modelar no torno ensina paciência e detalhe.', en: 'Throwing on the wheel teaches patience and detail.', es: 'Modelar en el torno enseña paciencia y detalle.' }
     },
     {
       t: { pt: 'Livros', en: 'Books', es: 'Libros' },
-      w: { pt: 'com um livro na mão', en: 'reading a book', es: 'con un libro en la mano' },
       d: { pt: 'Ficção, tecnologia e tudo que abre a cabeça.', en: 'Fiction, tech and anything that opens the mind.', es: 'Ficción, tecnología y todo lo que abre la mente.' }
     }
   ],
