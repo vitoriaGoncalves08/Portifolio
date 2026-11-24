@@ -223,7 +223,7 @@ export const DATA: PortfolioData = {
   /* Badges digitais (ex.: Credly). img: imagem da badge (png/svg) · url: link de verificação.
      Para adicionar uma nova, é só incluir mais um item aqui. */
   badges: [
-    { t: 'AWS Partner: Technical Accreditation', ab: 'AWS', org: 'Amazon Web Services · 5h', date: 'Mar/2025', img: '', url: '' },
+    { t: 'AWS Partner: Technical Accreditation', ab: 'AWS', org: 'Amazon Web Services · 5h', date: 'Mar/2025', img: 'assets/badges/aws-technical-accredited.jpg', url: '' },
     { t: 'Get Connected', ab: 'CISCO', org: 'Cisco Networking Academy · 30h', date: 'Mar/2022', img: '', url: '' }
   ],
   badgeSlots: 2, // espaços "próxima badge" exibidos depois das badges atuais

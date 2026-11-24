@@ -571,3 +571,6 @@ html{scroll-padding-top:86px}
 .theme-fab{position:fixed;left:18px;bottom:18px;z-index:30}
 .theme-fab>.icon-btn{width:46px;height:46px;font-size:1rem;background:var(--card);box-shadow:0 10px 30px -12px rgba(0,0,0,.45)}
 .theme-fab>.icon-btn[aria-expanded="true"]{background:var(--ac);color:var(--ac-fg);border-color:var(--ac)}
+/* badge com imagem (ex.: AWS): fundo branco e imagem inteira, sem cortar */
+.medal:has(img){background:#fff}
+.medal img{object-fit:contain;padding:10px}
