@@ -42,7 +42,7 @@ e várias animações ligadas ao scroll.
 ## Funcionalidades
 
 - **3 idiomas em tempo real** (PT/EN/ES), salvos no navegador; o idioma inicial segue o do navegador.
-- **Tema claro (off-white) e escuro + cor dos detalhes** (grafite, bordô, marrom ou azul jeans), escolhidos no botão ◐ e salvos no navegador. As paletas ficam no fim de `src/styles.css` (`data-accent`).
+- **Tema claro (off-white) e escuro + cor dos detalhes** (grafite, bordô, marrom ou azul jeans), escolhidos no botão ◐ fixo no canto inferior esquerdo e salvos no navegador. As paletas ficam no fim de `src/styles.css` (`data-accent`).
 - **Busca de projetos** por nome, descrição, categoria ou tag (ignora acentos), combinada com filtros de categoria e de várias tecnologias.
 - **Modal de projeto** com problema, solução, arquitetura, desafios, resultado e links de código/demo.
 - **CV por idioma**: `assets/cv-pt.pdf`, `cv-en.pdf`, `cv-es.pdf`; se faltar algum, baixa o em português.

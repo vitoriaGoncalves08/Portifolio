@@ -538,8 +538,7 @@ html{scroll-padding-top:86px}
 :root[data-theme="dark"]:not([data-accent="neutral"]) .fab img{filter:grayscale(1) brightness(2.6)}
 
 /* ===== painel de tema e cor ===== */
-.theme-menu{position:relative}
-.theme-pop{position:absolute;right:0;top:calc(100% + 10px);z-index:40;width:236px;padding:16px;border:1px solid var(--line);border-radius:16px;
+.theme-pop{position:absolute;left:0;bottom:calc(100% + 10px);z-index:40;width:236px;padding:16px;border:1px solid var(--line);border-radius:16px;
   background:var(--card);box-shadow:0 24px 50px -20px rgba(0,0,0,.45);animation:mIn .25s ease}
 .theme-pop p{margin:0 0 8px;color:var(--mut);text-transform:uppercase}
 .theme-pop p+.seg,.theme-pop .seg+p{margin-top:0}
@@ -564,3 +563,11 @@ html{scroll-padding-top:86px}
 :root[data-theme="dark"] .big-logo.logo-mark{filter:blur(8px);opacity:.1}
 .fab .logo-mark{height:26px;--logo-a:var(--ac-fg);--logo-b:color-mix(in srgb,var(--ac-fg) 60%,transparent)}
 @media (max-width:860px){.logo .logo-mark{height:46px}}
+
+/* logo de fundo do hero: absoluto, atrás da foto (o .logo-mark é relative por padrão) */
+.big-logo.logo-mark{position:absolute}
+
+/* ===== botão de tema fixo (canto inferior esquerdo) ===== */
+.theme-fab{position:fixed;left:18px;bottom:18px;z-index:30}
+.theme-fab>.icon-btn{width:46px;height:46px;font-size:1rem;background:var(--card);box-shadow:0 10px 30px -12px rgba(0,0,0,.45)}
+.theme-fab>.icon-btn[aria-expanded="true"]{background:var(--ac);color:var(--ac-fg);border-color:var(--ac)}

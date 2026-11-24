@@ -16,11 +16,12 @@ import { Projects } from './sections/projects';
 import { Services } from './sections/services';
 import { Skills } from './sections/skills';
 import { Testimonials } from './sections/testimonials';
+import { ThemeSwitcher } from './sections/theme-switcher';
 
 /** Página única do portfólio: monta as seções e liga os efeitos globais. */
 @Component({
   selector: 'app-root',
-  imports: [Header, Hero, About, Skills, Projects, Journey, Services, Certs, Testimonials, Contact, Footer, Chat],
+  imports: [Header, Hero, About, Skills, Projects, Journey, Services, Certs, Testimonials, Contact, Footer, Chat, ThemeSwitcher],
   templateUrl: './app.html',
 })
 export class App {

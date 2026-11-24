@@ -1,13 +1,11 @@
-import { Component, ElementRef, OnDestroy, afterNextRender, inject, signal } from '@angular/core';
+import { Component, OnDestroy, afterNextRender, inject, signal } from '@angular/core';
 import { I18nService } from '../core/i18n.service';
-import { ThemeService } from '../core/theme.service';
 import { Logo } from '../shared/logo';
 
-/** Menu fixo no topo: links das seções (com a seção atual destacada), idiomas e painel de tema/cor. */
+/** Menu fixo no topo: links das seções (com a seção atual destacada) e idiomas. */
 @Component({
   selector: 'app-header',
   imports: [Logo],
-  host: { '(document:click)': 'closePop($event)', '(document:keydown.escape)': 'pop.set(false)' },
   template: `
     <header class="nav">
       <div class="wrap nav-in">
@@ -24,28 +22,6 @@ import { Logo } from '../shared/logo';
                       (click)="i18n.setLang(l)">{{ l.toUpperCase() }}</button>
             }
           </div>
-          <div class="theme-menu">
-            <button type="button" class="icon-btn" [attr.aria-label]="i18n.t('theme_t')" aria-haspopup="true"
-                    [attr.aria-expanded]="pop()" (click)="pop.set(!pop())">◐</button>
-            @if (pop()) {
-              <div class="theme-pop" role="group" [attr.aria-label]="i18n.t('theme_t')">
-                <p class="mono">{{ i18n.t('theme_t') }}</p>
-                <div class="seg">
-                  <button type="button" [class.on]="theme.theme() === 'light'" (click)="theme.theme.set('light')">☀ {{ i18n.t('theme_light') }}</button>
-                  <button type="button" [class.on]="theme.theme() === 'dark'" (click)="theme.theme.set('dark')">☾ {{ i18n.t('theme_dark') }}</button>
-                </div>
-                <p class="mono">{{ i18n.t('accent_t') }}</p>
-                <div class="swatches">
-                  @for (a of theme.accents; track a.id) {
-                    <button type="button" class="sw" [class.on]="theme.accent() === a.id" [style.--sw]="a.swatch"
-                            [attr.aria-label]="i18n.t('accent_' + a.id)" [attr.aria-pressed]="theme.accent() === a.id"
-                            [title]="i18n.t('accent_' + a.id)" (click)="theme.accent.set(a.id)"></button>
-                  }
-                </div>
-                <span class="sw-name">{{ i18n.t('accent_' + theme.accent()) }}</span>
-              </div>
-            }
-          </div>
           <button type="button" class="icon-btn burger" aria-label="Menu" (click)="open.set(!open())">☰</button>
         </div>
       </div>
@@ -53,11 +29,7 @@ import { Logo } from '../shared/logo';
 })
 export class Header implements OnDestroy {
   protected readonly i18n = inject(I18nService);
-  protected readonly theme = inject(ThemeService);
   protected readonly open = signal(false);
-  /** painel de tema/cor aberto */
-  protected readonly pop = signal(false);
-  private readonly host = inject<ElementRef<HTMLElement>>(ElementRef).nativeElement;
   protected readonly active = signal('');
   protected readonly links = [
     { id: 'about', key: 'nav_about' },
@@ -81,12 +53,6 @@ export class Header implements OnDestroy {
         if (s) this.io.observe(s);
       }
     });
-  }
-
-  /** fecha o painel de tema ao clicar fora dele */
-  protected closePop(e: Event): void {
-    const menu = this.host.querySelector('.theme-menu');
-    if (this.pop() && menu && !menu.contains(e.target as Node)) this.pop.set(false);
   }
 
   ngOnDestroy(): void {
