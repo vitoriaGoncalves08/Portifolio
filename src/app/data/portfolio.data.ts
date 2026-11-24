@@ -294,7 +294,8 @@ export const DATA: PortfolioData = {
       code: 'https://github.com/vitoriaGoncalves08/E-commerce-Bewear', demo: ''
     },
     {
-      id: 'sorria-acene', title: 'Sorria e Acene', img: 'assets/projects/sorria-acene.webp',
+      id: 'sorria-acene', title: 'Sorria e Acene', img: 'assets/projects/sorria-acene-capa.webp',
+      imgs: ['assets/projects/sorria-acene.webp'],
       tags: ['JavaScript', 'Python', 'MediaPipe', 'scikit-learn', 'Chrome Extension'],
       cat: 'IA', emoji: '🐧',
       desc: {
