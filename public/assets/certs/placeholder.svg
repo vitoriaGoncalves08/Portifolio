@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 850">
+  <rect width="1200" height="850" fill="#1b1b19"/>
+  <rect x="30" y="30" width="1140" height="790" fill="none" stroke="#a82a40" stroke-width="4"/>
+  <rect x="50" y="50" width="1100" height="750" fill="none" stroke="#2c2c29" stroke-width="2"/>
+  <text x="600" y="230" text-anchor="middle" font-family="Georgia,serif" font-style="italic" font-size="72" fill="#e6e1d6">Certificado</text>
+  <text x="600" y="320" text-anchor="middle" font-family="monospace" font-size="26" fill="#8f8b82">SUBSTITUA POR UMA IMAGEM DO SEU CERTIFICADO</text>
+  <line x1="300" y1="470" x2="900" y2="470" stroke="#2c2c29" stroke-width="3"/>
+  <line x1="300" y1="530" x2="900" y2="530" stroke="#2c2c29" stroke-width="3"/>
+  <line x1="300" y1="590" x2="760" y2="590" stroke="#2c2c29" stroke-width="3"/>
+  <circle cx="600" cy="700" r="50" fill="none" stroke="#a82a40" stroke-width="4"/>
+  <text x="600" y="714" text-anchor="middle" font-family="Georgia,serif" font-size="40" fill="#e5707f">VGP</text>
+</svg>

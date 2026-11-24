@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Vitória Passos — Desenvolvedora Full Stack</title>
+  <meta name="description" content="Portfólio de Vitória Gonçalves Passos, desenvolvedora Full Stack com foco em Java, Spring Boot, React e microsserviços.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Vitória Passos — Desenvolvedora Full Stack">
+  <meta property="og:description" content="Projetos, experiência e contato.">
+  <meta property="og:image" content="assets/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;600&family=Space+Grotesk:wght@400;500;700&family=Barlow+Semi+Condensed:wght@400;500;600;700&family=Pinyon+Script&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/sections.css">
+  <script>
+    try { var t = localStorage.getItem('theme') || 'light'; document.documentElement.dataset.theme = t; } catch (e) {}
+  </script>
+</head>
+<body>
+  <div class="grain" aria-hidden="true"></div>
+  <div class="spot" aria-hidden="true"></div>
+  <div class="progress" aria-hidden="true"></div>
+  <div class="cursor" aria-hidden="true"></div>
+  <a class="skip" href="#main" data-i18n="skip">Ir para o conteúdo</a>
+
+  <header class="nav">
+    <div class="wrap nav-in">
+      <a href="#hero" class="logo" aria-label="VGP — início"><img src="assets/logo.png" alt="VGP"></a>
+      <nav id="menu" aria-label="Principal">
+        <a href="#about" data-i18n="nav_about">Sobre</a>
+        <a href="#skills" data-i18n="nav_skills">Skills</a>
+        <a href="#projects" data-i18n="nav_projects">Projetos</a>
+        <a href="#journey" data-i18n="nav_journey">Trajetória</a>
+        <a href="#services" data-i18n="nav_services">Serviços</a>
+        <a href="#certs" data-i18n="nav_certs">Certificados</a>
+        <a href="#contact" data-i18n="nav_contact">Contato</a>
+      </nav>
+      <div class="nav-tools">
+        <div class="langs" id="langSel" role="group" aria-label="Idioma"><button data-l="pt">PT</button><button data-l="en">EN</button><button data-l="es">ES</button></div>
+        <button id="theme" class="icon-btn" aria-label="Tema">◐</button>
+        <button id="burger" class="icon-btn burger" aria-label="Menu">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- HERO -->
+    <section id="hero" class="hero">
+      <div class="hero-bg" aria-hidden="true">
+        <img class="big-year big-logo" id="bigYear" src="assets/logo.png" alt="">
+        <i class="vl v1"></i><i class="vl v2"></i><i class="hl h1"></i><i class="hl h2"></i>
+      </div>
+      <div class="wrap hero-in">
+        <p class="welcome mono" data-i18n="welcome">Bem-vindo à minha jornada como desenvolvedor.</p>
+        <h1 class="hero-title" aria-label="Vitória Passos — Dev Full Stack">
+          <span class="serif" data-split>Vitória Passos</span>
+          <span class="name" data-split data-i18n="hero_role">Dev Full Stack</span>
+        </h1>
+        <p class="role" data-i18n="role">Java · Spring Boot · React · Microsserviços</p>
+        <p class="lead" data-i18n="tagline">Construo sistemas web escaláveis, de microsserviços a interfaces rápidas e acessíveis.</p>
+        <div class="cta">
+          <a class="btn primary" href="#projects" data-i18n="cta_projects">Ver projetos</a>
+          <a class="btn cv-link" href="assets/cv-pt.pdf" download data-i18n="cta_cv">Baixar CV</a>
+        </div>
+        <figure class="photo" id="photo"><img src="assets/photo.jpg" alt="Retrato de Vitória Passos"><figcaption class="mono">São Paulo, SP — Brasil</figcaption></figure>
+      </div>
+      <a class="scroll-hint mono" href="#about" aria-label="Scroll">scroll ↓</a>
+    </section>
+
+    <div class="marquee" aria-hidden="true"><div class="track" id="marquee"></div></div>
+
+    <!-- SOBRE -->
+    <section id="about" class="sec">
+      <div class="wrap">
+        <h2 data-i18n="nav_about">Sobre</h2>
+        <div class="grid-2">
+          <div>
+            <h3 data-i18n="about_pro_t">Profissional</h3>
+            <p data-i18n="about_pro">Escreva aqui 2–3 parágrafos sobre sua trajetória.</p>
+          </div>
+          <div>
+            <div class="stats" id="stats"></div>
+            <h3 data-i18n="langs_t">Idiomas</h3>
+            <ul class="plain" id="langs"></ul>
+          </div>
+        </div>
+        <div class="hobby-wrap">
+          <h3 data-i18n="about_hobby_t">Fora do código</h3>
+          <p data-i18n="about_hobby">Academia, jogos, cerâmica e livros.</p>
+          <div class="hobbies" id="hobbies"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills" class="sec alt">
+      <div class="wrap">
+        <h2 data-i18n="nav_skills">Skills</h2>
+        <div class="skills" id="skillsGrid"></div>
+      </div>
+    </section>
+
+    <!-- PROJETOS -->
+    <section id="projects" class="sec">
+      <div class="wrap">
+        <h2 data-i18n="nav_projects">Projetos</h2>
+        <div class="proj-bar">
+          <label class="search"><span class="sr-only" data-i18n="search_ph">Buscar</span>
+            <input id="q" type="search" autocomplete="off" data-i18n-ph="search_ph" placeholder="Buscar por nome, descrição ou tag…"></label>
+          <div class="fgroup"><h4 class="mono" data-i18n="f_cat">Categoria</h4><div class="filters" id="filters" role="group"></div></div>
+          <div class="fgroup"><h4 class="mono" data-i18n="f_tech">Tecnologia</h4><div class="filters" id="tagFilters" role="group"></div></div>
+          <div class="proj-meta"><p class="count mono" id="count" aria-live="polite"></p><button type="button" class="btn small" id="clearF" data-i18n="clear">Limpar filtros</button></div>
+        </div>
+        <div class="cards proj-grid" id="projectGrid"></div>
+      </div>
+    </section>
+
+    <!-- TRAJETÓRIA -->
+    <section id="journey" class="sec alt">
+      <div class="wrap">
+        <h2 data-i18n="nav_journey">Qualificação</h2>
+        <div class="tabs" id="tlTabs">
+          <button data-k="all" class="on" data-i18n="tl_all">Tudo</button>
+          <button data-k="work" data-i18n="tl_work">Experiência</button>
+          <button data-k="edu" data-i18n="tl_edu">Educação</button>
+        </div>
+        <ol class="tl" id="timeline"></ol>
+      </div>
+    </section>
+
+    <!-- SERVIÇOS -->
+    <section id="services" class="sec wine">
+      <div class="wave top" aria-hidden="true"><svg viewBox="0 0 2880 90" preserveAspectRatio="none"><path d="M0 45 Q360 -5 720 45 T1440 45 T2160 45 T2880 45 L2880 0 L0 0 Z"/></svg></div>
+      <div class="wave bot" aria-hidden="true"><svg viewBox="0 0 2880 90" preserveAspectRatio="none"><path d="M0 45 Q360 -5 720 45 T1440 45 T2160 45 T2880 45 L2880 0 L0 0 Z"/></svg></div>
+      <div class="wrap">
+        <p class="statement" data-i18n="statement">Transformo ideias complexas em sistemas simples, rápidos e prontos para crescer.</p>
+        <h2 data-i18n="nav_services">Serviços</h2>
+        <div class="svc-list" id="servicesGrid"></div>
+      </div>
+    </section>
+
+    <!-- CERTIFICADOS -->
+    <section id="certs" class="sec alt">
+      <div class="wrap">
+        <h2 data-i18n="nav_certs">Certificações</h2>
+        <h3 class="sub mono" data-i18n="certs_badges">Badges</h3>
+        <div class="badges" id="badgeGrid"></div>
+        <h3 class="sub mono" data-i18n="certs_courses">Certificados e cursos</h3>
+        <div class="cards three" id="certGrid"></div>
+      </div>
+    </section>
+
+    <!-- DEPOIMENTOS -->
+    <section id="testimonials" class="sec flip">
+      <div class="wrap">
+        <h2 data-i18n="nav_testi">Depoimentos</h2>
+        <div class="cards three" id="testiGrid"></div>
+      </div>
+    </section>
+
+    <!-- CONTATO -->
+    <section id="contact" class="sec">
+      <div class="wrap grid-2">
+        <div>
+          <h2 data-i18n="nav_contact">Contato</h2>
+          <p data-i18n="contact_lead">Tem um projeto, vaga ou dúvida? Me escreva.</p>
+          <div class="apps" id="apps"></div>
+          <a class="btn cv-link" href="assets/cv-pt.pdf" download data-i18n="cta_cv">Baixar CV</a>
+        </div>
+        <form id="form" class="form">
+          <label><span data-i18n="f_name">Nome</span><input name="name" required></label>
+          <label><span data-i18n="f_email">E-mail</span><input name="email" type="email" required></label>
+          <label><span data-i18n="f_msg">Mensagem</span><textarea name="msg" rows="5" required></textarea></label>
+          <button class="btn primary" type="submit" data-i18n="f_send">Enviar</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap foot-in">
+      <span>© <span id="year"></span> Vitória Gonçalves Passos. <span data-i18n="rights">Todos os direitos reservados.</span></span>
+      <span class="foot-links">
+        <a href="https://github.com/vitoriaGoncalves08" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://linkedin.com/in/vitoria-goncalves-passos" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="#hero" data-i18n="top">Voltar ao topo ↑</a>
+      </span>
+    </div>
+  </footer>
+
+  <!-- MODAL PROJETO -->
+  <dialog id="modal" class="modal">
+    <button class="close" id="mClose" aria-label="Fechar">✕</button>
+    <div id="mBody"></div>
+  </dialog>
+
+  <!-- CHAT IA -->
+  <button id="chatFab" class="fab" aria-label="Dúvidas? Fale com o assistente"><span data-i18n="chat_fab">Dúvidas?</span><img src="assets/logo.png" alt=""></button>
+  <section id="chat" class="chat" hidden aria-label="Assistente">
+    <header><strong data-i18n="chat_title">Assistente do portfólio</strong><button id="chatClose" class="icon-btn" aria-label="Fechar">✕</button></header>
+    <div id="chatLog" class="log" aria-live="polite"></div>
+    <div id="chatSug" class="sug"></div>
+    <form id="chatForm"><input id="chatIn" autocomplete="off" data-i18n-ph="chat_ph" placeholder="Digite sua dúvida…"><button class="btn primary" data-i18n="f_send">Enviar</button></form>
+  </section>
+
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/fx.js"></script>
+</body>
+</html>

@@ -1,0 +1,76 @@
+/** Idiomas suportados pelo site. */
+export type Lang = 'pt' | 'en' | 'es';
+
+/** Texto traduzido. `pt` é obrigatório e serve de fallback. */
+export interface Localized {
+  pt: string;
+  en?: string;
+  es?: string;
+}
+
+/** Texto que pode ser traduzido ou igual em todos os idiomas. */
+export type Text = string | Localized;
+
+export interface Stat { n: string; l: Localized; }
+
+export interface Hobby { t: Localized; d: Localized; /** conteúdo interno de um <svg viewBox="0 0 120 120"> */ svg: string; }
+
+export interface SkillGroup { t: Text; items: string[]; }
+
+export interface Project {
+  id: string;
+  title: string;
+  tags: string[];
+  cat: string;
+  emoji: string;
+  /** caminho da imagem/screenshot (opcional), ex.: assets/projects/saga.png */
+  img?: string;
+  desc: Localized;
+  problem: Localized;
+  solution: Localized;
+  arch: Localized;
+  challenges: Localized;
+  result: Localized;
+  code?: string;
+  demo?: string;
+}
+
+export interface TimelineItem {
+  when: Text;
+  t: Text;
+  org: string;
+  d: Localized;
+  /** destaque exibido como selo no card */
+  hl?: Localized;
+}
+
+export interface Service { t: Localized; d: Localized; }
+
+export interface Badge { t: string; ab: string; org: string; date: string; img?: string; url?: string; }
+
+export interface Cert { t: string; org: string; date: string; img: string; url?: string; }
+
+export interface Testimonial { q: Localized; who: string; role: string; }
+
+export interface Contact { n: string; slug: string; h: string; url: string; }
+
+export interface Faq { k: string[]; a: Localized; }
+
+export interface PortfolioData {
+  i18n: Record<Lang, Record<string, string>>;
+  cv: Record<Lang, string>;
+  stats: Stat[];
+  languages: Localized[];
+  hobbies: Hobby[];
+  skills: SkillGroup[];
+  projects: Project[];
+  timeline: { work: TimelineItem[]; edu: TimelineItem[] };
+  services: Service[];
+  badges: Badge[];
+  badgeSlots: number;
+  certs: Cert[];
+  testimonials: Testimonial[];
+  contacts: Contact[];
+  faq: Faq[];
+  suggestions: Record<Lang, string[]>;
+}
