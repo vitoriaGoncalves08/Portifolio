@@ -192,15 +192,13 @@ Todas respeitam `prefers-reduced-motion`.
 
 ## Deploy
 
-O build gera um site estático em `dist/portfolio/browser`, que pode ir para **Vercel**, **Netlify**,
-**Firebase Hosting** ou **GitHub Pages**.
+O site é publicado no **GitHub Pages** por um GitHub Action (`.github/workflows/deploy.yml`): a cada push na `main`,
+ele instala as dependências, roda os testes, faz o build com `--base-href /<nome-do-repositório>/` e publica
+`dist/portfolio/browser`.
 
-GitHub Pages (repositório `usuario/Portifolio`):
-
-```bash
-npx ng build --base-href /Portifolio/
-# publique o conteúdo de dist/portfolio/browser (ex.: com o pacote angular-cli-ghpages)
-```
+Configuração (uma vez só): em **Settings → Pages → Build and deployment → Source**, escolha **GitHub Actions**.
+O endereço fica `https://vitoriagoncalves08.github.io/Portifolio/`. Também dá para rodar o deploy manualmente
+pela aba **Actions → Deploy no GitHub Pages → Run workflow**.
 
 ## Pendências
 

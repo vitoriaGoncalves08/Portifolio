@@ -1,0 +1,59 @@
+# Publica o portfólio no GitHub Pages a cada push na main.
+# Em Settings → Pages, deixe "Source" como "GitHub Actions".
+name: Deploy no GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch: # permite rodar manualmente pela aba Actions
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# só um deploy por vez; um novo push cancela o que estiver na fila
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+
+      - name: Instalar dependências
+        run: npm ci
+
+      - name: Testes
+        run: npm test
+
+      # o site fica em https://<usuario>.github.io/<repositorio>/, por isso o base-href com o nome do repositório
+      - name: Build de produção
+        run: npx ng build --base-href "/${{ github.event.repository.name }}/"
+
+      # cópia do index.html como 404.html: links diretos para o site não caem na página de erro do GitHub
+      - name: Página 404
+        run: cp dist/portfolio/browser/index.html dist/portfolio/browser/404.html
+
+      - uses: actions/configure-pages@v5
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist/portfolio/browser
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
