@@ -14,7 +14,7 @@ export type Text = string | Localized;
 export interface Stat { n: string; l: Localized; }
 
 /** Hobby: vira um livro na estante do Sobre. `t` vai na lombada; `d` aparece ao passar o mouse ou tocar. */
-export interface Hobby { t: Localized; d: Localized; }
+export interface Hobby { t: Localized; d: Localized; /** o que o hobby traz para o trabalho */ gains: Localized[]; }
 
 export interface SkillGroup { t: Text; items: string[]; }
 
@@ -45,6 +45,12 @@ export interface TimelineItem {
   d: Localized;
   /** destaque exibido como selo no card */
   hl?: Localized;
+  /** destaques (até 4), mostrados em "Saiba mais" */
+  points?: Localized[];
+  /** selos de empresas/órgãos integrados (ids em sections/journey.ts) */
+  logos?: string[];
+  /** fixa no topo da trajetória com mais destaque */
+  featured?: boolean;
 }
 
 export interface Service { t: Localized; d: Localized; }
@@ -66,6 +72,10 @@ export interface PortfolioData {
   languages: Localized[];
   hobbies: Hobby[];
   skills: SkillGroup[];
+  /** nível de 0 a 10 por skill */
+  skillLevels: Record<string, number>;
+  /** tecnologias mostradas no filtro de projetos */
+  projectFilterTags: string[];
   projects: Project[];
   timeline: { work: TimelineItem[]; edu: TimelineItem[] };
   services: Service[];

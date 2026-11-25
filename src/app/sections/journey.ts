@@ -2,6 +2,7 @@ import { Component, computed, effect, inject, signal } from '@angular/core';
 import { I18nService } from '../core/i18n.service';
 import { ScrollFxService } from '../core/scroll-fx.service';
 import { DATA } from '../data/portfolio.data';
+import { BRANDS } from '../shared/brands';
 import { RevealDirective } from '../shared/reveal.directive';
 
 type Tab = 'all' | 'work' | 'edu';
@@ -12,9 +13,12 @@ const endOf = (w: string) => {
   const last = m ? m[m.length - 1] : '';
   return /\d/.test(last) ? +last : 9999;
 };
+const startOf = (w: string) => +(w.match(/\d{4}/)?.[0] ?? 0);
 
 /**
  * Trajetória: linha do tempo vertical que mistura experiência e educação.
+ * Cada card mostra o essencial (cargo, empresa, período e uma linha de resumo); "Saiba mais" abre os destaques.
+ * A experiência marcada como `featured` fica no topo, com mais destaque e já aberta.
  * A linha se preenche com o scroll e os pontos acendem (ScrollFxService).
  */
 @Component({
@@ -34,12 +38,36 @@ const endOf = (w: string) => {
             <li class="tl-i" appReveal="item" [revealIndex]="n">
               <span class="yr" aria-hidden="true">{{ i.year }}</span>
               <span class="node"></span>
-              <div class="tl-card">
-                <span class="tag">{{ i18n.t(i.k === 'work' ? 'tl_work' : 'tl_edu') }}</span>
-                <span class="when">{{ i.when }}</span>
+              <div class="tl-card" [class.featured]="i.featured">
+                <div class="tl-top">
+                  <span class="tag">{{ i18n.t(i.k === 'work' ? 'tl_work' : 'tl_edu') }}</span>
+                  @if (i.featured) {<span class="tag star">★ {{ i18n.t('tl_featured') }}</span>}
+                  <span class="when">{{ i.when }}</span>
+                </div>
                 <h3>{{ i.t }}</h3>
                 <span class="meta">{{ i.org }}</span>
                 <p>{{ i.d }}</p>
+
+                @if (i.logos.length) {
+                  <div class="tl-logos" [attr.aria-label]="i18n.t('tl_worked')">
+                    <span class="mono tl-logos-t">{{ i18n.t('tl_worked') }}</span>
+                    @for (b of i.logos; track b.name) {
+                      <span class="brand" [title]="b.name">
+                        <i [style.background]="b.bg" [style.color]="b.fg">{{ b.mark }}</i>{{ b.name }}
+                      </span>
+                    }
+                  </div>
+                }
+
+                @if (i.points.length) {
+                  <div class="tl-points" [class.open]="isOpen(i.key)" [id]="'tlp-' + i.key">
+                    <div><ul>@for (p of i.points; track $index) {<li>{{ p }}</li>}</ul></div>
+                  </div>
+                  <button type="button" class="tl-more" [attr.aria-expanded]="isOpen(i.key)" [attr.aria-controls]="'tlp-' + i.key"
+                          (click)="toggle(i.key)">
+                    {{ i18n.t(isOpen(i.key) ? 'tl_less' : 'tl_more') }} <span aria-hidden="true">{{ isOpen(i.key) ? '−' : '+' }}</span>
+                  </button>
+                }
                 @if (i.hl) {<span class="tl-hl">★ {{ i.hl }}</span>}
               </div>
             </li>
@@ -53,6 +81,8 @@ export class Journey {
   private readonly fx = inject(ScrollFxService);
   protected readonly tabs: Tab[] = ['all', 'work', 'edu'];
   protected readonly tab = signal<Tab>('all');
+  /** cards abertos em "Saiba mais" (os em destaque começam abertos) */
+  private readonly opened = signal<Set<string>>(new Set(['work-0']));
 
   protected readonly items = computed(() => {
     const tab = this.tab();
@@ -70,16 +100,31 @@ export class Journey {
             org: i.org,
             d: this.i18n.tr(i.d),
             hl: i.hl ? this.i18n.tr(i.hl) : '',
+            points: (i.points ?? []).slice(0, 4).map((p) => this.i18n.tr(p)),
+            logos: (i.logos ?? []).map((id) => BRANDS[id]).filter(Boolean),
+            featured: !!i.featured,
           };
         }),
       )
-      .sort((a, b) => endOf(b.when) - endOf(a.when));
+      // mais recente primeiro; empate (ex.: duas "até hoje") → a em destaque e depois a que começou antes
+      .sort((a, b) => endOf(b.when) - endOf(a.when) || +b.featured - +a.featured || startOf(a.when) - startOf(b.when));
   });
 
   constructor() {
     effect(() => {
       this.items();
+      this.opened();
       this.fx.refresh();
     });
+  }
+
+  protected isOpen(key: string): boolean {
+    return this.opened().has(key);
+  }
+
+  protected toggle(key: string): void {
+    const next = new Set(this.opened());
+    next.has(key) ? next.delete(key) : next.add(key);
+    this.opened.set(next);
   }
 }

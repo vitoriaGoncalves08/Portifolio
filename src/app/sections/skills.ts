@@ -17,7 +17,7 @@ import { TechChip } from '../shared/tech-chip';
             <div class="sk-row" appReveal="item" [revealIndex]="gi">
               <h3><small>0{{ gi + 1 }}</small>{{ i18n.tr(g.t) }}</h3>
               <div class="chips">
-                @for (it of g.items; track it.name) {<app-tech-chip [name]="it.name" [big]="true" [index]="it.k" />}
+                @for (it of g.items; track it.name) {<app-tech-chip [name]="it.name" [big]="true" [index]="it.k" [level]="levels[it.name]" />}
               </div>
             </div>
           }
@@ -27,6 +27,7 @@ import { TechChip } from '../shared/tech-chip';
 })
 export class Skills {
   protected readonly i18n = inject(I18nService);
+  protected readonly levels = DATA.skillLevels;
   /** índice contínuo entre grupos, para variar a posição de cada pílula */
   protected readonly groups = computed(() => {
     let k = 0;

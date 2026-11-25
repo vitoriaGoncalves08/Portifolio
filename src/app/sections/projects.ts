@@ -77,7 +77,7 @@ const GRADIENTS: [string, string][] = [['#55524a', '#171715'], ['#8a7d63', '#1d1
     <ng-template #shot let-p>
       <div class="shot" [style.--g1]="grad(p)[0]" [style.--g2]="grad(p)[1]">
         <i class="blob b1"></i><i class="blob b2"></i>
-        <span class="num">0{{ all.indexOf(p) + 1 }}</span><span class="cat">{{ p.cat }}</span>
+        <span class="cat">{{ p.cat }}</span>
         <div class="mock">
           <div class="bar"><b></b><b></b><b></b><em>{{ p.id }}.dev</em></div>
           <div class="scr">
@@ -117,7 +117,8 @@ export class Projects {
   private readonly bus = inject(UiBusService);
   protected readonly all = DATA.projects;
   protected readonly categories = ['all', ...new Set(DATA.projects.map((p) => p.cat))];
-  protected readonly tags = [...new Set(DATA.projects.flatMap((p) => p.tags))].sort();
+  /** só as tecnologias principais (DATA.projectFilterTags) que aparecem em algum projeto; as outras ficam só nos cards */
+  protected readonly tags = DATA.projectFilterTags.filter((t) => DATA.projects.some((p) => p.tags.includes(t)));
 
   protected readonly query = signal('');
   protected readonly cat = signal('all');

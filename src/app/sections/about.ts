@@ -36,7 +36,9 @@ import { RevealDirective } from '../shared/reveal.directive';
             <p>{{ i18n.t('about_hobby') }}</p>
             <p class="hobby-note" aria-live="polite">
               @if (sel() !== null) {
-                <b>{{ i18n.tr(data.hobbies[sel()!].t) }}</b> — {{ i18n.tr(data.hobbies[sel()!].d) }}
+                <b>{{ i18n.tr(data.hobbies[sel()!].t) }}</b>
+                <span class="gains-t mono">{{ i18n.t('hobby_gains') }}</span>
+                <span class="gains">@for (g of data.hobbies[sel()!].gains; track $index) {<span class="gain">{{ i18n.tr(g) }}</span>}</span>
               } @else {
                 <span class="mono">{{ i18n.t('hobby_hint') }}</span>
               }

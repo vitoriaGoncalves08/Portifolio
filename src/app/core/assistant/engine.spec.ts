@@ -51,6 +51,11 @@ describe('AssistantEngine (Dúvidas? offline)', () => {
     expect(ask(engine, 'sabe tailwind?').text).not.toMatch(/não aparece/);
   });
 
+  it('responde sobre as integrações da Muralis', () => {
+    expect(ask(engine, 'fez integração com itau?').text).toMatch(/Muralis/);
+    expect(ask(engine, 'trabalhou com receita federal?').text).toMatch(/Receita Federal/);
+  });
+
   it('responde sobre trabalho, inclusive com gíria', () => {
     expect(ask(engine, 'onde ela trabalha?').text).toMatch(/Muralis/);
     expect(ask(engine, 'me fala dos trampos').text).toMatch(/Muralis/);

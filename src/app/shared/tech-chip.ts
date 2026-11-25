@@ -22,14 +22,17 @@ export const techIconUrl = (name: string): string => {
   selector: 'app-tech-chip',
   host: { style: 'display:contents' },
   template: `
-    <span class="chip" [class.big]="big()" [style.--o]="big() ? offset() + 'px' : null"
-          [style.--r]="big() ? rot() + 'deg' : null" [style.--dl]="big() ? -(index() % 6) + 's' : null">
+    <span class="chip" [class.big]="big()" [class.lvl]="level() != null" [style.--o]="big() ? offset() + 'px' : null"
+          [style.--r]="big() ? rot() + 'deg' : null" [style.--dl]="big() ? -(index() % 6) + 's' : null"
+          [style.--lvl]="level() != null ? level()! * 10 + '%' : null"
+          [attr.title]="level() != null ? name() + ' · ' + level() + '/10' : null">
       @if (url() && !broken()) {
         <img [src]="url()" alt="" loading="lazy" (error)="broken.set(true)" />
       } @else if (!url()) {
         <i class="d"></i>
       }
       {{ name() }}
+      @if (level() != null) {<b class="lv" aria-hidden="true">{{ level() }}</b><span class="sr-only">{{ level() }}/10</span>}
     </span>`,
 })
 export class TechChip {
@@ -37,6 +40,8 @@ export class TechChip {
   readonly big = input(false);
   /** posição na lista, usada para variar deslocamento/rotação */
   readonly index = input(0);
+  /** nível de 0 a 10: pinta essa fração da tag com o tom mais escuro da cor de destaque */
+  readonly level = input<number | undefined>(undefined);
   protected readonly broken = signal(false);
   protected readonly url = computed(() => techIconUrl(this.name()));
   protected readonly offset = computed(() => (((this.index() * 37) % 5) - 2) * 7);

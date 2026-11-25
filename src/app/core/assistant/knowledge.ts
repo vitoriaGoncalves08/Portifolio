@@ -1,4 +1,5 @@
 import { Lang, Localized, PortfolioData, Text } from '../../models/portfolio.models';
+import { BRANDS } from '../../shared/brands';
 import { tokens } from './text';
 
 /** Botão que aparece embaixo de uma resposta do assistente. */
@@ -144,12 +145,17 @@ export function buildKnowledge(ctx: KnowledgeContext): Intent[] {
       const keys = new Map<string, number>();
       addKeys(keys, tokens(item.org), 3);
       addKeys(keys, tokens(allLangs(item.t)), 2);
-      addKeys(keys, tokens(allLangs(item.d) + ' ' + allLangs(item.hl)), 0.5);
+      // nomes das integrações (Itaú, Banco do Brasil, Receita Federal...) identificam bem a experiência
+      for (const id of item.logos ?? []) if (BRANDS[id]) addName(keys, BRANDS[id].name, 2.5);
+      addKeys(keys, tokens(allLangs(item.d) + ' ' + allLangs(item.hl) + ' ' + (item.points ?? []).map(allLangs).join(' ')), 0.5);
+      const pts = (item.points ?? []).map((pt) => `• ${tr(pt)}`).join('\n');
       const when = tr(item.when);
       const text =
-        k === 'work'
+        (k === 'work'
           ? t('ans_job', { role: tr(item.t), org: item.org, when, d: tr(item.d) })
-          : t('ans_edu_item', { course: tr(item.t), org: item.org, when, d: tr(item.d) }) + (item.hl ? `\n★ ${tr(item.hl)}` : '');
+          : t('ans_edu_item', { course: tr(item.t), org: item.org, when, d: tr(item.d) })) +
+        (pts ? `\n${pts}` : '') +
+        (item.hl ? `\n★ ${tr(item.hl)}` : '');
       intents.push({
         id: `${k}:${idx}`,
         kind: k === 'work' ? 'job' : 'edu',
@@ -189,7 +195,7 @@ export function buildKnowledge(ctx: KnowledgeContext): Intent[] {
   for (const h of data.hobbies) {
     const keys = new Map<string, number>();
     addKeys(keys, tokens(allLangs(h.t)), 3);
-    addKeys(keys, tokens(allLangs(h.d)), 0.6);
+    addKeys(keys, tokens(allLangs(h.d) + ' ' + h.gains.map(allLangs).join(' ')), 0.6);
     intents.push({
       id: 'hobby:' + h.t.pt,
       kind: 'topic',

@@ -602,3 +602,46 @@ html{scroll-padding-top:86px}
 .g-dots button.on{width:22px;background:var(--ac-t)}
 .g-count{position:absolute;right:14px;bottom:8px;color:var(--mut);font-size:.7rem}
 @media (prefers-reduced-motion:reduce){.g-track{transition:none}}
+
+/* ===== skills: nível de 0 a 10 pintado na tag ===== */
+.chip.big.lvl{background:linear-gradient(90deg,color-mix(in srgb,var(--ac) 42%,transparent) var(--lvl),color-mix(in srgb,var(--ac) 12%,transparent) var(--lvl))}
+.chip.big .lv{font:600 .62rem var(--mono);opacity:.75;margin-left:2px;padding-left:8px;border-left:1px solid color-mix(in srgb,var(--fg) 25%,transparent)}
+
+/* ===== hobbies: livros sem as linhas e o que cada hobby traz para o trabalho ===== */
+.spine::before,.spine::after{content:none}
+.hobby-note{display:flex;flex-direction:column;gap:6px;font:inherit}
+.hobby-note .gains-t{font-size:.68rem;color:var(--mut);text-transform:uppercase}
+.gains{display:flex;flex-wrap:wrap;gap:6px}
+.gain{font:600 .78rem var(--sans);padding:5px 12px;border-radius:99px;background:color-mix(in srgb,var(--ac) 16%,transparent);border:1px solid color-mix(in srgb,var(--ac) 40%,transparent);color:var(--fg)}
+
+/* ===== modal do projeto: cursor normal (o cursor personalizado não aparece por cima do modal) ===== */
+body.has-cursor .modal,body.has-cursor .modal *{cursor:auto}
+body.has-cursor .modal a,body.has-cursor .modal button{cursor:pointer}
+body.has-cursor .modal .g-track{cursor:grab}
+body:has(dialog[open]) .cursor{opacity:0}
+
+/* ===== contato: textos longos (ex.: /in/vitoria-goncalves-passos) não vazam do card ===== */
+.app>span:last-child{min-width:0;flex:1}
+.app small{white-space:normal;overflow-wrap:anywhere}
+
+/* ===== trajetória: resumo + "Saiba mais", selos de integração e experiência principal ===== */
+.tl-top{display:flex;flex-wrap:wrap;align-items:center;gap:6px 8px;margin-bottom:10px}
+.tl-top .tag{margin:0}
+.tl-top .when{margin-left:auto}
+.tag.star{background:var(--ac);color:var(--ac-fg);border-color:var(--ac)}
+.tl-card.featured{border-color:var(--ac-t);box-shadow:0 22px 60px -26px var(--ac),inset 0 0 0 1px var(--ac-t);padding:30px 32px}
+.tl-card.featured h3{font-size:1.5rem}
+.tl-logos{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-top:14px}
+.tl-logos-t{width:100%;font-size:.66rem;color:var(--mut);text-transform:uppercase}
+.brand{display:inline-flex;align-items:center;gap:8px;padding:4px 12px 4px 4px;border-radius:99px;border:1px solid var(--line);background:var(--bg);font:600 .78rem var(--sans)}
+.brand i{width:28px;height:28px;border-radius:8px;display:grid;place-items:center;font:800 .66rem var(--sans);font-style:normal;letter-spacing:-.02em}
+.tl-points{display:grid;grid-template-rows:0fr;transition:grid-template-rows .45s cubic-bezier(.2,.7,.2,1),margin .3s}
+.tl-points.open{grid-template-rows:1fr;margin-top:12px}
+.tl-points>div{overflow:hidden}
+.tl-points ul{margin:0;padding:0 0 0 18px;display:grid;gap:8px}
+.tl-points li{color:var(--fg);line-height:1.5}
+.tl-points li::marker{color:var(--ac-t)}
+.tl-more{margin-top:12px;border:1px solid var(--line);background:transparent;color:var(--fg);border-radius:99px;padding:6px 14px;font:600 .72rem var(--mono);text-transform:uppercase;cursor:pointer;transition:background .2s,color .2s,border-color .2s}
+.tl-more:hover{background:var(--ac);color:var(--ac-fg);border-color:var(--ac)}
+.tl-more span{margin-left:4px}
+@media (prefers-reduced-motion:reduce){.tl-points{transition:none}}

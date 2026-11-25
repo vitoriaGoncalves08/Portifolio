@@ -23,7 +23,8 @@ export const DATA: PortfolioData = {
       cta_projects: 'Ver projetos', cta_cv: 'Baixar CV',
       about_pro_t: 'Profissional', about_hobby_t: 'Fora do código',
       about_pro: 'Sou desenvolvedora fullstack em São Paulo. Na Muralis Tecnologia comecei como estagiária em 2022 e hoje desenvolvo microsserviços em Java e Spring Boot com arquitetura hexagonal, APIs REST e interfaces em React, participando das decisões técnicas e do dia a dia ágil do time. Também atuo como freelancer, criando landing pages, protótipos no Figma e identidades visuais.',
-      about_hobby: 'O que me recarrega quando fecho o editor.', hobby_hint: 'Passe o mouse (ou toque) nos livros da estante.',
+      about_hobby: 'O que me recarrega quando fecho o editor.', hobby_hint: 'Passe o mouse (ou toque) nos livros para ver o que cada hobby traz para o meu trabalho.', hobby_gains: 'O que isso traz para o meu trabalho:',
+      tl_more: 'Saiba mais', tl_less: 'Ver menos', tl_featured: 'Experiência principal', tl_worked: 'Integrações em produção', skill_level: 'nível',
       langs_t: 'Idiomas',
       tl_work: 'Experiência', tl_edu: 'Educação', tl_all: 'Tudo', more: 'Ver detalhes →', all: 'Todos',
       certs_badges: 'Badges', certs_courses: 'Certificados e cursos', badge_soon: 'Próxima badge',
@@ -91,7 +92,8 @@ export const DATA: PortfolioData = {
       cta_projects: 'View projects', cta_cv: 'Download CV',
       about_pro_t: 'Professional', about_hobby_t: 'Beyond code',
       about_pro: "I'm a full stack developer based in São Paulo. I joined Muralis Tecnologia as an intern in 2022 and today I build Java and Spring Boot microservices with hexagonal architecture, REST APIs and React interfaces, taking part in technical decisions and the team's agile routine. I also freelance, creating landing pages, Figma prototypes and visual identities.",
-      about_hobby: 'What recharges me when I close the editor.', hobby_hint: 'Hover (or tap) the books on the shelf.',
+      about_hobby: 'What recharges me when I close the editor.', hobby_hint: 'Hover (or tap) the books to see what each hobby brings to my work.', hobby_gains: 'What it brings to my work:',
+      tl_more: 'Learn more', tl_less: 'Show less', tl_featured: 'Main experience', tl_worked: 'Production integrations', skill_level: 'level',
       langs_t: 'Languages',
       tl_work: 'Experience', tl_edu: 'Education', tl_all: 'All', more: 'See details →', all: 'All',
       certs_badges: 'Badges', certs_courses: 'Certificates & courses', badge_soon: 'Next badge',
@@ -159,7 +161,8 @@ export const DATA: PortfolioData = {
       cta_projects: 'Ver proyectos', cta_cv: 'Descargar CV',
       about_pro_t: 'Profesional', about_hobby_t: 'Fuera del código',
       about_pro: 'Soy desarrolladora fullstack en São Paulo. Entré a Muralis Tecnologia como pasante en 2022 y hoy desarrollo microservicios en Java y Spring Boot con arquitectura hexagonal, APIs REST e interfaces en React, participando en las decisiones técnicas y en el día a día ágil del equipo. También trabajo como freelancer, creando landing pages, prototipos en Figma e identidades visuales.',
-      about_hobby: 'Lo que me recarga cuando cierro el editor.', hobby_hint: 'Pasa el mouse (o toca) los libros del estante.',
+      about_hobby: 'Lo que me recarga cuando cierro el editor.', hobby_hint: 'Pasa el mouse (o toca) los libros para ver lo que cada hobby aporta a mi trabajo.', hobby_gains: 'Lo que aporta a mi trabajo:',
+      tl_more: 'Saber más', tl_less: 'Ver menos', tl_featured: 'Experiencia principal', tl_worked: 'Integraciones en producción', skill_level: 'nivel',
       langs_t: 'Idiomas',
       tl_work: 'Experiencia', tl_edu: 'Educación', tl_all: 'Todo', more: 'Ver detalles →', all: 'Todos',
       certs_badges: 'Insignias', certs_courses: 'Certificados y cursos', badge_soon: 'Próxima insignia',
@@ -232,29 +235,63 @@ export const DATA: PortfolioData = {
   hobbies: [
     {
       t: { pt: 'Academia', en: 'Gym', es: 'Gimnasio' },
-      d: { pt: 'Treino para manter corpo e cabeça em dia.', en: 'Training to keep body and mind in shape.', es: 'Entreno para mantener cuerpo y mente en forma.' }
+      d: { pt: 'Treinar me ensina disciplina e constância, inclusive nas semanas difíceis.', en: 'Training teaches me discipline and consistency, even in tough weeks.', es: 'Entrenar me enseña disciplina y constancia, incluso en las semanas difíciles.' },
+      gains: [
+        { pt: 'Disciplina', en: 'Discipline', es: 'Disciplina' },
+        { pt: 'Constância', en: 'Consistency', es: 'Constancia' },
+        { pt: 'Foco em metas', en: 'Goal focus', es: 'Enfoque en metas' }
+      ]
     },
     {
       t: { pt: 'Jogos', en: 'Games', es: 'Videojuegos' },
-      d: { pt: 'Jogos com boa história e bons desafios.', en: 'Games with a good story and good challenges.', es: 'Juegos con buena historia y buenos desafíos.' }
+      d: { pt: 'Jogar exercita estratégia, resolução de problemas e trabalho em equipe.', en: 'Gaming trains strategy, problem solving and teamwork.', es: 'Jugar ejercita estrategia, resolución de problemas y trabajo en equipo.' },
+      gains: [
+        { pt: 'Resolução de problemas', en: 'Problem solving', es: 'Resolución de problemas' },
+        { pt: 'Pensamento estratégico', en: 'Strategic thinking', es: 'Pensamiento estratégico' },
+        { pt: 'Trabalho em equipe', en: 'Teamwork', es: 'Trabajo en equipo' }
+      ]
     },
     {
       t: { pt: 'Cerâmica', en: 'Ceramics', es: 'Cerámica' },
-      d: { pt: 'Modelar no torno ensina paciência e detalhe.', en: 'Throwing on the wheel teaches patience and detail.', es: 'Modelar en el torno enseña paciencia y detalle.' }
+      d: { pt: 'Modelar no torno ensina paciência, atenção aos detalhes e a refazer até ficar bom.', en: 'Throwing on the wheel teaches patience, attention to detail and redoing until it is right.', es: 'Modelar en el torno enseña paciencia, atención al detalle y a rehacer hasta que quede bien.' },
+      gains: [
+        { pt: 'Paciência', en: 'Patience', es: 'Paciencia' },
+        { pt: 'Atenção aos detalhes', en: 'Attention to detail', es: 'Atención al detalle' },
+        { pt: 'Melhorar a cada versão', en: 'Improving with each iteration', es: 'Mejorar en cada versión' }
+      ]
     },
     {
       t: { pt: 'Livros', en: 'Books', es: 'Libros' },
-      d: { pt: 'Ficção, tecnologia e tudo que abre a cabeça.', en: 'Fiction, tech and anything that opens the mind.', es: 'Ficción, tecnología y todo lo que abre la mente.' }
+      d: { pt: 'Ler mantém o aprendizado contínuo e melhora a forma como me comunico.', en: 'Reading keeps me learning and improves the way I communicate.', es: 'Leer mantiene el aprendizaje continuo y mejora mi forma de comunicarme.' },
+      gains: [
+        { pt: 'Aprendizado contínuo', en: 'Continuous learning', es: 'Aprendizaje continuo' },
+        { pt: 'Comunicação', en: 'Communication', es: 'Comunicación' },
+        { pt: 'Criatividade', en: 'Creativity', es: 'Creatividad' }
+      ]
     }
   ],
 
+  /* Títulos dos grupos ficam iguais nos três idiomas (não são traduzidos). */
   skills: [
-    { t: { pt: 'Linguagens', en: 'Languages', es: 'Lenguajes' }, items: ['Java', 'JavaScript', 'Node.js'] },
+    { t: 'Linguagens', items: ['Java', 'JavaScript', 'Node.js'] },
     { t: 'Front-end', items: ['React.js', 'HTML/CSS', 'SASS', 'Material UI'] },
     { t: 'Back-end', items: ['Spring Boot', 'Hibernate', 'REST', 'CI/CD'] },
-    { t: { pt: 'Banco de dados', en: 'Databases', es: 'Bases de datos' }, items: ['MySQL', 'SQL Server', 'PostgreSQL'] },
-    { t: { pt: 'Ferramentas', en: 'Tools', es: 'Herramientas' }, items: ['Git', 'Figma'] }
+    { t: 'Banco de dados', items: ['MySQL', 'SQL Server', 'PostgreSQL'] },
+    { t: 'Ferramentas', items: ['Git', 'Figma'] }
   ],
+
+  /* Nível de cada skill, de 0 a 10: pinta essa fração da tag com o tom mais escuro da cor escolhida.
+     Ex.: 5 = metade da tag. Skill sem número fica sem preenchimento. */
+  skillLevels: {
+    'Java': 9, 'JavaScript': 8, 'Node.js': 6,
+    'React.js': 8, 'HTML/CSS': 8, 'SASS': 6, 'Material UI': 7,
+    'Spring Boot': 9, 'Hibernate': 7, 'REST': 9, 'CI/CD': 6,
+    'MySQL': 8, 'SQL Server': 7, 'PostgreSQL': 7,
+    'Git': 8, 'Figma': 8
+  },
+
+  /* Tecnologias que aparecem no filtro de projetos (as demais continuam nos cards). */
+  projectFilterTags: ['Java', 'Spring Boot', 'React.js', 'Next.js', 'Angular', 'TypeScript', 'JavaScript', 'Python', 'PostgreSQL', 'MySQL', 'Figma'],
 
   projects: [
     {
@@ -511,30 +548,56 @@ export const DATA: PortfolioData = {
     }
   ],
 
+  /* Trajetória: "d" é o resumo de uma linha; "points" são os destaques (até 4), abertos em "Saiba mais".
+     "logos" mostra selos de empresas/órgãos com que houve integração; "featured" fixa no topo com destaque. */
   timeline: {
     work: [
       {
-        when: { pt: '2025 — hoje', en: '2025 — present', es: '2025 — hoy' }, t: { pt: 'Desenvolvedora Web e Designer', en: 'Web Developer & Designer', es: 'Desarrolladora Web y Diseñadora' }, org: 'Freelancer · Remoto',
-        d: { pt: 'Landing pages com integração de formulários e automação de e-mails; protótipos UX/UI no Figma com design systems e boas práticas de usabilidade; identidades visuais e logotipos vetorizados.', en: 'Landing pages with form integration and e-mail automation; UX/UI prototypes in Figma using design systems and usability best practices; visual identities and vector logos.', es: 'Landing pages con integración de formularios y automatización de correos; prototipos UX/UI en Figma con design systems y buenas prácticas de usabilidad; identidades visuales y logotipos vectorizados.' }
+        when: { pt: '2024 — hoje', en: '2024 — present', es: '2024 — hoy' }, featured: true,
+        t: { pt: 'Desenvolvedora de Software Fullstack', en: 'Full Stack Software Developer', es: 'Desarrolladora de Software Fullstack' }, org: 'Muralis Tecnologia · São Paulo, SP',
+        d: { pt: 'Desenvolvimento fullstack de sistemas em produção: microsserviços em Java/Spring Boot e interfaces em React.', en: 'Full stack development of production systems: Java/Spring Boot microservices and React interfaces.', es: 'Desarrollo fullstack de sistemas en producción: microservicios en Java/Spring Boot e interfaces en React.' },
+        logos: ['itau', 'bb', 'receita'],
+        points: [
+          { pt: 'Integrações bancárias em produção com Itaú e Banco do Brasil.', en: 'Production banking integrations with Itaú and Banco do Brasil.', es: 'Integraciones bancarias en producción con Itaú y Banco do Brasil.' },
+          { pt: 'Alterações em APIs integradas à Receita Federal.', en: 'Changes to APIs integrated with the Brazilian Federal Revenue Service (Receita Federal).', es: 'Cambios en APIs integradas a la Receita Federal (hacienda de Brasil).' },
+          { pt: 'Microsserviços em Java e Spring Boot com arquitetura hexagonal e APIs REST: novas funcionalidades e correção de bugs.', en: 'Java and Spring Boot microservices with hexagonal architecture and REST APIs: new features and bug fixes.', es: 'Microservicios en Java y Spring Boot con arquitectura hexagonal y APIs REST: nuevas funcionalidades y corrección de bugs.' },
+          { pt: 'Interfaces em React.js com componentes reutilizáveis, decisões técnicas e rotina ágil (sprints e estimativas).', en: 'React.js interfaces with reusable components, technical decisions and an agile routine (sprints and estimates).', es: 'Interfaces en React.js con componentes reutilizables, decisiones técnicas y rutina ágil (sprints y estimaciones).' }
+        ]
       },
       {
-        when: { pt: '2024 — hoje', en: '2024 — present', es: '2024 — hoy' }, t: { pt: 'Desenvolvedora de Software Fullstack', en: 'Full Stack Software Developer', es: 'Desarrolladora de Software Fullstack' }, org: 'Muralis Tecnologia · São Paulo, SP',
-        d: { pt: 'Microsserviços em Java e Spring Boot com arquitetura hexagonal; criação e integração de APIs REST, novas funcionalidades e correção de bugs; interfaces em React.js com componentes reutilizáveis e foco em performance; decisões técnicas, melhoria contínua, planejamento de sprints e estimativas em ambiente ágil.', en: 'Java and Spring Boot microservices with hexagonal architecture; REST API design and integration, new features and bug fixing; React.js interfaces with reusable components and a focus on performance; technical decisions, continuous improvement, sprint planning and estimates in an agile environment.', es: 'Microservicios en Java y Spring Boot con arquitectura hexagonal; creación e integración de APIs REST, nuevas funcionalidades y corrección de bugs; interfaces en React.js con componentes reutilizables y foco en el rendimiento; decisiones técnicas, mejora continua, planificación de sprints y estimaciones en un entorno ágil.' }
+        when: { pt: '2025 — hoje', en: '2025 — present', es: '2025 — hoy' },
+        t: { pt: 'Desenvolvedora Web e Designer', en: 'Web Developer & Designer', es: 'Desarrolladora Web y Diseñadora' }, org: 'Freelancer · Remoto',
+        d: { pt: 'Projetos para clientes: sites, protótipos e identidade visual.', en: 'Client projects: websites, prototypes and visual identity.', es: 'Proyectos para clientes: sitios, prototipos e identidad visual.' },
+        points: [
+          { pt: 'Landing pages com integração de formulários e automação de e-mails.', en: 'Landing pages with form integration and e-mail automation.', es: 'Landing pages con integración de formularios y automatización de correos.' },
+          { pt: 'Protótipos UX/UI no Figma com design systems e boas práticas de usabilidade.', en: 'UX/UI prototypes in Figma using design systems and usability best practices.', es: 'Prototipos UX/UI en Figma con design systems y buenas prácticas de usabilidad.' },
+          { pt: 'Identidades visuais e logotipos vetorizados.', en: 'Visual identities and vector logos.', es: 'Identidades visuales y logotipos vectorizados.' }
+        ]
       },
       {
-        when: { pt: '2022 — 2023', en: '2022 — 2023', es: '2022 — 2023' }, t: { pt: 'Desenvolvedora de Software (Estágio)', en: 'Software Developer (Intern)', es: 'Desarrolladora de Software (Pasantía)' }, org: 'Muralis Tecnologia · São Paulo, SP',
-        d: { pt: 'Suporte ao desenvolvimento de aplicações web e mobile, com correção de bugs e novas funcionalidades; apoio na análise e manutenção de banco de dados; documentação técnica e funcional a partir das necessidades do negócio.', en: 'Support for web and mobile application development, including bug fixes and new features; help with database analysis and maintenance; technical and functional documentation based on business needs.', es: 'Apoyo en el desarrollo de aplicaciones web y móviles, con corrección de bugs y nuevas funcionalidades; apoyo en el análisis y mantenimiento de bases de datos; documentación técnica y funcional a partir de las necesidades del negocio.' }
+        when: { pt: '2022 — 2023', en: '2022 — 2023', es: '2022 — 2023' },
+        t: { pt: 'Desenvolvedora de Software (Estágio)', en: 'Software Developer (Intern)', es: 'Desarrolladora de Software (Pasantía)' }, org: 'Muralis Tecnologia · São Paulo, SP',
+        d: { pt: 'Primeiro contato com projetos reais: aplicações web e mobile, banco de dados e documentação.', en: 'First contact with real projects: web and mobile apps, databases and documentation.', es: 'Primer contacto con proyectos reales: aplicaciones web y móviles, bases de datos y documentación.' },
+        points: [
+          { pt: 'Suporte ao desenvolvimento de aplicações web e mobile, com correção de bugs e novas funcionalidades.', en: 'Support for web and mobile app development, with bug fixes and new features.', es: 'Apoyo en el desarrollo de aplicaciones web y móviles, con corrección de bugs y nuevas funcionalidades.' },
+          { pt: 'Análise e manutenção de banco de dados.', en: 'Database analysis and maintenance.', es: 'Análisis y mantenimiento de bases de datos.' },
+          { pt: 'Documentação técnica e funcional a partir das necessidades do negócio.', en: 'Technical and functional documentation based on business needs.', es: 'Documentación técnica y funcional a partir de las necesidades del negocio.' }
+        ]
       }
     ],
     edu: [
       {
         when: { pt: '2021 — 2024', en: '2021 — 2024', es: '2021 — 2024' }, t: { pt: 'Análise e Desenvolvimento de Sistemas', en: 'Systems Analysis and Development', es: 'Análisis y Desarrollo de Sistemas' }, org: 'FATEC Ferraz de Vasconcelos · São Paulo, SP',
-        d: { pt: 'Aplicações web e mobile fullstack com metodologias ágeis (Scrum); foco em análise de requisitos, modelagem de sistemas e desenvolvimento de software.', en: 'Full stack web and mobile applications using agile methods (Scrum); focus on requirements analysis, systems modeling and software development.', es: 'Aplicaciones web y móviles fullstack con metodologías ágiles (Scrum); foco en análisis de requisitos, modelado de sistemas y desarrollo de software.' },
-        hl: { pt: 'Destaque acadêmico 2x com bolsa de intercâmbio internacional (EUA)', en: 'Two-time academic highlight with an international exchange scholarship (USA)', es: 'Destacada académicamente 2 veces con beca de intercambio internacional (EE. UU.)' }
+        d: { pt: 'Graduação tecnológica com foco em desenvolvimento de software.', en: 'Technology degree focused on software development.', es: 'Carrera tecnológica enfocada en desarrollo de software.' },
+        hl: { pt: 'Destaque acadêmico 2x com bolsa de intercâmbio internacional (EUA)', en: 'Two-time academic highlight with an international exchange scholarship (USA)', es: 'Destacada académicamente 2 veces con beca de intercambio internacional (EE. UU.)' },
+        points: [
+          { pt: 'Aplicações web e mobile fullstack com metodologias ágeis (Scrum).', en: 'Full stack web and mobile applications using agile methods (Scrum).', es: 'Aplicaciones web y móviles fullstack con metodologías ágiles (Scrum).' },
+          { pt: 'Análise de requisitos, modelagem de sistemas e desenvolvimento de software.', en: 'Requirements analysis, systems modeling and software development.', es: 'Análisis de requisitos, modelado de sistemas y desarrollo de software.' }
+        ]
       },
       {
         when: { pt: '2019 — 2021', en: '2019 — 2021', es: '2019 — 2021' }, t: { pt: 'Técnico em Desenvolvimento de Sistemas', en: 'Systems Development Technician', es: 'Técnico en Desarrollo de Sistemas' }, org: 'ETEC Guaianases · São Paulo, SP',
-        d: { pt: 'Aplicações web e mobile e modelagem de banco de dados.', en: 'Web and mobile applications and database modeling.', es: 'Aplicaciones web y móviles y modelado de bases de datos.' }
+        d: { pt: 'Curso técnico com aplicações web e mobile e modelagem de banco de dados.', en: 'Technical course with web and mobile apps and database modeling.', es: 'Curso técnico con aplicaciones web y móviles y modelado de bases de datos.' }
       }
     ]
   },
