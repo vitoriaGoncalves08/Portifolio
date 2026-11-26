@@ -20,6 +20,9 @@ import { RevealDirective } from '../shared/reveal.directive';
       <div class="wrap">
         <h2 appReveal>{{ i18n.t('nav_certs') }}</h2>
 
+        <!-- badges e certificações lado a lado, separadas por uma linha (no celular, uma embaixo da outra) -->
+        <div class="medal-groups">
+        <div class="mg">
         <h3 class="sub mono" appReveal>{{ i18n.t('certs_badges') }}</h3>
         <div class="badges">
           @for (b of data.badges; track b.t; let i = $index) {
@@ -39,8 +42,10 @@ import { RevealDirective } from '../shared/reveal.directive';
             </div>
           }
         </div>
+        </div>
 
         @if (certifications.length) {
+          <div class="mg">
           <h3 class="sub mono" appReveal>{{ i18n.t('certs_certifications') }}</h3>
           <!-- mesmo estilo das badges: medalha + nome; com link, abre a credencial -->
           <div class="badges">
@@ -56,7 +61,9 @@ import { RevealDirective } from '../shared/reveal.directive';
               }
             }
           </div>
+          </div>
         }
+        </div>
 
         <h3 class="sub mono" appReveal>{{ i18n.t('certs_courses') }}</h3>
         <div class="cards three">

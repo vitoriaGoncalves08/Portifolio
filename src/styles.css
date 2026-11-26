@@ -667,3 +667,16 @@ body:has(dialog[open]) .cursor{opacity:0}
 .medal img{padding:8px;transform:none}
 button.badge{font:inherit;color:inherit;cursor:pointer}
 button.badge:hover{transform:translateY(-5px);border-color:var(--fg)}
+
+/* ===== badges e certificações lado a lado, com uma linha entre os grupos ===== */
+.medal-groups{display:flex;flex-wrap:wrap;gap:28px 40px;margin-bottom:56px}
+.medal-groups .mg{min-width:0}
+.medal-groups .mg + .mg{border-left:1px solid color-mix(in srgb,var(--fg) 28%,transparent);padding-left:40px}
+.medal-groups .badges{display:flex;flex-wrap:wrap;gap:16px;margin-bottom:0}
+.medal-groups .badge{width:190px}
+@media (max-width:700px){
+  .medal-groups{flex-direction:column}
+  .medal-groups .mg + .mg{border-left:0;padding-left:0;border-top:1px solid color-mix(in srgb,var(--fg) 28%,transparent);padding-top:24px}
+  .medal-groups .badges{display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}
+  .medal-groups .badge{width:auto}
+}
