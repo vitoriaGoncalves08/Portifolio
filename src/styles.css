@@ -680,3 +680,8 @@ button.badge:hover{transform:translateY(-5px);border-color:var(--fg)}
   .medal-groups .badges{display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}
   .medal-groups .badge{width:auto}
 }
+/* cards de badges e certificações com a mesma altura (o mais alto define a dos outros) */
+.medal-groups{align-items:stretch}
+.medal-groups .mg{display:flex;flex-direction:column}
+.medal-groups .badges{flex:1;align-items:stretch;align-content:stretch}
+.medal-groups .badge{justify-content:flex-start}
