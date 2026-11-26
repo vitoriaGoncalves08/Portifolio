@@ -22,7 +22,6 @@ import { RevealDirective } from '../shared/reveal.directive';
               <span class="n">0{{ i + 1 }}</span>
               <h3>{{ i18n.tr(s.t) }}</h3>
               <p>{{ i18n.tr(s.d) }}</p>
-              <span class="go">→</span>
             </div>
           }
         </div>

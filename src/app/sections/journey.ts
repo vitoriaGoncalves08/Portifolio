@@ -18,7 +18,6 @@ const startOf = (w: string) => +(w.match(/\d{4}/)?.[0] ?? 0);
 /**
  * Trajetória: linha do tempo vertical que mistura experiência e educação.
  * Cada card mostra o essencial (cargo, empresa, período e uma linha de resumo); "Saiba mais" abre os destaques.
- * A experiência marcada como `featured` fica no topo, com mais destaque e já aberta.
  * A linha se preenche com o scroll e os pontos acendem (ScrollFxService).
  */
 @Component({
@@ -41,7 +40,6 @@ const startOf = (w: string) => +(w.match(/\d{4}/)?.[0] ?? 0);
               <div class="tl-card" [class.featured]="i.featured">
                 <div class="tl-top">
                   <span class="tag">{{ i18n.t(i.k === 'work' ? 'tl_work' : 'tl_edu') }}</span>
-                  @if (i.featured) {<span class="tag star">★ {{ i18n.t('tl_featured') }}</span>}
                   <span class="when">{{ i.when }}</span>
                 </div>
                 <h3>{{ i.t }}</h3>
@@ -49,8 +47,8 @@ const startOf = (w: string) => +(w.match(/\d{4}/)?.[0] ?? 0);
                 <p>{{ i.d }}</p>
 
                 @if (i.logos.length) {
-                  <div class="tl-logos" [attr.aria-label]="i18n.t('tl_worked')">
-                    <span class="mono tl-logos-t">{{ i18n.t('tl_worked') }}</span>
+                  <div class="tl-logos" [attr.aria-label]="i.logosTitle">
+                    <span class="mono tl-logos-t">{{ i.logosTitle }}</span>
                     @for (b of i.logos; track b.name) {
                       <span class="brand" [title]="b.name">
                         <i [style.background]="b.bg" [style.color]="b.fg">{{ b.mark }}</i>{{ b.name }}
@@ -81,8 +79,8 @@ export class Journey {
   private readonly fx = inject(ScrollFxService);
   protected readonly tabs: Tab[] = ['all', 'work', 'edu'];
   protected readonly tab = signal<Tab>('all');
-  /** cards abertos em "Saiba mais" (os em destaque começam abertos) */
-  private readonly opened = signal<Set<string>>(new Set(['work-0']));
+  /** cards abertos em "Saiba mais" (todos começam fechados) */
+  private readonly opened = signal<Set<string>>(new Set());
 
   protected readonly items = computed(() => {
     const tab = this.tab();
@@ -102,12 +100,13 @@ export class Journey {
             hl: i.hl ? this.i18n.tr(i.hl) : '',
             points: (i.points ?? []).slice(0, 4).map((p) => this.i18n.tr(p)),
             logos: (i.logos ?? []).map((id) => BRANDS[id]).filter(Boolean),
+            logosTitle: i.logosTitle ? this.i18n.tr(i.logosTitle) : this.i18n.t('tl_worked'),
             featured: !!i.featured,
           };
         }),
       )
-      // mais recente primeiro; empate (ex.: duas "até hoje") → a em destaque e depois a que começou antes
-      .sort((a, b) => endOf(b.when) - endOf(a.when) || +b.featured - +a.featured || startOf(a.when) - startOf(b.when));
+      // mais recente primeiro; empate (ex.: duas "até hoje") → a que começou mais recentemente
+      .sort((a, b) => endOf(b.when) - endOf(a.when) || +b.featured - +a.featured || startOf(b.when) - startOf(a.when));
   });
 
   constructor() {

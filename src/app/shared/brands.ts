@@ -7,4 +7,5 @@ export const BRANDS: Record<string, { name: string; mark: string; bg: string; fg
   itau: { name: 'Itaú', mark: 'itaú', bg: '#ec7000', fg: '#1c2a7c' },
   bb: { name: 'Banco do Brasil', mark: 'BB', bg: '#fcfc30', fg: '#465eff' },
   receita: { name: 'Receita Federal', mark: 'RF', bg: '#0c326f', fg: '#ffcd07' },
+  bradesco: { name: 'Bradesco', mark: 'B', bg: '#cc092f', fg: '#ffffff' },
 };

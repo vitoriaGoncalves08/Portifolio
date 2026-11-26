@@ -24,6 +24,10 @@ export interface Project {
   tags: string[];
   cat: string;
   emoji: string;
+  /** cores da vitrine: [principal, fundo escuro, brilho] — combine com a imagem do projeto */
+  tone?: [string, string, string];
+  /** 'wip' = em construção (mostra um selo e listras na vitrine) */
+  status?: 'wip';
   /** caminho da imagem/screenshot (opcional), ex.: assets/projects/saga.png */
   img?: string;
   /** imagens extras mostradas no carrossel do modal (a primeira do carrossel é sempre `img`) */
@@ -49,6 +53,8 @@ export interface TimelineItem {
   points?: Localized[];
   /** selos de empresas/órgãos integrados (ids em sections/journey.ts) */
   logos?: string[];
+  /** título acima dos selos (padrão: "Integrações em produção") */
+  logosTitle?: Localized;
   /** fixa no topo da trajetória com mais destaque */
   featured?: boolean;
 }
@@ -57,7 +63,7 @@ export interface Service { t: Localized; d: Localized; }
 
 export interface Badge { t: string; ab: string; org: string; date: string; img?: string; url?: string; }
 
-export interface Cert { t: string; org: string; date: string; img: string; url?: string; }
+export interface Cert { kind: 'course' | 'certification'; t: string; org: string; date: string; img: string; url?: string; }
 
 export interface Testimonial { q: Localized; who: string; role: string; }
 

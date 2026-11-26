@@ -6,9 +6,11 @@ import { Cert } from '../models/portfolio.models';
 import { RevealDirective } from '../shared/reveal.directive';
 
 /**
- * Certificações em duas partes:
- * - Badges digitais (medalhas) + espaços "Próxima badge" (DATA.badgeSlots)
- * - Certificados e cursos com imagem; ao clicar, abre ampliado
+ * Certificações em três partes (grupos vazios não aparecem):
+ * - Badges digitais (medalhas)
+ * - Certificações (kind: 'certification')
+ * - Certificados de cursos (kind: 'course')
+ * Certificações e cursos abrem a imagem ampliada ao clicar.
  */
 @Component({
   selector: 'app-certs',
@@ -38,9 +40,21 @@ import { RevealDirective } from '../shared/reveal.directive';
           }
         </div>
 
+        @if (certifications.length) {
+          <h3 class="sub mono" appReveal>{{ i18n.t('certs_certifications') }}</h3>
+          <div class="cards three">
+            @for (c of certifications; track c.t; let i = $index) {
+              <button type="button" class="card cert click" appReveal="item" [revealIndex]="i" (click)="open(c)">
+                <div class="thumb"><img [src]="c.img" [alt]="c.t" loading="lazy" /></div>
+                <div class="body"><h3>{{ c.t }}</h3><span class="meta">{{ c.org }} · {{ c.date }}</span></div>
+              </button>
+            }
+          </div>
+        }
+
         <h3 class="sub mono" appReveal>{{ i18n.t('certs_courses') }}</h3>
         <div class="cards three">
-          @for (c of data.certs; track c.t; let i = $index) {
+          @for (c of courses; track c.t; let i = $index) {
             <button type="button" class="card cert click" appReveal="item" [revealIndex]="i" (click)="open(c)">
               <div class="thumb"><img [src]="c.img" [alt]="c.t" loading="lazy" /></div>
               <div class="body"><h3>{{ c.t }}</h3><span class="meta">{{ c.org }} · {{ c.date }}</span></div>
@@ -74,6 +88,8 @@ export class Certs {
   protected readonly i18n = inject(I18nService);
   protected readonly data = DATA;
   protected readonly slots = Array.from({ length: DATA.badgeSlots });
+  protected readonly certifications = DATA.certs.filter((c) => c.kind === 'certification');
+  protected readonly courses = DATA.certs.filter((c) => c.kind !== 'certification');
   protected readonly selected = signal<Cert | null>(null);
   private readonly dlg = viewChild.required<ElementRef<HTMLDialogElement>>('dlg');
 

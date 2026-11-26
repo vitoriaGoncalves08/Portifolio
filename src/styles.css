@@ -645,3 +645,15 @@ body:has(dialog[open]) .cursor{opacity:0}
 .tl-more:hover{background:var(--ac);color:var(--ac-fg);border-color:var(--ac)}
 .tl-more span{margin-left:4px}
 @media (prefers-reduced-motion:reduce){.tl-points{transition:none}}
+
+/* ===== ajustes: sobre sem linha nos hobbies, serviços sem seta, selo AWS maior ===== */
+.hobby-wrap{border-top:0;padding-top:0}
+.svc{grid-template-columns:110px 1fr 1.3fr}
+.medal img{padding:3px;transform:scale(1.18)}
+
+/* ===== projetos: brilho na cor do projeto e selo "em construção" ===== */
+.blob.b2{background:var(--g3,#d9d4c7)}
+.shot.wip::before{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;
+  background:repeating-linear-gradient(-45deg,rgba(255,255,255,.07) 0 14px,transparent 14px 28px)}
+.wip-badge{position:absolute;left:16px;top:16px;z-index:4;padding:5px 12px;border-radius:99px;background:#f2c94c;color:#1b1b19;font-size:.66rem;font-weight:600;text-transform:uppercase;letter-spacing:.04em}
+.wip-badge.inline{position:static;display:inline-block;vertical-align:middle;margin-left:8px}

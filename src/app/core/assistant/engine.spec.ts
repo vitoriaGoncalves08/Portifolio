@@ -51,6 +51,11 @@ describe('AssistantEngine (Dúvidas? offline)', () => {
     expect(ask(engine, 'sabe tailwind?').text).not.toMatch(/não aparece/);
   });
 
+  it('responde sobre o trabalho atual na Capgemini', () => {
+    expect(ask(engine, 'trabalha na capgemini?').text).toMatch(/Capgemini/);
+    expect(ask(engine, 'onde ela trabalha hoje?').text).toMatch(/Capgemini/);
+  });
+
   it('responde sobre as integrações da Muralis', () => {
     expect(ask(engine, 'fez integração com itau?').text).toMatch(/Muralis/);
     expect(ask(engine, 'trabalhou com receita federal?').text).toMatch(/Receita Federal/);

@@ -18,13 +18,13 @@ export const DATA: PortfolioData = {
       nav_contact: 'Contato',
       theme_t: 'Tema', theme_light: 'Claro', theme_dark: 'Escuro', accent_t: 'Cor dos detalhes',
       accent_neutral: 'Grafite', accent_wine: 'Bordô', accent_brown: 'Marrom', accent_denim: 'Azul jeans',
-      role: 'Java · Spring Boot · React · Microsserviços',
+      role: 'Java · Spring Boot · Angular · React · Microsserviços',
       tagline: 'Construo microsserviços em Java e Spring Boot e interfaces em React, com arquitetura limpa e foco em qualidade.',
       cta_projects: 'Ver projetos', cta_cv: 'Baixar CV',
       about_pro_t: 'Profissional', about_hobby_t: 'Fora do código',
-      about_pro: 'Sou desenvolvedora fullstack em São Paulo. Na Muralis Tecnologia comecei como estagiária em 2022 e hoje desenvolvo microsserviços em Java e Spring Boot com arquitetura hexagonal, APIs REST e interfaces em React, participando das decisões técnicas e do dia a dia ágil do time. Também atuo como freelancer, criando landing pages, protótipos no Figma e identidades visuais.',
+      about_pro: 'Sou desenvolvedora fullstack em São Paulo. Hoje sou Consultora de Soluções na Capgemini, atuando com Angular e Java para um cliente do setor financeiro e de seguros, criando microsserviços do zero e integrações com sistemas externos. Antes, na Muralis Tecnologia, fui de estagiária a desenvolvedora fullstack, com microsserviços em Java e Spring Boot, integrações bancárias em produção e interfaces em React. Também atuo como freelancer, criando landing pages, protótipos no Figma e identidades visuais.',
       about_hobby: 'O que me recarrega quando fecho o editor.', hobby_hint: 'Passe o mouse (ou toque) nos livros para ver o que cada hobby traz para o meu trabalho.', hobby_gains: 'O que isso traz para o meu trabalho:',
-      tl_more: 'Saiba mais', tl_less: 'Ver menos', tl_featured: 'Experiência principal', tl_worked: 'Integrações em produção', skill_level: 'nível',
+      proj_wip: 'Em construção', certs_certifications: 'Certificações', tl_more: 'Saiba mais', tl_less: 'Ver menos', tl_featured: 'Experiência principal', tl_worked: 'Integrações em produção', skill_level: 'nível',
       langs_t: 'Idiomas',
       tl_work: 'Experiência', tl_edu: 'Educação', tl_all: 'Tudo', more: 'Ver detalhes →', all: 'Todos',
       certs_badges: 'Badges', certs_courses: 'Certificados e cursos', badge_soon: 'Próxima badge',
@@ -87,13 +87,13 @@ export const DATA: PortfolioData = {
       nav_contact: 'Contact',
       theme_t: 'Theme', theme_light: 'Light', theme_dark: 'Dark', accent_t: 'Accent color',
       accent_neutral: 'Graphite', accent_wine: 'Burgundy', accent_brown: 'Brown', accent_denim: 'Denim blue',
-      role: 'Java · Spring Boot · React · Microservices',
+      role: 'Java · Spring Boot · Angular · React · Microservices',
       tagline: 'I build Java and Spring Boot microservices and React interfaces, with clean architecture and a focus on quality.',
       cta_projects: 'View projects', cta_cv: 'Download CV',
       about_pro_t: 'Professional', about_hobby_t: 'Beyond code',
-      about_pro: "I'm a full stack developer based in São Paulo. I joined Muralis Tecnologia as an intern in 2022 and today I build Java and Spring Boot microservices with hexagonal architecture, REST APIs and React interfaces, taking part in technical decisions and the team's agile routine. I also freelance, creating landing pages, Figma prototypes and visual identities.",
+      about_pro: "I'm a full stack developer based in São Paulo. Today I'm a Solutions Consultant at Capgemini, working with Angular and Java for a client in the financial and insurance sector, building microservices from scratch and integrations with external systems. Before that, at Muralis Tecnologia, I grew from intern to full stack developer, working on Java and Spring Boot microservices, production banking integrations and React interfaces. I also freelance, creating landing pages, Figma prototypes and visual identities.",
       about_hobby: 'What recharges me when I close the editor.', hobby_hint: 'Hover (or tap) the books to see what each hobby brings to my work.', hobby_gains: 'What it brings to my work:',
-      tl_more: 'Learn more', tl_less: 'Show less', tl_featured: 'Main experience', tl_worked: 'Production integrations', skill_level: 'level',
+      proj_wip: 'Under construction', certs_certifications: 'Certifications', tl_more: 'Learn more', tl_less: 'Show less', tl_featured: 'Main experience', tl_worked: 'Production integrations', skill_level: 'level',
       langs_t: 'Languages',
       tl_work: 'Experience', tl_edu: 'Education', tl_all: 'All', more: 'See details →', all: 'All',
       certs_badges: 'Badges', certs_courses: 'Certificates & courses', badge_soon: 'Next badge',
@@ -156,13 +156,13 @@ export const DATA: PortfolioData = {
       nav_contact: 'Contacto',
       theme_t: 'Tema', theme_light: 'Claro', theme_dark: 'Oscuro', accent_t: 'Color de detalles',
       accent_neutral: 'Grafito', accent_wine: 'Burdeos', accent_brown: 'Marrón', accent_denim: 'Azul vaquero',
-      role: 'Java · Spring Boot · React · Microservicios',
+      role: 'Java · Spring Boot · Angular · React · Microservicios',
       tagline: 'Construyo microservicios en Java y Spring Boot e interfaces en React, con arquitectura limpia y foco en la calidad.',
       cta_projects: 'Ver proyectos', cta_cv: 'Descargar CV',
       about_pro_t: 'Profesional', about_hobby_t: 'Fuera del código',
-      about_pro: 'Soy desarrolladora fullstack en São Paulo. Entré a Muralis Tecnologia como pasante en 2022 y hoy desarrollo microservicios en Java y Spring Boot con arquitectura hexagonal, APIs REST e interfaces en React, participando en las decisiones técnicas y en el día a día ágil del equipo. También trabajo como freelancer, creando landing pages, prototipos en Figma e identidades visuales.',
+      about_pro: 'Soy desarrolladora fullstack en São Paulo. Hoy soy Consultora de Soluciones en Capgemini, trabajando con Angular y Java para un cliente del sector financiero y de seguros, creando microservicios desde cero e integraciones con sistemas externos. Antes, en Muralis Tecnologia, pasé de pasante a desarrolladora fullstack, con microservicios en Java y Spring Boot, integraciones bancarias en producción e interfaces en React. También trabajo como freelancer, creando landing pages, prototipos en Figma e identidades visuales.',
       about_hobby: 'Lo que me recarga cuando cierro el editor.', hobby_hint: 'Pasa el mouse (o toca) los libros para ver lo que cada hobby aporta a mi trabajo.', hobby_gains: 'Lo que aporta a mi trabajo:',
-      tl_more: 'Saber más', tl_less: 'Ver menos', tl_featured: 'Experiencia principal', tl_worked: 'Integraciones en producción', skill_level: 'nivel',
+      proj_wip: 'En construcción', certs_certifications: 'Certificaciones', tl_more: 'Saber más', tl_less: 'Ver menos', tl_featured: 'Experiencia principal', tl_worked: 'Integraciones en producción', skill_level: 'nivel',
       langs_t: 'Idiomas',
       tl_work: 'Experiencia', tl_edu: 'Educación', tl_all: 'Todo', more: 'Ver detalles →', all: 'Todos',
       certs_badges: 'Insignias', certs_courses: 'Certificados y cursos', badge_soon: 'Próxima insignia',
@@ -222,12 +222,12 @@ export const DATA: PortfolioData = {
   stats: [
     { n: '4+', l: { pt: 'anos de experiência', en: 'years of experience', es: 'años de experiencia' } },
     { n: '2', l: { pt: 'bolsas de intercâmbio (EUA)', en: 'exchange scholarships (USA)', es: 'becas de intercambio (EE. UU.)' } },
-    { n: '5', l: { pt: 'certificações', en: 'certifications', es: 'certificaciones' } }
+    { n: '5', l: { pt: 'cursos e certificações', en: 'courses and certifications', es: 'cursos y certificaciones' } }
   ],
   languages: [
     { pt: 'Português — nativo', en: 'Portuguese — native', es: 'Portugués — nativo' },
     { pt: 'Inglês — B2 (New York Institute of Technology · ELS)', en: 'English — B2 (New York Institute of Technology · ELS)', es: 'Inglés — B2 (New York Institute of Technology · ELS)' },
-    { pt: 'Espanhol — básico', en: 'Spanish — basic', es: 'Español — básico' }
+    { pt: 'Espanhol — A2', en: 'Spanish — A2', es: 'Español — A2' }
   ],
 
   /* Hobbies: cada um vira um livro na estante do Sobre.
@@ -273,21 +273,21 @@ export const DATA: PortfolioData = {
 
   /* Títulos dos grupos ficam iguais nos três idiomas (não são traduzidos). */
   skills: [
-    { t: 'Linguagens', items: ['Java', 'JavaScript', 'Node.js'] },
-    { t: 'Front-end', items: ['React.js', 'HTML/CSS', 'SASS', 'Material UI'] },
+    { t: 'Linguagens', items: ['Java', 'JavaScript', 'TypeScript', 'Node.js', 'Python'] },
+    { t: 'Front-end', items: ['Angular', 'React.js', 'HTML/CSS', 'SASS', 'Material UI'] },
     { t: 'Back-end', items: ['Spring Boot', 'Hibernate', 'REST', 'CI/CD'] },
     { t: 'Banco de dados', items: ['MySQL', 'SQL Server', 'PostgreSQL'] },
-    { t: 'Ferramentas', items: ['Git', 'Figma'] }
+    { t: 'Ferramentas', items: ['Git', 'Figma', 'Scrum', 'DevOps'] }
   ],
 
   /* Nível de cada skill, de 0 a 10: pinta essa fração da tag com o tom mais escuro da cor escolhida.
      Ex.: 5 = metade da tag. Skill sem número fica sem preenchimento. */
   skillLevels: {
-    'Java': 9, 'JavaScript': 8, 'Node.js': 6,
-    'React.js': 8, 'HTML/CSS': 8, 'SASS': 6, 'Material UI': 7,
+    'Java': 9, 'JavaScript': 7, 'TypeScript': 7, 'Node.js': 6, 'Python': 6,
+    'Angular': 8, 'React.js': 8, 'HTML/CSS': 9, 'SASS': 6, 'Material UI': 7,
     'Spring Boot': 9, 'Hibernate': 7, 'REST': 9, 'CI/CD': 6,
-    'MySQL': 8, 'SQL Server': 7, 'PostgreSQL': 7,
-    'Git': 8, 'Figma': 8
+    'MySQL': 8, 'SQL Server': 7, 'PostgreSQL': 8,
+    'Git': 8, 'Figma': 8, 'Scrum': 8, 'DevOps': 6
   },
 
   /* Tecnologias que aparecem no filtro de projetos (as demais continuam nos cards). */
@@ -295,7 +295,7 @@ export const DATA: PortfolioData = {
 
   projects: [
     {
-      id: 'bewear', title: 'E-commerce Bewear', img: 'assets/projects/bewear.svg',
+      tone: ['#7c5cf0', '#24185c', '#c4b5ff'], id: 'bewear', title: 'E-commerce Bewear', img: 'assets/projects/bewear.svg',
       tags: ['Next.js', 'React.js', 'TypeScript', 'Tailwind CSS', 'PostgreSQL', 'Drizzle ORM', 'Stripe'],
       cat: 'Full Stack', emoji: '🛒',
       desc: {
@@ -331,7 +331,7 @@ export const DATA: PortfolioData = {
       code: 'https://github.com/vitoriaGoncalves08/E-commerce-Bewear', demo: ''
     },
     {
-      id: 'sorria-acene', title: 'Sorria e Acene', img: 'assets/projects/sorria-acene-capa.webp',
+      tone: ['#2a303f', '#0b0d12', '#f09242'], id: 'sorria-acene', title: 'Sorria e Acene', img: 'assets/projects/sorria-acene-capa.webp',
       imgs: ['assets/projects/sorria-acene.webp'],
       tags: ['JavaScript', 'Python', 'MediaPipe', 'scikit-learn', 'Chrome Extension'],
       cat: 'IA', emoji: '🐧',
@@ -368,7 +368,7 @@ export const DATA: PortfolioData = {
       code: 'https://github.com/vitoriaGoncalves08/Sorria-Acene', demo: 'https://lnkd.in/p/dejXym6R'
     },
     {
-      id: 'futurize', title: 'Futurize', img: 'assets/projects/futurize-home.webp',
+      tone: ['#4f86ff', '#132f8c', '#9cc6ff'], id: 'futurize', title: 'Futurize', img: 'assets/projects/futurize-home.webp',
       imgs: ['assets/projects/futurize.webp', 'assets/projects/futurize-trabalhos.webp', 'assets/projects/futurize-casos-de-uso.webp', 'assets/projects/futurize-classes.webp', 'assets/projects/futurize-logico.webp'],
       tags: ['Java', 'Spring Boot', 'React.js', 'MySQL', 'Material UI', 'JWT'],
       cat: 'Full Stack', emoji: '📋',
@@ -405,7 +405,7 @@ export const DATA: PortfolioData = {
       code: 'https://github.com/vitoriaGoncalves08/Futurize', demo: ''
     },
     {
-      id: 'fatima-bolos', title: 'Fátima Bolos', img: 'assets/projects/fatima-bolos-home.webp',
+      tone: ['#f29bbd', '#7a2c4d', '#ffd1e1'], id: 'fatima-bolos', title: 'Fátima Bolos', img: 'assets/projects/fatima-bolos-home.webp',
       imgs: ['assets/projects/fatima-bolos.webp'],
       tags: ['React.js', 'TypeScript', 'Vite', 'Material UI', 'Framer Motion'],
       cat: 'Front-end', emoji: '🎂',
@@ -442,7 +442,7 @@ export const DATA: PortfolioData = {
       code: 'https://github.com/vitoriaGoncalves08/FatimaBolos', demo: ''
     },
     {
-      id: 'farma-co', title: 'Farma.co', img: 'assets/projects/farma-co-splash.webp',
+      tone: ['#15a3aa', '#05363a', '#7fe0e4'], id: 'farma-co', title: 'Farma.co', img: 'assets/projects/farma-co-splash.webp',
       imgs: ['assets/projects/farma-co.webp', 'assets/projects/farma-co-cadastros.webp', 'assets/projects/farma-co-catalogo.webp'],
       tags: ['Figma', 'UX/UI', 'Mobile'],
       cat: 'UX/UI', emoji: '💊',
@@ -490,7 +490,7 @@ export const DATA: PortfolioData = {
       code: 'https://github.com/vitoriaGoncalves08/microservice-saga-orquestrado', demo: ''
     },
     {
-      id: 'passeios', title: 'Passeios App', tags: ['Angular', 'TypeScript'],
+      id: 'passeios', title: 'Passeios App', status: 'wip', tags: ['Angular', 'TypeScript'],
       cat: 'Front-end', emoji: '🗺️',
       desc: { pt: 'Aplicação Angular para gestão de passeios.', en: 'Angular app for managing tours.', es: 'Aplicación Angular para la gestión de paseos.' },
       problem: { pt: 'Descreva o problema.', en: 'Describe the problem.', es: 'Describe el problema.' },
@@ -553,7 +553,19 @@ export const DATA: PortfolioData = {
   timeline: {
     work: [
       {
-        when: { pt: '2024 — hoje', en: '2024 — present', es: '2024 — hoy' }, featured: true,
+        when: { pt: '2026 — hoje', en: '2026 — present', es: '2026 — hoy' },
+        t: { pt: 'Consultora de Soluções III (Pleno)', en: 'Solutions Consultant III (Mid-level)', es: 'Consultora de Soluciones III (Semi-senior)' }, org: 'Capgemini · São Paulo, SP',
+        d: { pt: 'Front-end em Angular e back-end em Java para um cliente do setor financeiro e de seguros.', en: 'Angular front-end and Java back-end for a client in the financial and insurance sector.', es: 'Front-end en Angular y back-end en Java para un cliente del sector financiero y de seguros.' },
+        logos: ['bradesco'], logosTitle: { pt: 'Cliente', en: 'Client', es: 'Cliente' },
+        points: [
+          { pt: 'Desenvolvimento front-end com Angular para cliente do setor financeiro e de seguros, com atividades específicas de back-end em Java.', en: 'Front-end development with Angular for a client in the financial and insurance sector, with specific back-end tasks in Java.', es: 'Desarrollo front-end con Angular para un cliente del sector financiero y de seguros, con tareas específicas de back-end en Java.' },
+          { pt: 'Microsserviços criados do zero, com integração ao BFF (Backend for Frontend) e a sistemas externos.', en: 'Microservices built from scratch, integrated with the BFF (Backend for Frontend) and external systems.', es: 'Microservicios creados desde cero, integrados al BFF (Backend for Frontend) y a sistemas externos.' },
+          { pt: 'Interfaces web e mobile fiéis ao design, com práticas de acessibilidade e testes no Mobile Center.', en: 'Web and mobile interfaces faithful to the design, with accessibility practices and testing in Mobile Center.', es: 'Interfaces web y móviles fieles al diseño, con prácticas de accesibilidad y pruebas en Mobile Center.' },
+          { pt: 'Correção de bugs e acompanhamento de implantações em produção.', en: 'Bug fixing and follow-up of production deployments.', es: 'Corrección de bugs y seguimiento de despliegues en producción.' }
+        ]
+      },
+      {
+        when: { pt: '2024 — 2026', en: '2024 — 2026', es: '2024 — 2026' },
         t: { pt: 'Desenvolvedora de Software Fullstack', en: 'Full Stack Software Developer', es: 'Desarrolladora de Software Fullstack' }, org: 'Muralis Tecnologia · São Paulo, SP',
         d: { pt: 'Desenvolvimento fullstack de sistemas em produção: microsserviços em Java/Spring Boot e interfaces em React.', en: 'Full stack development of production systems: Java/Spring Boot microservices and React interfaces.', es: 'Desarrollo fullstack de sistemas en producción: microservicios en Java/Spring Boot e interfaces en React.' },
         logos: ['itau', 'bb', 'receita'],
@@ -604,23 +616,24 @@ export const DATA: PortfolioData = {
 
   services: [
     { t: { pt: 'Landing pages e sites', en: 'Landing pages & websites', es: 'Landing pages y sitios web' }, d: { pt: 'Páginas rápidas, com formulários integrados e automação de e-mails.', en: 'Fast pages with integrated forms and e-mail automation.', es: 'Páginas rápidas, con formularios integrados y automatización de correos.' } },
-    { t: { pt: 'APIs e microsserviços', en: 'APIs & microservices', es: 'APIs y microservicios' }, d: { pt: 'Back-ends em Java e Spring Boot com arquitetura hexagonal.', en: 'Java and Spring Boot back-ends with hexagonal architecture.', es: 'Back-ends en Java y Spring Boot con arquitectura hexagonal.' } },
+    { t: { pt: 'Arquitetura back-end e microsserviços', en: 'Back-end architecture & microservices', es: 'Arquitectura back-end y microservicios' }, d: { pt: 'Microsserviços em Java/Spring Boot com mensageria (filas e Kafka), padrão SAGA, arquitetura hexagonal e integrações com sistemas externos, bancos e BFF.', en: 'Java/Spring Boot microservices with messaging (queues and Kafka), the SAGA pattern, hexagonal architecture and integrations with external systems, banks and BFFs.', es: 'Microservicios en Java/Spring Boot con mensajería (colas y Kafka), patrón SAGA, arquitectura hexagonal e integraciones con sistemas externos, bancos y BFF.' } },
     { t: { pt: 'UX/UI e protótipos', en: 'UX/UI & prototypes', es: 'UX/UI y prototipos' }, d: { pt: 'Protótipos no Figma com design system e foco em usabilidade.', en: 'Figma prototypes with a design system and a focus on usability.', es: 'Prototipos en Figma con design system y foco en la usabilidad.' } }
   ],
 
-  /* Badges digitais (ex.: Credly). img: imagem da badge (png/svg) · url: link de verificação.
-     Para adicionar uma nova, é só incluir mais um item aqui. */
+  /* Badges digitais (ex.: Credly). img: imagem da badge (png/svg) · url: link de verificação. */
   badges: [
-    { t: 'AWS Partner: Technical Accreditation', ab: 'AWS', org: 'Amazon Web Services · 5h', date: 'Mar/2025', img: 'assets/badges/aws-technical-accredited.jpg', url: '' },
-    { t: 'Get Connected', ab: 'CISCO', org: 'Cisco Networking Academy · 30h', date: 'Mar/2022', img: '', url: '' }
+    { t: 'AWS Partner: Technical Accreditation', ab: 'AWS', org: 'Amazon Web Services · 5h', date: 'Mar/2025', img: 'assets/badges/aws-technical-accredited.jpg', url: '' }
   ],
-  badgeSlots: 2, // espaços "próxima badge" exibidos depois das badges atuais
+  badgeSlots: 0, // espaços "próxima badge" (0 = nenhum)
 
-  /* Certificados e cursos. img: imagem do certificado em assets/certs/ · url: link de verificação (opcional) */
+  /* kind: 'certification' (certificação, com prova) ou 'course' (certificado de curso).
+     img: imagem do certificado em assets/certs/ · url: link de verificação (opcional).
+     Grupos sem itens não aparecem no site. */
   certs: [
-    { t: 'Clean Code e Clean Architecture', org: 'Rodrigo Branas · 24h', date: 'Jan/2026', img: 'assets/certs/placeholder.svg', url: '' },
-    { t: 'Acelerando Projetos de Sucesso', org: 'MBA USP/Esalq', date: 'Nov/2025', img: 'assets/certs/placeholder.svg', url: '' },
-    { t: 'App Development', org: 'Madcode (from Facebook) · 32h', date: 'Out/2019', img: 'assets/certs/placeholder.svg', url: '' }
+    { kind: 'course', t: 'Clean Code e Clean Architecture', org: 'Rodrigo Branas · 24h', date: 'Jan/2026', img: 'assets/certs/placeholder.svg', url: '' },
+    { kind: 'course', t: 'Acelerando Projetos de Sucesso', org: 'MBA USP/Esalq', date: 'Nov/2025', img: 'assets/certs/placeholder.svg', url: '' },
+    { kind: 'course', t: 'Get Connected', org: 'Cisco Networking Academy · 30h', date: 'Mar/2022', img: 'assets/certs/placeholder.svg', url: '' },
+    { kind: 'course', t: 'App Development', org: 'Madcode (from Facebook) · 32h', date: 'Out/2019', img: 'assets/certs/placeholder.svg', url: '' }
   ],
 
   testimonials: [
@@ -637,7 +650,7 @@ export const DATA: PortfolioData = {
 
   /* Base do assistente "Dúvidas?" (modo offline, por palavras-chave). Para IA real, defina CHAT_ENDPOINT em main.js. */
   faq: [
-    { k: ['microsserviço', 'microservice', 'microservicio', 'saga', 'kafka', 'hexagonal'], a: { pt: 'Vitória desenvolve microsserviços em Java e Spring Boot com arquitetura hexagonal na Muralis Tecnologia, além de projetos próprios com Kafka e o padrão SAGA.', en: 'Vitória builds Java and Spring Boot microservices with hexagonal architecture at Muralis Tecnologia, plus personal projects with Kafka and the SAGA pattern.', es: 'Vitória desarrolla microservicios en Java y Spring Boot con arquitectura hexagonal en Muralis Tecnologia, además de proyectos propios con Kafka y el patrón SAGA.' } },
+    { k: ['microsserviço', 'microservice', 'microservicio', 'saga', 'kafka', 'hexagonal'], a: { pt: 'Vitória cria microsserviços em Java e Spring Boot: hoje na Capgemini, com integração ao BFF e a sistemas externos, e antes na Muralis Tecnologia, com arquitetura hexagonal e integrações bancárias em produção. Também tem projetos próprios com Kafka e o padrão SAGA.', en: 'Vitória builds Java and Spring Boot microservices: today at Capgemini, integrated with the BFF and external systems, and before at Muralis Tecnologia, with hexagonal architecture and production banking integrations. She also has personal projects with Kafka and the SAGA pattern.', es: 'Vitória crea microservicios en Java y Spring Boot: hoy en Capgemini, integrados al BFF y a sistemas externos, y antes en Muralis Tecnologia, con arquitectura hexagonal e integraciones bancarias en producción. También tiene proyectos propios con Kafka y el patrón SAGA.' } },
     { k: ['disponível', 'disponivel', 'disponible', 'available', 'vaga', 'vacante', 'freela', 'hire', 'contrat'], a: { pt: 'Ela atua como freelancer e está aberta a conversas. Fale pelo formulário de contato.', en: 'She freelances and is open to conversations. Reach out via the contact form.', es: 'Trabaja como freelancer y está abierta a conversar. Escríbele por el formulario de contacto.' } },
     { k: ['react', 'front', 'angular'], a: { pt: 'No front-end ela usa React.js, HTML, CSS/SASS e Material UI, com foco em componentes reutilizáveis e performance.', en: 'On the front-end she uses React.js, HTML, CSS/SASS and Material UI, focusing on reusable components and performance.', es: 'En el front-end usa React.js, HTML, CSS/SASS y Material UI, con foco en componentes reutilizables y rendimiento.' } },
     { k: ['stack', 'tecnologia', 'tecnología', 'skill', 'technolog'], a: { pt: 'Java, Spring Boot, Hibernate, React.js, JavaScript, Node.js, MySQL, SQL Server, PostgreSQL, Git e CI/CD, entre outras.', en: 'Java, Spring Boot, Hibernate, React.js, JavaScript, Node.js, MySQL, SQL Server, PostgreSQL, Git and CI/CD, among others.', es: 'Java, Spring Boot, Hibernate, React.js, JavaScript, Node.js, MySQL, SQL Server, PostgreSQL, Git y CI/CD, entre otras.' } },

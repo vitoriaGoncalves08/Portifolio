@@ -11,7 +11,7 @@ import { RevealDirective } from '../shared/reveal.directive';
 import { TechChip, techIconUrl } from '../shared/tech-chip';
 
 /** gradientes de fundo das vitrines (um por projeto, em ciclo) */
-const GRADIENTS: [string, string][] = [['#55524a', '#171715'], ['#8a7d63', '#1d1a14'], ['#3f4857', '#0f1217'], ['#6a5d52', '#181512']];
+const GRADIENTS: [string, string, string][] = [['#55524a', '#171715', '#d9d4c7'], ['#8a7d63', '#1d1a14', '#e8d9b9'], ['#3f4857', '#0f1217', '#c9d3e3'], ['#6a5d52', '#181512', '#e3d2c4']];
 
 /**
  * Projetos: filtros na lateral (fixos ao rolar) — busca digitável (nome, descrição, categoria, tag — sem acento), filtros por
@@ -75,13 +75,14 @@ const GRADIENTS: [string, string][] = [['#55524a', '#171715'], ['#8a7d63', '#1d1
 
     <!-- vitrine (fundo colorido + janela de navegador com a imagem do projeto) -->
     <ng-template #shot let-p>
-      <div class="shot" [style.--g1]="grad(p)[0]" [style.--g2]="grad(p)[1]">
+      <div class="shot" [class.wip]="p.status === 'wip'" [style.--g1]="grad(p)[0]" [style.--g2]="grad(p)[1]" [style.--g3]="grad(p)[2]">
+        @if (p.status === 'wip') {<span class="wip-badge mono">🚧 {{ i18n.t('proj_wip') }}</span>}
         <i class="blob b1"></i><i class="blob b2"></i>
         <span class="cat">{{ p.cat }}</span>
         <div class="mock">
           <div class="bar"><b></b><b></b><b></b><em>{{ p.id }}.dev</em></div>
           <div class="scr">
-            @if (p.img) {<img [src]="p.img" alt="" loading="lazy" />} @else {<span class="emo">{{ p.emoji }}</span>}
+            @if (p.img) {<img [src]="p.img" alt="" loading="lazy" />}
           </div>
         </div>
       </div>
@@ -96,7 +97,7 @@ const GRADIENTS: [string, string][] = [['#55524a', '#171715'], ['#8a7d63', '#1d1
           <div class="m-shot"><ng-container *ngTemplateOutlet="shot; context: { $implicit: p }" /></div>
         }
         <div class="m-in">
-          <h3 style="margin-top:0">{{ p.title }}</h3>
+          <h3 style="margin-top:0">{{ p.title }} @if (p.status === 'wip') {<span class="wip-badge inline mono">🚧 {{ i18n.t('proj_wip') }}</span>}</h3>
           <div class="chips">@for (t of p.tags; track t) {<app-tech-chip [name]="t" />}</div>
           <h4>{{ i18n.t('m_problem') }}</h4><p>{{ i18n.tr(p.problem) }}</p>
           <h4>{{ i18n.t('m_solution') }}</h4><p>{{ i18n.tr(p.solution) }}</p>
@@ -156,7 +157,8 @@ export class Projects {
   }
 
   protected icon = techIconUrl;
-  protected grad = (p: Project) => GRADIENTS[this.all.indexOf(p) % GRADIENTS.length];
+  /** cores da vitrine: as do projeto (p.tone, combinando com a imagem) ou um tom neutro */
+  protected grad = (p: Project) => p.tone ?? GRADIENTS[this.all.indexOf(p) % GRADIENTS.length];
 
   protected toggleTag(t: string): void {
     const next = new Set(this.tagSel());
