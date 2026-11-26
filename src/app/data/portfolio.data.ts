@@ -222,7 +222,7 @@ export const DATA: PortfolioData = {
   stats: [
     { n: '4+', l: { pt: 'anos de experiência', en: 'years of experience', es: 'años de experiencia' } },
     { n: '2', l: { pt: 'bolsas de intercâmbio (EUA)', en: 'exchange scholarships (USA)', es: 'becas de intercambio (EE. UU.)' } },
-    { n: '7', l: { pt: 'cursos e certificações', en: 'courses and certifications', es: 'cursos y certificaciones' } }
+    { n: '8', l: { pt: 'cursos e certificações', en: 'courses and certifications', es: 'cursos y certificaciones' } }
   ],
   languages: [
     { pt: 'Português — nativo', en: 'Portuguese — native', es: 'Portugués — nativo' },
@@ -334,7 +334,7 @@ export const DATA: PortfolioData = {
       tone: ['#2a303f', '#0b0d12', '#f09242'], id: 'sorria-acene', title: 'Sorria e Acene', img: 'assets/projects/sorria-acene-capa.webp',
       imgs: ['assets/projects/sorria-acene.webp'],
       tags: ['JavaScript', 'Python', 'MediaPipe', 'scikit-learn', 'Chrome Extension'],
-      cat: 'IA', emoji: '🐧',
+      cat: 'Full Stack', emoji: '🐧',
       desc: {
         pt: 'Extensão do Chrome que reconhece o alfabeto de Libras pela webcam, em tempo real e 100% no navegador. Você faz a letra com a mão e sorri para confirmar.',
         en: 'Chrome extension that recognizes the Brazilian Sign Language (Libras) alphabet through the webcam, in real time and 100% in the browser. You sign the letter and smile to confirm.',
@@ -622,7 +622,8 @@ export const DATA: PortfolioData = {
 
   /* Badges digitais (ex.: Credly). img: imagem da badge (png/svg) · url: link de verificação. */
   badges: [
-    { t: 'AWS Partner: Technical Accreditation', ab: 'AWS', org: 'Amazon Web Services · 5h', date: 'Mar/2025', img: 'assets/badges/aws-technical-accredited.jpg', url: 'https://www.credly.com/badges/c86f5925-1193-4916-bdfa-4706c6258b1e' }
+    { t: 'AWS Partner: Technical Accreditation', ab: 'AWS', org: 'Amazon Web Services · 5h', date: 'Mar/2025', img: 'assets/badges/aws-technical-accredited.webp', url: 'https://www.credly.com/badges/c86f5925-1193-4916-bdfa-4706c6258b1e' },
+    { t: 'Google Cloud Computing Foundations: Cloud Computing Fundamentals', ab: 'GCP', org: 'Google Cloud', date: 'Out/2023', img: 'assets/badges/google-cloud-computing-fundamentals.webp', url: '' }
   ],
   badgeSlots: 0, // espaços "próxima badge" (0 = nenhum)
 
@@ -630,7 +631,7 @@ export const DATA: PortfolioData = {
      img: imagem do certificado em assets/certs/ · url: link de verificação (opcional).
      Grupos sem itens não aparecem no site. */
   certs: [
-    { kind: 'certification', t: 'Oracle Cloud Infrastructure (OCI) Foundations', org: 'Oracle · válida até Abr/2028', date: 'Abr/2026', img: 'assets/certs/oci-foundations.svg', url: 'https://catalog-education.oracle.com/ords/certview/sharebadge?id=4BD1DB715DCE11849C15EA17F5FA1C6AA015051C4FE1A2CC71BA1F8AEA6190E5' },
+    { kind: 'certification', t: 'OCI 2025 Certified AI Foundations Associate', org: 'Oracle', date: 'Abr/2026 · válida até Abr/2028', img: 'assets/badges/oci-ai-foundations.webp', url: 'https://catalog-education.oracle.com/ords/certview/sharebadge?id=4BD1DB715DCE11849C15EA17F5FA1C6AA015051C4FE1A2CC71BA1F8AEA6190E5' },
     { kind: 'course', t: 'Angular 19/20 — Curso Completo do Iniciante ao Avançado', org: 'Udemy · 15h', date: 'Set/2026', img: 'assets/certs/angular-udemy.webp', url: 'https://www.udemy.com/certificate/UC-54fc14d4-2e78-441c-b0b1-8ddf2a4efd8d/' },
     { kind: 'course', t: 'Padrões de Projeto em Java na Prática', org: 'Udemy · 14h', date: 'Ago/2026', img: 'assets/certs/java-patterns-udemy.webp', url: 'https://www.udemy.com/certificate/UC-55f8285c-feb9-47f5-958d-d2d92513d136/' },
     { kind: 'course', t: 'Clean Code e Clean Architecture', org: 'Rodrigo Branas · 24h', date: 'Jan/2026', img: 'assets/certs/clean-code-branas.webp', url: '' },

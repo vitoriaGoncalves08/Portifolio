@@ -662,3 +662,8 @@ body:has(dialog[open]) .cursor{opacity:0}
 .m-shot .cat{display:none}
 /* certificações: com poucos itens, o card mantém o tamanho (auto-fill não estica um card só) */
 #certs .cards.three{grid-template-columns:repeat(auto-fill,minmax(260px,1fr))}
+
+/* ===== medalhas: imagens já recortadas, então ocupam o círculo sem zoom ===== */
+.medal img{padding:8px;transform:none}
+button.badge{font:inherit;color:inherit;cursor:pointer}
+button.badge:hover{transform:translateY(-5px);border-color:var(--fg)}

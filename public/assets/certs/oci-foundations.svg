@@ -1,9 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 560">
-  <rect width="800" height="560" fill="#312d2a"/>
-  <rect x="24" y="24" width="752" height="512" rx="18" fill="none" stroke="#c74634" stroke-width="3"/>
-  <rect x="300" y="110" width="200" height="110" rx="55" fill="none" stroke="#c74634" stroke-width="22"/>
-  <text x="400" y="300" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="30" fill="#f1efed" letter-spacing="4">ORACLE CLOUD INFRASTRUCTURE</text>
-  <text x="400" y="370" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="56" font-weight="700" fill="#ffffff">OCI Foundations</text>
-  <text x="400" y="420" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="24" fill="#c74634" letter-spacing="3">CERTIFIED ASSOCIATE</text>
-  <text x="400" y="480" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#b9b4ae">Abr/2026 — Abr/2028</text>
-</svg>

@@ -8,9 +8,9 @@ import { RevealDirective } from '../shared/reveal.directive';
 /**
  * Certificações em três partes (grupos vazios não aparecem):
  * - Badges digitais (medalhas)
- * - Certificações (kind: 'certification')
+ * - Certificações (kind: 'certification'), no mesmo estilo de medalha das badges
  * - Certificados de cursos (kind: 'course')
- * Certificações e cursos abrem a imagem ampliada ao clicar.
+ * Com link, badges e certificações abrem a credencial; cursos abrem a imagem ampliada.
  */
 @Component({
   selector: 'app-certs',
@@ -42,12 +42,18 @@ import { RevealDirective } from '../shared/reveal.directive';
 
         @if (certifications.length) {
           <h3 class="sub mono" appReveal>{{ i18n.t('certs_certifications') }}</h3>
-          <div class="cards three">
+          <!-- mesmo estilo das badges: medalha + nome; com link, abre a credencial -->
+          <div class="badges">
             @for (c of certifications; track c.t; let i = $index) {
-              <button type="button" class="card cert click" appReveal="item" [revealIndex]="i" (click)="open(c)">
-                <div class="thumb"><img [src]="c.img" [alt]="c.t" loading="lazy" /></div>
-                <div class="body"><h3>{{ c.t }}</h3><span class="meta">{{ c.org }} · {{ c.date }}</span></div>
-              </button>
+              @if (c.url) {
+                <a class="badge" [href]="c.url" target="_blank" rel="noopener" appReveal="item" [revealIndex]="i">
+                  <ng-container *ngTemplateOutlet="medal; context: { $implicit: c }" />
+                </a>
+              } @else {
+                <button type="button" class="badge click" appReveal="item" [revealIndex]="i" (click)="open(c)">
+                  <ng-container *ngTemplateOutlet="medal; context: { $implicit: c }" />
+                </button>
+              }
             }
           </div>
         }
