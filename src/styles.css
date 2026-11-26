@@ -657,3 +657,8 @@ body:has(dialog[open]) .cursor{opacity:0}
   background:repeating-linear-gradient(-45deg,rgba(255,255,255,.07) 0 14px,transparent 14px 28px)}
 .wip-badge{position:absolute;left:16px;top:16px;z-index:4;padding:5px 12px;border-radius:99px;background:#f2c94c;color:#1b1b19;font-size:.66rem;font-weight:600;text-transform:uppercase;letter-spacing:.04em}
 .wip-badge.inline{position:static;display:inline-block;vertical-align:middle;margin-left:8px}
+
+/* ===== modal de projeto: sem a etiqueta de categoria (ficava sob o botão fechar) ===== */
+.m-shot .cat{display:none}
+/* certificações: com poucos itens, o card mantém o tamanho (auto-fill não estica um card só) */
+#certs .cards.three{grid-template-columns:repeat(auto-fill,minmax(260px,1fr))}

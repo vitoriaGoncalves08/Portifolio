@@ -70,7 +70,7 @@ import { RevealDirective } from '../shared/reveal.directive';
       <span class="meta">{{ b.org }} · {{ b.date }}</span>
     </ng-template>
 
-    <dialog #dlg class="modal" (click)="$event.target === dlg && dlg.close()">
+    <dialog #dlg class="modal" (click)="$event.target === dlg ? dlg.close() : null">
       <button type="button" class="close" aria-label="Fechar" (click)="dlg.close()">✕</button>
       @if (selected(); as c) {
         <div class="lightbox"><img [src]="c.img" [alt]="c.t" /></div>

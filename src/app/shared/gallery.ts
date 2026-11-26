@@ -3,6 +3,7 @@ import { Component, computed, effect, input, signal } from '@angular/core';
 /**
  * Carrossel de imagens do modal de projeto.
  * Setas, bolinhas, contador, teclado (← →) e arrastar com o dedo/mouse.
+ * Com uma imagem só, mostra a foto inteira sem os controles.
  */
 @Component({
   selector: 'app-gallery',
@@ -25,6 +26,7 @@ import { Component, computed, effect, input, signal } from '@angular/core';
         </figure>
       }
     </div>
+    @if (images().length > 1) {
     <button type="button" class="g-nav prev" aria-label="Imagem anterior" (click)="go(-1)">‹</button>
     <button type="button" class="g-nav next" aria-label="Próxima imagem" (click)="go(1)">›</button>
     <div class="g-dots">
@@ -33,7 +35,8 @@ import { Component, computed, effect, input, signal } from '@angular/core';
                 [attr.aria-current]="i === index()" (click)="index.set(i)"></button>
       }
     </div>
-    <span class="g-count mono" aria-live="polite">{{ index() + 1 }} / {{ images().length }}</span>`,
+    <span class="g-count mono" aria-live="polite">{{ index() + 1 }} / {{ images().length }}</span>
+    }`,
 })
 export class Gallery {
   readonly images = input.required<string[]>();
@@ -53,6 +56,7 @@ export class Gallery {
 
   protected go(step: number): void {
     const n = this.images().length;
+    if (n < 2) return;
     this.index.update((i) => (i + step + n) % n);
   }
 

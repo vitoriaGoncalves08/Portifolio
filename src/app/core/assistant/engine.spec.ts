@@ -70,7 +70,8 @@ describe('AssistantEngine (Dúvidas? offline)', () => {
   it('responde sobre formação e certificações', () => {
     expect(ask(engine, 'qual faculdade ela fez?').text).toMatch(/FATEC/);
     expect(ask(engine, 'tem certificado da aws?').text).toMatch(/AWS|Amazon/);
-    expect(ask(engine, 'cisco').text).toMatch(/Cisco/);
+    expect(ask(engine, 'tem certificacao da oracle?').text).toMatch(/OCI|Oracle/);
+    expect(ask(engine, 'fez curso de padroes de projeto?').text).toMatch(/Padrões de Projeto/);
   });
 
   it('é sincero com tecnologia que não está no portfólio', () => {

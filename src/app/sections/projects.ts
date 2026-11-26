@@ -88,10 +88,10 @@ const GRADIENTS: [string, string, string][] = [['#55524a', '#171715', '#d9d4c7']
       </div>
     </ng-template>
 
-    <dialog #dlg class="modal" (click)="$event.target === dlg && dlg.close()">
+    <dialog #dlg class="modal" (click)="$event.target === dlg ? dlg.close() : null">
       <button type="button" class="close" aria-label="Fechar" (click)="dlg.close()">✕</button>
       @if (selected(); as p) {
-        @if (selectedGallery().length > 1) {
+        @if (selectedGallery().length) {
           <app-gallery [images]="selectedGallery()" [title]="p.title" />
         } @else {
           <div class="m-shot"><ng-container *ngTemplateOutlet="shot; context: { $implicit: p }" /></div>

@@ -172,7 +172,8 @@ export function buildKnowledge(ctx: KnowledgeContext): Intent[] {
   // ---------- badges e certificados ----------
   for (const c of [...data.badges.map((b) => ({ t: b.t, org: b.org, date: b.date, url: b.url, ab: b.ab })), ...data.certs.map((c) => ({ ...c, ab: '' }))]) {
     const keys = new Map<string, number>();
-    addKeys(keys, tokens(c.t), 3);
+    // título com peso menor que o de projeto: "padrões de projeto" deve achar o projeto Java Patterns antes do curso
+    addKeys(keys, tokens(c.t), 2.2);
     addKeys(keys, tokens(c.org + ' ' + c.ab), 2.5);
     intents.push({
       id: 'cert:' + c.t,
